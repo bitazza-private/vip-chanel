@@ -37,24 +37,20 @@
   .btn-outline { display: inline-block; border: 1px solid #d1c8b4; color: #1a1814 !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 12px 24px; border-radius: 2px; transition: border-color 0.3s ease; }
   .btn-outline:hover { border-color: #b8923c; }
 
-  /* NAV BAR */
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; }
   .nav-left { display: flex; align-items: center; }
   .logo-img { height: 60px; object-fit: contain; mix-blend-mode: multiply; }
 
-  /* HERO SECTION */
   .hero { position: relative; background: linear-gradient(100deg, rgba(244,243,237,0.97) 0%, rgba(244,243,237,0.90) 55%, rgba(244,243,237,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: center 20%; display: flex; align-items: center; padding: 40px 0 60px 0; }
   .hero-inner { padding: 0 40px; max-width: 620px; }
   .hero h1 { font-size: 42px; line-height: 1.15; font-weight: 600; margin: 0 0 12px 0; color: #1a1814; }
   .hero p.quote { font-size: 16px; line-height: 1.8; color: #5c574f; margin: 0 0 25px 0; font-style: italic; }
 
-  /* HERO GRID */
   .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
   .grid-item h4 { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #1a1814; margin: 0 0 4px 0; display: flex; align-items: center; gap: 8px; }
   .grid-item h4 svg { width: 14px; height: 14px; stroke: #b8923c; }
   .grid-item p { font-size: 13px; line-height: 1.5; color: #6a645b; margin: 0; }
 
-  /* STATS BAR */
   .stats-wrap { padding: 0 40px; margin-top: -20px; position: relative; z-index: 3; }
   .stats { background: #fdfcf9; border: 1px solid #ebe6da; border-radius: 60px; display: flex; justify-content: space-around; align-items: center; padding: 18px 20px; box-shadow: 0 15px 35px rgba(26,24,20,0.06); }
   .stat { text-align: center; padding: 0 14px; display: flex; flex-direction: column; align-items: center; }
@@ -62,7 +58,6 @@
   .stat .lbl { font-size: 10px; color: #8a8377; margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
   .stat-sep { width: 1px; height: 30px; background: #e1ddce; }
 
-  /* SECTIONS */
   .goals { display: flex; gap: 30px; padding: 45px 40px; align-items: center; }
   .goals.reverse { flex-direction: row-reverse; }
   .goals-text { flex: 0 0 44%; }
@@ -82,28 +77,20 @@
   .feature-list h4 { font-size: 17px; font-weight: 600; margin: 0 0 6px 0; }
   .feature-list p { font-size: 14px; line-height: 1.6; margin: 0; }
 
-  /* BOTTOM CTA (ปรับลด Padding ด้านล่างให้ชิดกับ Footer มากขึ้น) */
   .closing { padding: 45px 40px 10px 40px; text-align: left; }
   .closing h2 { font-size: 38px; font-weight: 600; margin: 0 0 15px 0; }
   .closing p.desc { font-size: 15px; line-height: 1.8; max-width: 700px; margin: 0 0 25px 0; }
 
-  /* SIGN OFF (ตัดขอบบนออก ให้กลืนไปกับเนื้อหา) */
   .sign-off { margin-top: 40px; font-size: 15px; line-height: 1.8; color: #5c574f; }
   .sign-off strong { color: #1a1814; font-size: 16px; font-weight: 600; }
   .sign-off a { color: #b8923c; font-weight: 500; transition: color 0.3s ease; }
   .sign-off a:hover { color: #8a6a24; }
 
-  /* FOOTER */
-  /* ปรับลด Padding ด้านบนให้ต่อกับ Sign-off พอดี */
   .footer { padding: 15px 40px 40px 40px; }
   .confidential-note { font-size: 11px; line-height: 1.8; color: #8a8377; text-align: justify; margin-bottom: 30px; }
-  
-  /* ปรับ Layout Footer ล่างสุดเป็นแนวนอน 3 ส่วน (ซ้าย-กลาง-ขวา) */
   .footer-bottom { padding-top: 25px; border-top: 1px solid #e1ddce; display: flex; justify-content: space-between; align-items: center; }
-  
   .footer-address { font-size: 11px; line-height: 1.8; text-transform: uppercase; letter-spacing: 1.5px; color: #8a8377; text-align: left; }
   
-  /* สไตล์ Social Icons แบบไม่มีวงกลม */
   .social-links { display: flex; gap: 20px; align-items: center; justify-content: center; }
   .social-links a { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; color: #8a8377; transition: color 0.3s; text-decoration: none; }
   .social-links a:hover { color: #b8923c; }
@@ -113,7 +100,8 @@
   .footer-logo { height: 20px; object-fit: contain; mix-blend-mode: multiply; filter: grayscale(100%) opacity(0.5); }
 
   @media (max-width: 760px) {
-    .hero { background-position: center 30%; padding: 40px 0; }
+    /* 💥 แก้ตรงนี้! ขยับภาพไปขวา 80% เพื่อโชว์หน้าผู้ชายหล่อๆ */
+    .hero { background-position: 80% center; padding: 40px 0; }
     .hero h1 { font-size: 32px; }
     .hero-grid { grid-template-columns: 1fr; gap: 16px; }
     .stats { flex-wrap: wrap; gap: 12px; border-radius: 16px; padding: 20px; }
@@ -223,7 +211,6 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- โซนนี้ลดระยะห่างแล้ว -->
   <div class="closing bg-grad-cta reveal" id="request">
     <h2 class="serif">Schedule a Private Consultation</h2>
     <p class="desc">Share your support requirements with us. Our specialized team will review your request and recommend the optimal solution in complete confidence.</p>
@@ -235,7 +222,6 @@
       <p class="desc">Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.</p>
     </div>
     
-    <!-- ตัด Private Client Desk ออก -->
     <div class="sign-off">
       Yours sincerely,<br>
       <strong>Bitazza Elite Thailand</strong><br>
@@ -243,11 +229,9 @@
     </div>
   </div>
 
-  <!-- โซน Footer ขยับชิดขึ้น -->
   <div class="footer bg-grad-footer reveal">
     <div class="confidential-note"><strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.</div>
     
-    <!-- Footer จับเรียง 3 ส่วน (ที่อยู่ - ไอคอนโซเชียล - โลโก้) -->
     <div class="footer-bottom">
       <div class="footer-address">
         THIS INVITATION WAS EXTENDED PERSONALLY AND IS NOT TRANSFERABLE.<br>
