@@ -22,38 +22,31 @@
   a { text-decoration: none; }
 
   /* ------------------------------------------------
-     THEME CLASSES (สำหรับแยกสีตัวหนังสือให้เข้ากับพื้นหลัง)
+     THEME CLASSES (Warm Luxury - โทนอบอุ่น)
   ------------------------------------------------- */
-  /* Theme Light (บนพื้นขาว) */
-  .theme-light { color: #555555; }
-  .theme-light h2.serif { color: #111111; }
-  .theme-light .gold { color: #b8860b; }
-  .theme-light .feature-list h4 { color: #111111; }
-  .theme-light .feature-list li { border-left-color: #e0e0e0; }
-
-  /* Theme Dark (บนพื้นเทา-ดำ) */
-  .theme-dark { color: #9a978f; }
-  .theme-dark h2.serif { color: #f2efe6; }
-  .theme-dark .gold { color: #c9a24b; }
-  .theme-dark .feature-list h4 { color: #e8e4db; }
-  .theme-dark .feature-list li { border-left-color: #3a3220; }
+  /* Theme Light (ใช้กับทุก Section เพราะพื้นหลังสว่างทั้งหมด) */
+  .theme-light { color: #5c574f; } /* สีเทาอมน้ำตาลสำหรับเนื้อหา */
+  .theme-light h2.serif { color: #1a1814; } /* สีชาร์โคลเข้มสำหรับหัวข้อ */
+  .theme-light .gold { color: #b8923c; } /* สีทองที่เข้มขึ้นนิดนึง ตัดกับพื้นสว่าง */
+  .theme-light .feature-list h4 { color: #1a1814; }
+  .theme-light .feature-list li { border-left-color: #d1c8b4; } /* เส้นคั่นสีทราย */
 
   /* ------------------------------------------------
-     GRADIENT FLOW BACKGROUNDS (แก้ไขรอยตัดให้เนียนกริบ)
+     GRADIENT FLOW BACKGROUNDS (ขาว -> ทราย -> แชมเปญ)
   ------------------------------------------------- */
   .bg-white { background-color: #ffffff; }
   
-  /* แก้ไข: ไล่เฉดจาก ขาว -> เทาเข้ม (ให้ช่วง 120px แรกเป็นโซนละลายสี) */
-  .bg-grad-grey { background: linear-gradient(180deg, #ffffff 0%, #2d2d30 120px, #151518 100%); }
+  /* 2. ไล่เฉดจาก ขาว -> ทรายอ่อน (Sand) เฟดเนียนๆ 120px แรก */
+  .bg-grad-sand-1 { background: linear-gradient(180deg, #ffffff 0%, #fcfaf5 120px, #f4efe1 100%); }
   
-  /* ไล่เฉดจากเทาไปดำ */
-  .bg-grad-black { background: linear-gradient(180deg, #151518 0%, #050505 100%); }
+  /* 3. ไล่เฉดจาก ทรายอ่อน -> ทองแชมเปญอุ่นๆ */
+  .bg-grad-sand-2 { background: linear-gradient(180deg, #f4efe1 0%, #ebe2c9 100%); }
   
-  /* ไล่เฉดจากดำกลับมาเทา */
-  .bg-grad-cta { background: linear-gradient(180deg, #050505 0%, #2d2d30 100%); }
+  /* 4. ไล่เฉดจาก ทองแชมเปญกลับมา -> ทรายอ่อน */
+  .bg-grad-cta { background: linear-gradient(180deg, #ebe2c9 0%, #fcfaf5 100%); }
   
-  /* ไล่เฉดจากเทาเฟดไปขาว */
-  .bg-grad-footer { background: linear-gradient(180deg, #2d2d30 0%, #ffffff 150px, #ffffff 100%); }
+  /* 5. ไล่เฉดจาก ทรายอ่อนเฟดไป -> ขาวล้วนตอนจบ */
+  .bg-grad-footer { background: linear-gradient(180deg, #fcfaf5 0%, #ffffff 150px, #ffffff 100%); }
 
 
   /* ------------------------------------------------
@@ -67,8 +60,8 @@
   /* ปุ่มกด */
   .btn {
     display: inline-block;
-    background: #c9a24b;
-    color: #111111 !important;
+    background: #b8923c;
+    color: #ffffff !important;
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -77,13 +70,12 @@
     border-radius: 2px;
     transition: all 0.4s ease;
   }
-  .theme-light .btn { background: #b8860b; color: #ffffff !important; }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 146, 60, 0.25); background: #d4a94a; }
 
   .btn-outline {
     display: inline-block;
-    border: 1px solid #dddddd;
-    color: #111111 !important;
+    border: 1px solid #d1c8b4;
+    color: #1a1814 !important;
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -92,7 +84,7 @@
     border-radius: 2px;
     transition: border-color 0.3s ease;
   }
-  .btn-outline:hover { border-color: #b8860b; }
+  .btn-outline:hover { border-color: #b8923c; }
 
   .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; font-weight: 500; margin-bottom: 20px; }
 
@@ -101,9 +93,9 @@
   ------------------------------------------------- */
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; }
   .nav-left { display: flex; align-items: center; gap: 20px; }
-  .dots { width: 36px; height: 36px; border: 1px solid #eeeeee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #111111;}
-  .logo { font-size: 19px; letter-spacing: 2px; font-weight: 600; color: #111111; }
-  .nav-links { display: flex; gap: 34px; font-size: 12px; letter-spacing: 1px; color: #555555; }
+  .dots { width: 36px; height: 36px; border: 1px solid #eae5d9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1a1814;}
+  .logo { font-size: 19px; letter-spacing: 2px; font-weight: 600; color: #1a1814; }
+  .nav-links { display: flex; gap: 34px; font-size: 12px; letter-spacing: 1px; color: #5c574f; }
   .nav-right { display: flex; align-items: center; }
 
   /* ------------------------------------------------
@@ -119,23 +111,23 @@
     align-items: center;
   }
   .hero-inner { padding: 60px 40px; max-width: 560px; }
-  .hero h1 { font-size: 48px; line-height: 1.1; font-weight: 600; margin: 0 0 15px 0; color: #111111; }
-  .hero p { font-size: 17px; line-height: 1.8; color: #666666; max-width: 430px; margin: 0 0 30px 0; font-style: italic; }
+  .hero h1 { font-size: 48px; line-height: 1.1; font-weight: 600; margin: 0 0 15px 0; color: #1a1814; }
+  .hero p { font-size: 17px; line-height: 1.8; color: #5c574f; max-width: 430px; margin: 0 0 30px 0; font-style: italic; }
 
   /* ------------------------------------------------
-     STATS BAR
+     STATS BAR (แคปซูลพื้นขาว เงาอบอุ่นบางๆ)
   ------------------------------------------------- */
   .stats-wrap { padding: 0 40px; margin-top: -34px; position: relative; z-index: 3; }
   .stats {
-    background: #ffffff; border: 1px solid #f0f0f0; border-radius: 60px; 
+    background: #ffffff; border: 1px solid #f4efe1; border-radius: 60px; 
     display: flex; justify-content: space-around; align-items: center;
     padding: 26px 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.06); 
+    box-shadow: 0 15px 35px rgba(26,24,20,0.06); 
   }
   .stat { text-align: center; padding: 0 14px; display: flex; flex-direction: column; align-items: center; }
-  .stat .num { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 8px; color: #111111; }
-  .stat .lbl { font-size: 11px; color: #888888; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
-  .stat-sep { width: 1px; height: 34px; background: #eeeeee; }
+  .stat .num { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 8px; color: #1a1814; }
+  .stat .lbl { font-size: 11px; color: #8a8377; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .stat-sep { width: 1px; height: 34px; background: #eae5d9; }
 
   /* ------------------------------------------------
      SECTIONS (Z-PATTERN) 
@@ -146,17 +138,18 @@
   .goals-text { flex: 0 0 42%; }
   .goals-text h2 { font-size: 40px; line-height: 1.15; font-weight: 600; margin: 0 0 25px 0; }
   
-  .goals-image { flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 380px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+  .goals-image { flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 380px; box-shadow: 0 20px 40px rgba(26,24,20,0.12); }
   .goals-image.chess { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg') center/cover; }
   .goals-image.ele { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg') center/cover; }
   .goals-image.btz { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg') center/cover; }
   
+  /* ปรับ Overlay ภาพให้เป็นโทนชาร์โคลอุ่นๆ แทนดำสนิท */
   .goals-overlay {
     position: absolute; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.0) 70%);
+    background: linear-gradient(0deg, rgba(26,24,20,0.85) 0%, rgba(26,24,20,0.0) 70%);
     padding: 26px 26px 20px 26px;
   }
-  .goals-overlay .tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c9a24b; margin-bottom: 6px; font-weight: 600; }
+  .goals-overlay .tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b8923c; margin-bottom: 6px; font-weight: 600; }
   .goals-overlay .title { font-size: 22px; color: #ffffff; font-weight: 500; }
 
   /* FEATURE LIST */
@@ -171,15 +164,15 @@
   .closing { padding: 100px 40px; text-align: left; }
   .closing h2 { font-size: 42px; font-weight: 600; margin: 0 0 20px 0; }
   .closing p.desc { font-size: 15px; line-height: 1.8; max-width: 650px; margin: 0 0 35px 0; }
-  .closing p.sub-desc { font-size: 13px; line-height: 1.8; max-width: 650px; margin: 35px 0 0 0; opacity: 0.7; }
+  .closing p.sub-desc { font-size: 13px; line-height: 1.8; max-width: 650px; margin: 35px 0 0 0; opacity: 0.8; }
 
   /* ------------------------------------------------
-     FOOTER
+     FOOTER 
   ------------------------------------------------- */
   .footer { padding: 140px 40px 34px 40px; }
-  .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; color: #999999; }
-  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #eeeeee; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px; color: #999999;}
-  .footer-logo { font-size: 14px; font-weight: 600; letter-spacing: 3px; color: #111111; }
+  .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; color: #8a8377; }
+  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #eae5d9; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8a8377;}
+  .footer-logo { font-size: 14px; font-weight: 600; letter-spacing: 3px; color: #1a1814; }
 
   @media (max-width: 760px) {
     .nav-links { display: none; }
@@ -233,7 +226,7 @@
     <div class="stats">
       <div class="stat">
         <div class="num">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
           SEC-Licensed
         </div>
         <div class="lbl">Digital asset broker in Thailand</div>
@@ -241,7 +234,7 @@
       <div class="stat-sep"></div>
       <div class="stat">
         <div class="num">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
           7+ Years
         </div>
         <div class="lbl">Digital Asset Market Experience</div>
@@ -249,7 +242,7 @@
       <div class="stat-sep"></div>
       <div class="stat">
         <div class="num">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           Private Channels
         </div>
         <div class="lbl">Direct line · WhatsApp · LINE</div>
@@ -285,8 +278,8 @@
     <div class="goals-image ele reveal delay-1"></div>
   </div>
 
-  <!-- SECTION 2: EXECUTION (ไล่เฉดจาก ขาว -> เทาเข้ม) -->
-  <div class="goals reverse theme-dark bg-grad-grey">
+  <!-- SECTION 2: EXECUTION (ไล่เฉดจาก ขาว -> ทรายอ่อน) -->
+  <div class="goals reverse theme-light bg-grad-sand-1">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Strategic Planning</div>
       <h2 class="serif">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
@@ -310,8 +303,8 @@
     </div>
   </div>
 
-  <!-- SECTION 3: PERKS (ไล่เฉดจาก เทาเข้ม -> ดำสนิท) -->
-  <div class="goals theme-dark bg-grad-black">
+  <!-- SECTION 3: PERKS (ไล่เฉดจาก ทรายอ่อน -> ทองแชมเปญ) -->
+  <div class="goals theme-light bg-grad-sand-2">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Beyond Execution</div>
       <h2 class="serif">Exclusive Access <br><span class="gold serif" style="font-style:italic;">& Perks</span></h2>
@@ -326,8 +319,8 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- BOTTOM CTA (ไล่เฉดจาก ดำ -> เทา) -->
-  <div class="closing theme-dark bg-grad-cta reveal" id="request">
+  <!-- BOTTOM CTA (ไล่เฉดจาก ทองแชมเปญ -> ทรายอ่อน) -->
+  <div class="closing theme-light bg-grad-cta reveal" id="request">
     <div class="eyebrow gold">Our Focus</div>
     <h2 class="serif">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
     <p class="desc">
@@ -340,7 +333,7 @@
     </p>
   </div>
 
-  <!-- FOOTER (ไล่เฉดจาก เทา -> ขาวล้วน) -->
+  <!-- FOOTER (ไล่เฉดจาก ทรายอ่อน -> ขาวล้วน) -->
   <div class="footer theme-light bg-grad-footer reveal">
     <div class="confidential-note">
       <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
@@ -348,7 +341,7 @@
     <div class="footer-bottom">
       <div>This invitation was extended personally and is not transferable.</div>
       <div class="footer-logo">BITAZZA</div>
-      <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; <a href="https://www.bitazza.com" style="color: #999999; text-decoration: none;">www.bitazza.com</a></div>
+      <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; <a href="https://www.bitazza.com" style="color: #8a8377; text-decoration: none;">www.bitazza.com</a></div>
     </div>
   </div>
 
