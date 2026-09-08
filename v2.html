@@ -27,91 +27,89 @@
   .bg-grad-cta { background: linear-gradient(180deg, #dfd8c6 0%, #efece4 100%); }
   .bg-grad-footer { background: linear-gradient(180deg, #efece4 0%, #f4f3ed 150px, #f4f3ed 100%); }
 
-  .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
   .reveal.active { opacity: 1; transform: translateY(0); }
-  .delay-1 { transition-delay: 0.15s; }
-  .delay-2 { transition-delay: 0.3s; }
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
 
-  .btn { display: inline-block; background: #b8923c; color: #ffffff !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 16px 36px; border-radius: 2px; transition: all 0.4s ease; }
+  .btn { display: inline-block; background: #b8923c; color: #ffffff !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 15px 32px; border-radius: 2px; transition: all 0.4s ease; }
   .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 146, 60, 0.25); background: #d4a94a; }
-  
-  .btn-outline { display: inline-block; border: 1px solid #d1c8b4; color: #1a1814 !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 13px 26px; border-radius: 2px; transition: border-color 0.3s ease; }
+  .btn-outline { display: inline-block; border: 1px solid #d1c8b4; color: #1a1814 !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 12px 24px; border-radius: 2px; transition: border-color 0.3s ease; }
   .btn-outline:hover { border-color: #b8923c; }
 
   /* NAV BAR */
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; }
-  .nav-left { display: flex; align-items: center; gap: 20px; }
-  .dots { width: 36px; height: 36px; border: 1px solid #e1ddce; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1a1814;}
-  /* ปรับให้รูปโลโก้พอดีกับ Nav */
-  .logo-img { height: 20px; object-fit: contain; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; }
+  .nav-left { display: flex; align-items: center; }
+  /* ขยายขนาด Logo ให้ใหญ่ขึ้นจาก 20px เป็น 45px */
+  .logo-img { height: 45px; object-fit: contain; }
 
-  /* HERO SECTION */
-  .hero { position: relative; background: linear-gradient(100deg, rgba(244,243,237,0.97) 0%, rgba(244,243,237,0.90) 55%, rgba(244,243,237,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: center 20%; display: flex; align-items: center; padding: 80px 0 100px 0; }
+  /* HERO SECTION (ลด padding ลง) */
+  .hero { position: relative; background: linear-gradient(100deg, rgba(244,243,237,0.97) 0%, rgba(244,243,237,0.90) 55%, rgba(244,243,237,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: center 20%; display: flex; align-items: center; padding: 50px 0 70px 0; }
   .hero-inner { padding: 0 40px; max-width: 620px; }
-  .hero h1 { font-size: 46px; line-height: 1.15; font-weight: 600; margin: 0 0 15px 0; color: #1a1814; }
-  .hero p.quote { font-size: 17px; line-height: 1.8; color: #5c574f; margin: 0 0 35px 0; font-style: italic; }
+  .hero h1 { font-size: 42px; line-height: 1.15; font-weight: 600; margin: 0 0 12px 0; color: #1a1814; }
+  .hero p.quote { font-size: 16px; line-height: 1.8; color: #5c574f; margin: 0 0 25px 0; font-style: italic; }
 
-  /* HERO GRID (4-Point Definitions) */
-  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
-  .grid-item h4 { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #1a1814; margin: 0 0 6px 0; display: flex; align-items: center; gap: 8px; }
+  /* HERO GRID 4 ช่อง (ลด Gap) */
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+  .grid-item h4 { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #1a1814; margin: 0 0 4px 0; display: flex; align-items: center; gap: 8px; }
   .grid-item h4 svg { width: 14px; height: 14px; stroke: #b8923c; }
-  .grid-item p { font-size: 13px; line-height: 1.6; color: #6a645b; margin: 0; }
+  .grid-item p { font-size: 13px; line-height: 1.5; color: #6a645b; margin: 0; }
 
   /* STATS BAR */
-  .stats-wrap { padding: 0 40px; margin-top: -34px; position: relative; z-index: 3; }
-  .stats { background: #fdfcf9; border: 1px solid #ebe6da; border-radius: 60px; display: flex; justify-content: space-around; align-items: center; padding: 26px 20px; box-shadow: 0 15px 35px rgba(26,24,20,0.06); }
+  .stats-wrap { padding: 0 40px; margin-top: -30px; position: relative; z-index: 3; }
+  .stats { background: #fdfcf9; border: 1px solid #ebe6da; border-radius: 60px; display: flex; justify-content: space-around; align-items: center; padding: 22px 20px; box-shadow: 0 15px 35px rgba(26,24,20,0.06); }
   .stat { text-align: center; padding: 0 14px; display: flex; flex-direction: column; align-items: center; }
   .stat .num { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 8px; color: #1a1814; }
-  .stat .lbl { font-size: 11px; color: #8a8377; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
-  .stat-sep { width: 1px; height: 34px; background: #e1ddce; }
+  .stat .lbl { font-size: 10px; color: #8a8377; margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .stat-sep { width: 1px; height: 30px; background: #e1ddce; }
 
-  /* SECTIONS (ลด Spacing ลงจาก 100px เหลือ 70px) */
-  .goals { display: flex; gap: 40px; padding: 70px 40px; align-items: center; }
+  /* SECTIONS (ลด Spacing ให้ชิดขึ้นอีก) */
+  .goals { display: flex; gap: 40px; padding: 50px 40px; align-items: center; }
   .goals.reverse { flex-direction: row-reverse; }
-  .goals-text { flex: 0 0 42%; }
-  .goals-text h2 { font-size: 38px; line-height: 1.15; font-weight: 600; margin: 0 0 25px 0; }
-  .goals-image { flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 360px; box-shadow: 0 20px 40px rgba(26,24,20,0.12); }
+  .goals-text { flex: 0 0 44%; }
+  .goals-text h2 { font-size: 36px; line-height: 1.15; font-weight: 600; margin: 0 0 20px 0; }
+  .goals-image { flex: 1; position: relative; border-radius: 8px; overflow: hidden; min-height: 320px; box-shadow: 0 20px 40px rgba(26,24,20,0.12); }
   
   .goals-image.chess { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg') center/cover; }
   .goals-image.ele { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg') center/cover; }
   .goals-image.btz { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg') center/cover; }
   
-  .goals-overlay { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(26,24,20,0.85) 0%, rgba(26,24,20,0.0) 70%); padding: 26px 26px 20px 26px; }
-  .goals-overlay .tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b8923c; margin-bottom: 6px; font-weight: 600; }
-  .goals-overlay .title { font-size: 22px; color: #ffffff; font-weight: 500; }
+  .goals-overlay { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(26,24,20,0.85) 0%, rgba(26,24,20,0.0) 70%); padding: 20px 24px 16px 24px; }
+  .goals-overlay .tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b8923c; margin-bottom: 4px; font-weight: 600; }
+  .goals-overlay .title { font-size: 20px; color: #ffffff; font-weight: 500; }
 
   .feature-list { list-style: none; padding: 0; margin: 0; }
-  .feature-list li { margin-bottom: 24px; border-left: 2px solid; padding-left: 24px; }
-  .feature-list h4 { font-size: 18px; font-weight: 600; margin: 0 0 8px 0; }
-  .feature-list p { font-size: 14px; line-height: 1.7; margin: 0; }
+  .feature-list li { margin-bottom: 18px; border-left: 2px solid; padding-left: 20px; }
+  .feature-list h4 { font-size: 17px; font-weight: 600; margin: 0 0 6px 0; }
+  .feature-list p { font-size: 14px; line-height: 1.6; margin: 0; }
 
   /* BOTTOM CTA (ลด Spacing) */
-  .closing { padding: 70px 40px; text-align: left; }
-  .closing p.desc { font-size: 15px; line-height: 1.8; max-width: 650px; margin: 0 0 35px 0; }
+  .closing { padding: 50px 40px; text-align: left; }
+  .closing p.desc { font-size: 15px; line-height: 1.8; max-width: 650px; margin: 0 0 25px 0; }
 
-  /* SIGN OFF */
-  .sign-off { margin-top: 50px; border-top: 1px solid #d1c8b4; padding-top: 35px; font-size: 15px; line-height: 1.8; color: #5c574f; }
-  .sign-off strong { color: #1a1814; font-size: 16px; font-weight: 600; }
+  /* SIGN OFF (ลด Spacing) */
+  .sign-off { margin-top: 35px; border-top: 1px solid #d1c8b4; padding-top: 25px; font-size: 14px; line-height: 1.8; color: #5c574f; }
+  .sign-off strong { color: #1a1814; font-size: 15px; font-weight: 600; }
   .sign-off a { color: #b8923c; font-weight: 500; transition: color 0.3s ease; }
   .sign-off a:hover { color: #8a6a24; }
 
-  .footer { padding: 70px 40px 34px 40px; }
-  .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; color: #8a8377; }
-  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #e1ddce; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8a8377;}
+  .footer { padding: 50px 40px 30px 40px; }
+  .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 30px; color: #8a8377; }
+  .footer-bottom { display: flex; justify-content: space-between; padding-top: 20px; border-top: 1px solid #e1ddce; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8a8377;}
   .footer-logo { height: 12px; object-fit: contain; filter: grayscale(100%) opacity(0.5); }
 
   @media (max-width: 760px) {
     .nav-left { gap: 10px; }
-    .hero { background-position: center 30%; padding: 60px 0; }
-    .hero h1 { font-size: 34px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 20px; }
-    .stats { flex-wrap: wrap; gap: 16px; border-radius: 20px; }
+    .hero { background-position: center 30%; padding: 40px 0; }
+    .hero h1 { font-size: 32px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 16px; }
+    .stats { flex-wrap: wrap; gap: 12px; border-radius: 16px; padding: 20px; }
     .stat-sep { display: none; }
-    .goals, .goals.reverse { flex-direction: column; padding: 50px 30px; gap: 30px; }
+    .goals, .goals.reverse { flex-direction: column; padding: 40px 24px; gap: 24px; }
     .goals-text { flex: 1 1 auto; }
-    .goals-image { min-height: 280px; width: 100%; }
-    .closing { padding: 50px 30px; }
-    .footer { padding-top: 50px; }
+    .goals-image { min-height: 240px; width: 100%; }
+    .closing { padding: 40px 24px; }
+    .footer { padding: 40px 24px 20px 24px; }
     .footer-bottom { flex-direction: column; text-align: center; }
   }
 </style>
@@ -119,62 +117,44 @@
 <body>
 <div class="wrap">
 
-  <!-- NAV -->
   <div class="nav bg-offwhite reveal">
     <div class="nav-left">
-      <div class="dots">⋯</div>
-      <!-- โลโก้ดึงจาก Raw GitHub แบบถูกต้อง -->
       <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza" class="logo-img">
     </div>
-    <!-- เอาปุ่มกลางออก เปลี่ยนคำปุ่มขวาเป็น INVITATION ONLY -->
     <div class="nav-right">
       <span class="btn-outline">INVITATION ONLY</span>
     </div>
   </div>
 
-  <!-- HERO -->
   <div class="hero bg-offwhite">
     <div class="hero-inner reveal delay-1">
       <h1 class="serif">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
       <p class="serif quote">"Clarity, access, and complete discretion."</p>
       
-      <!-- HERO GRID 4 ช่อง -->
       <div class="hero-grid">
         <div class="grid-item">
-          <h4>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            EXCLUSIVE
-          </h4>
+          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>EXCLUSIVE</h4>
           <p>Reserved only for valued clients, extended by invitation.</p>
         </div>
         <div class="grid-item">
-          <h4>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            CLARITY
-          </h4>
+          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>CLARITY</h4>
           <p>Straightforward communication — no jargon, no runaround.</p>
         </div>
         <div class="grid-item">
-          <h4>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
-            ACCESS
-          </h4>
+          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>ACCESS</h4>
           <p>A direct line to your Relationship Manager, always.</p>
         </div>
         <div class="grid-item">
-          <h4>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            DISCRETION
-          </h4>
+          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>DISCRETION</h4>
           <p>Complete confidentiality in every interaction.</p>
         </div>
       </div>
 
-      <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="btn" target="_blank">Request an Introduction</a>
+      <!-- ลิงก์แก้ชี้ไปที่หน้าฟอร์มหลัก -->
+      <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" target="_blank">Request an Introduction</a>
     </div>
   </div>
 
-  <!-- STATS BAR -->
   <div class="stats-wrap reveal delay-2">
     <div class="stats">
       <div class="stat">
@@ -194,7 +174,6 @@
     </div>
   </div>
 
-  <!-- SECTION 1: ADVISORY -->
   <div class="goals bg-grad-sand-1">
     <div class="goals-text reveal">
       <h2 class="serif">High-Touch Advisory <br><span class="gold serif" style="font-style:italic;">& Dedicated Team</span></h2>
@@ -208,11 +187,10 @@
     <div class="goals-image ele reveal delay-1"></div>
   </div>
 
-  <!-- SECTION 2: EXECUTION (เอา Eyebrow ออก) -->
   <div class="goals reverse bg-grad-sand-2">
     <div class="goals-text reveal">
       <h2 class="serif">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
-      <ul class="feature-list" style="margin-top: 30px;">
+      <ul class="feature-list">
         <li><h4 class="serif">Institutional Execution</h4><p>Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.</p></li>
         <li><h4 class="serif">Priority Operations</h4><p>Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.</p></li>
       </ul>
@@ -222,7 +200,6 @@
     </div>
   </div>
 
-  <!-- SECTION 3: PERKS (เอา Eyebrow ออก) -->
   <div class="goals bg-grad-sand-3">
     <div class="goals-text reveal">
       <h2 class="serif">Exclusive Access <br><span class="gold serif" style="font-style:italic;">& Perks</span></h2>
@@ -233,13 +210,12 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- BOTTOM CTA -->
   <div class="closing bg-grad-cta reveal" id="request">
     <p class="desc">Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.</p>
-    <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="btn" target="_blank" style="margin-bottom: 20px;">Request an Introduction</a>
-    <p class="desc" style="margin-top: 20px; color: #8a8377; font-size: 13px;">Reply directly with your preferred channel and contact details, and your Relationship Manager will be in touch personally.</p>
     
-    <!-- SIGN OFF (อีเมลและลิงก์กดได้) -->
+    <!-- ลิงก์แก้ชี้ไปที่หน้าฟอร์มหลัก -->
+    <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" target="_blank">Request an Introduction</a>
+    
     <div class="sign-off">
       Yours sincerely,<br>
       <strong>Bitazza Elite Thailand</strong><br>
@@ -248,7 +224,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer bg-grad-footer reveal">
     <div class="confidential-note"><strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.</div>
     <div class="footer-bottom">
