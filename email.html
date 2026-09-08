@@ -1,290 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite — Private Client Channel</title>
+<!-- ดึงฟอนต์สำหรับเครื่องที่รองรับ -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
-
-  * { box-sizing: border-box; }
-  body, html { margin:0; padding:0; background:#0a0a0b; }
-  body { font-family:'Jost', Helvetica, Arial, sans-serif; color:#ece7dc; }
-
-  .serif { font-family:'Playfair Display', Georgia, serif; }
-  .gold { color:#c9a24b; }
-  .cream { color:#f2efe6; }
-  .muted { color:#9a978f; }
-
-  .wrap { max-width: 1040px; margin:0 auto; }
-
-  a { text-decoration:none; }
-
-  .btn {
-    display:inline-block;
-    background:#c9a24b;
-    color:#0a0a0b !important;
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    font-weight:600;
-    padding:15px 32px;
-    border-radius:2px;
-  }
-  .btn-outline {
-    display:inline-block;
-    border:1px solid #3a372f;
-    color:#f2efe6 !important;
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    font-weight:500;
-    padding:13px 26px;
-    border-radius:2px;
-  }
-
-  .eyebrow {
-    font-size:11px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:#c9a24b;
-    font-weight:600;
-    margin-bottom:14px;
-  }
-
-  /* NAV */
-  .nav {
-    display:flex; align-items:center; justify-content:space-between;
-    padding: 22px 40px;
-  }
-  .logo { font-size:19px; letter-spacing:2px; font-weight:600; }
-  .nav-links { display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:#cfccc2; }
-  .nav-right { display:flex; align-items:center; gap:14px; }
-  .dots { width:34px; height:34px; border:1px solid #3a372f; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; color:#cfccc2;}
-
-  /* HERO */
-  .hero {
-    position:relative;
-    background: linear-gradient(100deg, rgba(6,6,7,0.97) 0%, rgba(6,6,7,0.88) 32%, rgba(6,6,7,0.25) 62%, rgba(6,6,7,0.05) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg');
-    background-size: cover;
-    background-position: center right;
-    min-height: 560px;
-    display:flex;
-    align-items:center;
-  }
-  .hero-inner { padding: 60px 40px; max-width: 560px; }
-  .hero h1 { font-size:42px; line-height:1.18; font-weight:500; margin:0 0 20px 0; }
-  .hero p { font-size:15px; line-height:1.8; color:#c7c4ba; max-width:430px; margin:0 0 30px 0; }
-
-  /* STATS BAR */
-  .stats-wrap { padding: 0 40px; margin-top:-34px; position:relative; z-index:3; }
-  .stats {
-    background:#111113; border:1px solid #232326; border-radius: 60px;
-    display:flex; justify-content:space-around; align-items:center;
-    padding: 26px 20px;
-  }
-  .stat { text-align:center; padding: 0 14px; }
-  .stat .num { font-size:15px; font-weight:600; }
-  .stat .lbl { font-size:11px; color:#8f8c84; margin-top:4px; letter-spacing:.3px; }
-  .stat-sep { width:1px; height:34px; background:#232326; }
-
-  /* GOALS / FEATURE SECTION */
-  .goals { display:flex; gap: 40px; padding: 90px 40px 70px 40px; background:#0e0e0f; align-items:center; }
-  .goals-text { flex: 0 0 34%; }
-  .goals-text h2 { font-size:32px; line-height:1.25; font-weight:500; margin:0 0 18px 0; }
-  .goals-text p { font-size:14px; line-height:1.8; color:#9a978f; margin:0 0 26px 0; }
-
-  .goals-image { flex:1; position:relative; border-radius:10px; overflow:hidden; min-height:340px;
-    background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg');
-    background-size: cover; background-position:center;
-  }
-  .goals-overlay {
-    position:absolute; left:0; right:0; bottom:0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.0) 60%);
-    padding: 26px 26px 20px 26px;
-  }
-  .goals-overlay .tag { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#c9a24b; margin-bottom:6px; }
-  .goals-overlay .title { font-serif; font-family:'Playfair Display',serif; font-size:20px; color:#f2efe6; font-weight:600; }
-
-  /* SERVICES */
-  .services { background:#000000; padding: 80px 40px; }
-  .services-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom: 44px; gap:20px; flex-wrap:wrap; }
-  .services-head h2 { font-size:30px; font-weight:500; margin:10px 0 16px 0; max-width:340px; line-height:1.3; }
-  .services-head p { color:#8f8c84; font-size:13px; max-width:320px; line-height:1.75; }
-
-  .service-grid { display:flex; gap:16px; flex-wrap:wrap; }
-  .service-card {
-    flex:1; min-width:210px;
-    background:#0d0d0e; border:1px solid #202022; border-radius:10px;
-    padding: 30px 24px;
-  }
-  .service-card .icon { font-size:22px; color:#c9a24b; margin-bottom:18px; }
-  .service-card h3 { font-family:'Playfair Display', serif; font-size:16px; font-weight:600; color:#f2efe6; margin:0 0 10px 0; }
-  .service-card p { font-size:12.5px; line-height:1.7; color:#918e86; margin:0; }
-
-  /* CLOSING CTA */
-  .closing {
-    background:#0e0e0f;
-    padding: 80px 40px;
-    text-align:center;
-  }
-  .closing h2 { font-size:30px; font-weight:500; margin:0 0 16px 0; }
-  .closing p { color:#9a978f; font-size:14px; line-height:1.8; max-width:480px; margin:0 auto 30px auto; }
-  .closing small { display:block; margin-top:20px; color:#726f68; font-size:12px; }
-
-  /* FOOTER */
-  .footer { background:#000000; padding: 60px 40px 34px 40px; border-top:1px solid #1c1c1e; }
-  .footer-top { display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; padding-bottom:36px; }
-  .footer h3 { font-size:26px; font-weight:500; line-height:1.35; margin:0 0 22px 0; max-width:260px; }
-  .footer-col p { font-size:13px; color:#a09d95; line-height:2; margin:0; }
-  .footer-logo { text-align:right; }
-  .footer-logo .logo { margin-bottom:10px; }
-  .footer-logo p { font-size:12px; color:#726f68; max-width:220px; margin-left:auto; line-height:1.7; }
-  .footer-bottom { display:flex; justify-content:space-between; padding-top:26px; border-top:1px solid #1c1c1e; font-size:11px; color:#5c5a54; flex-wrap:wrap; gap:10px; }
-
-  @media (max-width: 760px) {
-    .nav-links { display:none; }
-    .hero { background-position: center 30%; }
-    .hero-inner { max-width:100%; }
-    .hero h1 { font-size:30px; }
-    .stats { flex-wrap:wrap; gap:16px; border-radius:20px; }
-    .stat-sep { display:none; }
-    .goals { flex-direction:column; }
-    .goals-text { flex:1 1 auto; }
-    .services-head { flex-direction:column; align-items:flex-start; }
-    .service-grid { flex-direction:column; }
-    .footer-top { flex-direction:column; }
-    .footer-logo { text-align:left; }
-    .footer-logo p { margin-left:0; }
-  }
+  body { margin: 0; padding: 0; background-color: #0a0a0b; }
 </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0; background-color: #0a0a0b; font-family: 'Jost', Helvetica, Arial, sans-serif; color: #ece7dc;">
 
-<div class="wrap" style="background:#0a0a0b;">
+  <!-- Wrapper พื้นหลังสีดำสุด -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #0a0a0b; padding: 20px 0;">
+    <tr>
+      <td align="center">
+        
+        <!-- Main Container (กว้าง 600px มาตรฐานอีเมล) -->
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #0a0a0b; max-width: 600px; width: 100%;">
+          
+          <!-- ==============================
+               HEADER & NAV
+          =============================== -->
+          <tr>
+            <td style="padding: 30px 40px 10px 40px; text-align: center;">
+              <div style="font-size: 18px; letter-spacing: 2px; font-weight: 600; color: #f2efe6;">◆ BITAZZA <span style="color: #c9a24b; font-size: 14px; font-weight: normal; margin-left: 10px;">| PRIVATE CLIENT</span></div>
+            </td>
+          </tr>
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="logo cream">◆ BITAZZA</div>
-    <div class="nav-links">
-      <span>PRIVATE CLIENT</span>
-      <span>SERVICES</span>
-      <span>ABOUT</span>
-      <span>CONTACT</span>
-    </div>
-    <div class="nav-right">
-      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn-outline" target="_blank">Get In Touch</a>
-      <div class="dots">⋯</div>
-    </div>
-  </div>
+          <!-- ==============================
+               HERO TEXT (แยกข้อความมาไว้บนพื้นดำ เพื่อไม่ให้พังในอีเมล)
+          =============================== -->
+          <tr>
+            <td style="padding: 40px 40px 30px 40px; text-align: center;">
+              <div style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c9a24b; font-weight: 600; margin-bottom: 15px;">Invitation Only</div>
+              <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 36px; line-height: 1.2; font-weight: 500; color: #f2efe6; margin: 0 0 15px 0;">
+                Welcome to the<br>
+                <span style="color: #c9a24b; font-style: italic;">Private Client Channel</span>
+              </h1>
+              <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 16px; font-style: italic; color: #c7c4ba; margin: 0 0 30px 0;">
+                "Clarity, access, and complete discretion."
+              </p>
+              <!-- ปุ่ม CTA -->
+              <a href="https://chiraphats-stack.github.io/vip-form/" target="_blank" style="background-color: #c9a24b; color: #0a0a0b; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; padding: 14px 30px; text-decoration: none; border-radius: 2px; display: inline-block;">
+                Request an Introduction
+              </a>
+            </td>
+          </tr>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Invitation Only</div>
-      <h1 class="serif cream">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
-      <p class="serif" style="font-style:italic;">&ldquo;Clarity, access, and complete discretion.&rdquo;</p>
-      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
-    </div>
-  </div>
+          <!-- ==============================
+               HERO IMAGE (ใส่รูปจริงต่อจากข้อความ)
+          =============================== -->
+          <tr>
+            <td>
+              <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg" alt="Bitazza Executive" width="600" style="display: block; width: 100%; max-width: 600px; border-bottom: 1px solid #232326;">
+            </td>
+          </tr>
 
-  <!-- STATS BAR -->
-  <div class="stats-wrap">
-    <div class="stats">
-      <div class="stat">
-        <div class="num gold">🛡 SEC-Licensed</div>
-        <div class="lbl">Digital asset broker in Thailand</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat">
-        <div class="num gold">★ 7+ Years</div>
-        <div class="lbl">Digital asset market experience</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat">
-        <div class="num gold">✉ Private Channels</div>
-        <div class="lbl">Direct line · WhatsApp · LINE · Telegram</div>
-      </div>
-    </div>
-  </div>
+          <!-- ==============================
+               STATS BAR (ตารางแบ่ง 3 ช่อง)
+          =============================== -->
+          <tr>
+            <td style="background-color: #111113; padding: 25px 20px; border-bottom: 1px solid #232326;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="33%" align="center" style="padding: 0 10px; border-right: 1px solid #232326;">
+                    <div style="font-size: 13px; font-weight: bold; color: #c9a24b; margin-bottom: 5px;">🛡 SEC-Licensed</div>
+                    <div style="font-size: 10px; color: #8f8c84; letter-spacing: 0.5px;">Digital asset broker in TH</div>
+                  </td>
+                  <td width="33%" align="center" style="padding: 0 10px; border-right: 1px solid #232326;">
+                    <div style="font-size: 13px; font-weight: bold; color: #c9a24b; margin-bottom: 5px;">★ 7+ Years</div>
+                    <div style="font-size: 10px; color: #8f8c84; letter-spacing: 0.5px;">Market experience</div>
+                  </td>
+                  <td width="33%" align="center" style="padding: 0 10px;">
+                    <div style="font-size: 13px; font-weight: bold; color: #c9a24b; margin-bottom: 5px;">✉ Private Channels</div>
+                    <div style="font-size: 10px; color: #8f8c84; letter-spacing: 0.5px;">Direct line · LINE · Telegram</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-  <!-- GOALS / FEATURE -->
-  <div class="goals">
-    <div class="goals-text">
-      <div class="eyebrow">Our Focus</div>
-      <h2 class="serif cream">Your Goals, <span class="gold" style="font-style:italic;">Our Focus.</span></h2>
-      <p>Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.</p>
-      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn-outline" target="_blank">Request an Introduction</a>
-    </div>
-    <div class="goals-image">
-      <div class="goals-overlay">
-        <div class="tag">Bitazza · Private Desk</div>
-        <div class="title">A Strategic Partnership</div>
-      </div>
-    </div>
-  </div>
+          <!-- ==============================
+               OUR FOCUS
+          =============================== -->
+          <tr>
+            <td style="padding: 60px 40px 40px 40px; background-color: #0e0e0f; text-align: center;">
+              <div style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c9a24b; font-weight: 600; margin-bottom: 15px;">Our Focus</div>
+              <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 500; color: #f2efe6; margin: 0 0 15px 0;">
+                Your Goals, <span style="color: #c9a24b; font-style: italic;">Our Focus.</span>
+              </h2>
+              <p style="font-size: 14px; line-height: 1.8; color: #9a978f; margin: 0 0 30px 0;">
+                Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.
+              </p>
+              
+              <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Partnership" width="520" style="display: block; width: 100%; max-width: 520px; border-radius: 4px; margin: 0 auto 30px auto; border: 1px solid #232326;">
+              
+              <a href="https://chiraphats-stack.github.io/vip-form/" target="_blank" style="background-color: transparent; border: 1px solid #c9a24b; color: #c9a24b; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; padding: 12px 26px; text-decoration: none; border-radius: 2px; display: inline-block;">
+                Request an Introduction
+              </a>
+            </td>
+          </tr>
 
-  <!-- SERVICES -->
-  <div class="services">
-    <div class="services-head">
-      <div>
-        <div class="eyebrow">What You Receive</div>
-        <h2 class="serif cream">End-to-End<br>Private Service</h2>
-      </div>
-      <p>A dedicated desk, private channels, and institutional-grade execution — tailored end to end, with complete discretion.</p>
-    </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="icon">◆</div>
-        <h3>High-Touch Advisory</h3>
-        <p>Direct access to a specialized desk of experts. No general queues.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">✉</div>
-        <h3>Private Channels</h3>
-        <p>Immediate access via direct line, WhatsApp, LINE, or Telegram.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">▣</div>
-        <h3>Institutional Execution</h3>
-        <p>Competitive pricing, deep liquidity, and specialized OTC support.</p>
-      </div>
-      <div class="service-card">
-        <div class="icon">✎</div>
-        <h3>Tailored Strategies</h3>
-        <p>Customized execution, bespoke risk parameters, and flexible liquidity.</p>
-      </div>
-    </div>
-  </div>
+          <!-- ==============================
+               SERVICES (จัดเป็นตาราง 2x2 เพื่อความชัวร์)
+          =============================== -->
+          <tr>
+            <td style="background-color: #000000; padding: 60px 40px;">
+              
+              <div style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c9a24b; font-weight: 600; margin-bottom: 10px; text-align: center;">What You Receive</div>
+              <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 500; color: #f2efe6; margin: 0 0 40px 0; text-align: center;">End-to-End Private Service</h2>
 
-  <!-- CLOSING CTA -->
-  <div class="closing" id="request">
-    <div class="eyebrow" style="text-align:center;">Get Started</div>
-    <h2 class="serif cream">Let&rsquo;s Build Something <span class="gold" style="font-style:italic;">Exclusive</span></h2>
-    <p>Reply directly with your preferred channel and contact details, and your Relationship Manager will be in touch personally.</p>
-    <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
-    <small>Yours sincerely, <strong class="cream">Bitazza Elite Thailand</strong> — Private Client Desk</small>
-  </div>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <!-- แถวที่ 1 -->
+                <tr>
+                  <td width="48%" valign="top" style="background-color: #0d0d0e; border: 1px solid #202022; border-radius: 6px; padding: 25px;">
+                    <div style="font-size: 20px; color: #c9a24b; margin-bottom: 10px;">◆</div>
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: #f2efe6; margin: 0 0 8px 0;">High-Touch Advisory</h3>
+                    <p style="font-size: 12px; line-height: 1.6; color: #918e86; margin: 0;">Direct access to a specialized desk. No general queues.</p>
+                  </td>
+                  <td width="4%"></td>
+                  <td width="48%" valign="top" style="background-color: #0d0d0e; border: 1px solid #202022; border-radius: 6px; padding: 25px;">
+                    <div style="font-size: 20px; color: #c9a24b; margin-bottom: 10px;">✉</div>
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: #f2efe6; margin: 0 0 8px 0;">Private Channels</h3>
+                    <p style="font-size: 12px; line-height: 1.6; color: #918e86; margin: 0;">Immediate access via direct line, WhatsApp, LINE, or Telegram.</p>
+                  </td>
+                </tr>
+                <tr><td colspan="3" height="15"></td></tr>
+                <!-- แถวที่ 2 -->
+                <tr>
+                  <td width="48%" valign="top" style="background-color: #0d0d0e; border: 1px solid #202022; border-radius: 6px; padding: 25px;">
+                    <div style="font-size: 20px; color: #c9a24b; margin-bottom: 10px;">▣</div>
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: #f2efe6; margin: 0 0 8px 0;">Institutional Execution</h3>
+                    <p style="font-size: 12px; line-height: 1.6; color: #918e86; margin: 0;">Competitive pricing, deep liquidity, and OTC support.</p>
+                  </td>
+                  <td width="4%"></td>
+                  <td width="48%" valign="top" style="background-color: #0d0d0e; border: 1px solid #202022; border-radius: 6px; padding: 25px;">
+                    <div style="font-size: 20px; color: #c9a24b; margin-bottom: 10px;">✎</div>
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: #f2efe6; margin: 0 0 8px 0;">Tailored Strategies</h3>
+                    <p style="font-size: 12px; line-height: 1.6; color: #918e86; margin: 0;">Customized execution, bespoke risk parameters.</p>
+                  </td>
+                </tr>
+              </table>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="footer-top">
-      <div class="footer-col">
-        <h3 class="serif cream">Let&rsquo;s Talk<br>Privately</h3>
-        <p>elitethailand@bitazza.com</p>
-        <p>www.bitazza.com</p>
-      </div>
-      <div class="footer-logo">
-        <div class="logo cream">◆ BITAZZA</div>
-        <p>SEC-licensed digital asset broker delivering institutional-grade access with complete discretion.</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Bitazza. All rights reserved.</span>
-      <span>Sent to you as an invited private client.</span>
-    </div>
-  </div>
+            </td>
+          </tr>
 
-</div>
+          <!-- ==============================
+               CLOSING CTA
+          =============================== -->
+          <tr>
+            <td style="background-color: #0e0e0f; padding: 60px 40px; text-align: center; border-bottom: 1px solid #1c1c1e;">
+              <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 500; color: #f2efe6; margin: 0 0 15px 0;">
+                Let's Build Something <span style="color: #c9a24b; font-style: italic;">Exclusive</span>
+              </h2>
+              <p style="font-size: 14px; line-height: 1.7; color: #9a978f; margin: 0 auto 30px auto; max-width: 450px;">
+                Reply directly with your preferred channel and contact details, and your Relationship Manager will be in touch personally.
+              </p>
+              <a href="https://chiraphats-stack.github.io/vip-form/" target="_blank" style="background-color: #c9a24b; color: #0a0a0b; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; padding: 14px 30px; text-decoration: none; border-radius: 2px; display: inline-block; margin-bottom: 25px;">
+                Request an Introduction
+              </a>
+              <div style="color: #726f68; font-size: 12px;">
+                Yours sincerely, <br><strong style="color: #f2efe6;">Bitazza Elite Thailand</strong> — Private Client Desk
+              </div>
+            </td>
+          </tr>
+
+          <!-- ==============================
+               FOOTER
+          =============================== -->
+          <tr>
+            <td style="background-color: #050505; padding: 30px 40px; text-align: center;">
+              <div style="font-size: 11px; color: #5c5a54; line-height: 1.6;">
+                elitethailand@bitazza.com &nbsp;|&nbsp; www.bitazza.com<br><br>
+                © 2026 Bitazza. All rights reserved.<br>
+                SEC-licensed digital asset broker delivering institutional-grade access with complete discretion.<br>
+                Sent to you as an invited private client.
+              </div>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
 </body>
 </html>
