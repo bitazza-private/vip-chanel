@@ -22,28 +22,42 @@
   a { text-decoration: none; }
 
   /* ------------------------------------------------
-     THEME CLASSES (สำหรับสลับเลเยอร์สีให้มีชั้นเชิง)
+     THEME CLASSES (สำหรับแยกสีตัวหนังสือให้เข้ากับพื้นหลัง)
   ------------------------------------------------- */
-  /* Theme Light (ขาว / เทาอ่อน) */
-  .theme-light { background-color: #ffffff; color: #666666; }
-  .theme-light.bg-light { background-color: #f8f9fa; border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; }
+  /* Theme Light (บนพื้นขาว) */
+  .theme-light { color: #555555; }
   .theme-light h2.serif { color: #111111; }
   .theme-light .gold { color: #b8860b; }
   .theme-light .feature-list h4 { color: #111111; }
   .theme-light .feature-list li { border-left-color: #e0e0e0; }
 
-  /* Theme Dark (ดำเทาไล่เฉด สุดหรู) */
-  .theme-dark { 
-    background: linear-gradient(135deg, #242428 0%, #0a0a0c 100%); 
-    color: #9a978f; 
-  }
+  /* Theme Dark (บนพื้นเทา-ดำ) */
+  .theme-dark { color: #9a978f; }
   .theme-dark h2.serif { color: #f2efe6; }
   .theme-dark .gold { color: #c9a24b; }
   .theme-dark .feature-list h4 { color: #e8e4db; }
   .theme-dark .feature-list li { border-left-color: #3a3220; }
 
   /* ------------------------------------------------
-     ANIMATION (เอฟเฟกต์เฟดอินนุ่มๆ)
+     GRADIENT FLOW BACKGROUNDS (หัวใจหลักของการไล่สี)
+  ------------------------------------------------- */
+  .bg-white { background-color: #ffffff; }
+  
+  /* 2. ไล่เฉดเป็นเทาเข้ม */
+  .bg-grad-grey { background: linear-gradient(180deg, #2d2d30 0%, #151518 100%); }
+  
+  /* 3. ไล่เฉดจากเทาไปดำ */
+  .bg-grad-black { background: linear-gradient(180deg, #151518 0%, #050505 100%); }
+  
+  /* 4. ไล่เฉดจากดำกลับมาเทา */
+  .bg-grad-cta { background: linear-gradient(180deg, #050505 0%, #2d2d30 100%); }
+  
+  /* 5. ไล่เฉดจากเทาเฟดไปขาว (เฟดจบที่ 150px แรก) */
+  .bg-grad-footer { background: linear-gradient(180deg, #2d2d30 0%, #ffffff 150px, #ffffff 100%); }
+
+
+  /* ------------------------------------------------
+     ANIMATION
   ------------------------------------------------- */
   .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
   .reveal.active { opacity: 1; transform: translateY(0); }
@@ -80,13 +94,7 @@
   }
   .btn-outline:hover { border-color: #b8860b; }
 
-  .eyebrow {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: 20px;
-  }
+  .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; font-weight: 500; margin-bottom: 20px; }
 
   /* ------------------------------------------------
      NAV BAR
@@ -115,7 +123,7 @@
   .hero p { font-size: 17px; line-height: 1.8; color: #666666; max-width: 430px; margin: 0 0 30px 0; font-style: italic; }
 
   /* ------------------------------------------------
-     STATS BAR 
+     STATS BAR (แคปซูลพื้นขาว ขอบเทาอ่อน เงาบางๆ)
   ------------------------------------------------- */
   .stats-wrap { padding: 0 40px; margin-top: -34px; position: relative; z-index: 3; }
   .stats {
@@ -153,7 +161,7 @@
 
   /* FEATURE LIST */
   .feature-list { list-style: none; padding: 0; margin: 0; }
-  .feature-list li { margin-bottom: 24px; border-left: 1px solid; padding-left: 24px; }
+  .feature-list li { margin-bottom: 24px; border-left: 2px solid; padding-left: 24px; }
   .feature-list h4 { font-size: 18px; font-weight: 600; margin: 0 0 8px 0; }
   .feature-list p { font-size: 14px; line-height: 1.7; margin: 0; }
 
@@ -166,12 +174,12 @@
   .closing p.sub-desc { font-size: 13px; line-height: 1.8; max-width: 650px; margin: 35px 0 0 0; opacity: 0.7; }
 
   /* ------------------------------------------------
-     FOOTER 
+     FOOTER (เพิ่ม Padding ด้านบนเพื่อให้สีเฟดจากเทาเป็นขาวจนเสร็จก่อนถึงตัวหนังสือ)
   ------------------------------------------------- */
-  .footer { background: #050505; padding: 60px 40px 34px 40px; border-top: 1px solid #1c1c1e; color: #726f68; }
-  .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; }
-  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #1c1c1e; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px;}
-  .footer-logo { font-size: 14px; font-weight: 600; letter-spacing: 3px; color: #9a978f; }
+  .footer { padding: 140px 40px 34px 40px; }
+  .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; color: #999999; }
+  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #eeeeee; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px; color: #999999;}
+  .footer-logo { font-size: 14px; font-weight: 600; letter-spacing: 3px; color: #111111; }
 
   @media (max-width: 760px) {
     .nav-links { display: none; }
@@ -184,6 +192,7 @@
     .goals-text { flex: 1 1 auto; }
     .goals-image { min-height: 300px; width: 100%; }
     .closing { padding: 60px 30px; }
+    .footer { padding-top: 100px; }
     .footer-bottom { flex-direction: column; text-align: center; }
   }
 </style>
@@ -192,8 +201,8 @@
 
 <div class="wrap">
 
-  <!-- NAV (Theme Light) -->
-  <div class="nav theme-light reveal">
+  <!-- NAV (เปิดตัวสีขาว) -->
+  <div class="nav theme-light bg-white reveal">
     <div class="nav-left">
       <div class="dots">⋯</div>
       <div class="logo">◆ BITAZZA</div>
@@ -209,8 +218,8 @@
     </div>
   </div>
 
-  <!-- HERO (Theme Light) -->
-  <div class="hero theme-light">
+  <!-- HERO (สีขาว) -->
+  <div class="hero theme-light bg-white">
     <div class="hero-inner reveal delay-1">
       <div class="eyebrow gold">Invitation Only</div>
       <h1 class="serif">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
@@ -219,7 +228,7 @@
     </div>
   </div>
 
-  <!-- STATS BAR -->
+  <!-- STATS BAR (แคปซูลขาว เงาลอย) -->
   <div class="stats-wrap reveal delay-2">
     <div class="stats">
       <div class="stat">
@@ -248,8 +257,8 @@
     </div>
   </div>
 
-  <!-- SECTION 1: ADVISORY (พื้นขาว) -->
-  <div class="goals theme-light">
+  <!-- SECTION 1: ADVISORY (สีขาวล้วน) -->
+  <div class="goals theme-light bg-white">
     <div class="goals-text reveal">
       <div class="eyebrow gold">What You Receive</div>
       <h2 class="serif">High-Touch Advisory <br><span class="gold serif" style="font-style:italic;">& Dedicated Team</span></h2>
@@ -276,8 +285,8 @@
     <div class="goals-image ele reveal delay-1"></div>
   </div>
 
-  <!-- SECTION 2: EXECUTION (สลับเลเยอร์เป็น ดำเทาไล่เฉด สวยเด่นป๊อปอัป) -->
-  <div class="goals reverse theme-dark">
+  <!-- SECTION 2: EXECUTION (ไล่เฉดลงมาเป็นเทาเข้ม) -->
+  <div class="goals reverse theme-dark bg-grad-grey">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Strategic Planning</div>
       <h2 class="serif">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
@@ -301,8 +310,8 @@
     </div>
   </div>
 
-  <!-- SECTION 3: PERKS (สลับกลับมาเป็น สีเทาอ่อน) -->
-  <div class="goals theme-light bg-light">
+  <!-- SECTION 3: PERKS (ไล่เฉดจากเทาเข้มไปดำสนิท) -->
+  <div class="goals theme-dark bg-grad-black">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Beyond Execution</div>
       <h2 class="serif">Exclusive Access <br><span class="gold serif" style="font-style:italic;">& Perks</span></h2>
@@ -317,8 +326,8 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- BOTTOM CTA (ดำเทาไล่เฉด - ปิดท้ายอย่างหนักแน่น) -->
-  <div class="closing theme-dark reveal" id="request">
+  <!-- BOTTOM CTA (ไล่เฉดจากดำกลับมาเทา) -->
+  <div class="closing theme-dark bg-grad-cta reveal" id="request">
     <div class="eyebrow gold">Our Focus</div>
     <h2 class="serif">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
     <p class="desc">
@@ -331,15 +340,15 @@
     </p>
   </div>
 
-  <!-- FOOTER (สีดำสนิท) -->
-  <div class="footer reveal">
+  <!-- FOOTER (ไล่เฉดจากเทาเฟดไปจนเป็นสีขาวล้วน) -->
+  <div class="footer theme-light bg-grad-footer reveal">
     <div class="confidential-note">
       <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
     </div>
     <div class="footer-bottom">
       <div>This invitation was extended personally and is not transferable.</div>
       <div class="footer-logo">BITAZZA</div>
-      <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; <a href="https://www.bitazza.com" style="color: #726f68; text-decoration: none;">www.bitazza.com</a></div>
+      <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; <a href="https://www.bitazza.com" style="color: #999999; text-decoration: none;">www.bitazza.com</a></div>
     </div>
   </div>
 
