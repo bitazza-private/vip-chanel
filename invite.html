@@ -1,313 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite — Private Client Channel</title>
-<style>
-  /* อิมพอร์ตฟอนต์ระดับ FinTech Luxury (Inter + Playfair Display) */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
-
-  * { box-sizing: border-box; }
-  body, html { margin:0; padding:0; background-color:#030303; }
-  
-  /* ฟอนต์หลักสำหรับเนื้อหา (คมชัด ทันสมัย) */
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #a19d94; -webkit-font-smoothing: antialiased; }
-
-  /* ฟอนต์สำหรับหัวข้อ (หรูหรา คลาสสิก) */
-  .serif { font-family: 'Playfair Display', Georgia, serif; }
-  
-  /* สีหลักของแบรนด์ */
-  .gold { color: #d0a85c; }
-  .white { color: #ffffff; }
-
-  .wrap { max-width: 100%; margin: 0 auto; overflow: hidden; background-color: #050505; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-
-  a { text-decoration:none; }
-
-  /* ปุ่มกดสไตล์ Modern Luxury */
-  .btn {
-    display: inline-block;
-    background: #c5a059;
-    color: #000000 !important;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 16px 36px;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-  .btn:hover { background: #dfb658; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.15); }
-
-  .eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #c5a059;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  /* HERO SECTION */
-  .hero {
-    position: relative;
-    background: linear-gradient(100deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.80) 40%, rgba(5,5,5,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg');
-    background-size: cover;
-    background-position: center 20%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-  .hero-inner { max-width: 600px; }
-  .hero h1 { font-size: 52px; line-height: 1.15; font-weight: 400; margin: 0 0 25px 0; letter-spacing: -0.5px; }
-  .hero p { font-size: 16px; line-height: 1.8; color: #b5b1a8; max-width: 450px; margin: 0 0 40px 0; font-weight: 300; }
-
-  /* STATS BAR */
-  .stats-wrap { background: #0a0a0b; border-top: 1px solid #1a1a1c; border-bottom: 1px solid #1a1a1c; }
-  .stats {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 35px 0;
-  }
-  .stat { flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .stat .num { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; }
-  .stat .lbl { font-size: 11px; color: #726f68; margin-top: 8px; letter-spacing: 0.5px; text-transform: uppercase; }
-  .stat-sep { width: 1px; height: 40px; background: #1a1a1c; }
-
-  /* SPLIT SECTIONS (Z-Pattern Layout) */
-  .split-section { display: flex; gap: 80px; padding: 120px 0; align-items: center; }
-  .split-section.reverse { flex-direction: row-reverse; }
-  
-  .split-text { flex: 0 0 45%; }
-  .split-text h2 { font-size: 38px; line-height: 1.2; font-weight: 400; margin: 0 0 35px 0; letter-spacing: -0.5px; }
-  
-  .split-image { flex: 1; position: relative; border-radius: 4px; overflow: hidden; min-height: 450px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-  .split-image.chess { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg') center/cover; }
-  .split-image.ele { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg') center/cover; }
-  .split-image.btz { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg') center/cover; }
-
-  /* FEATURE LIST */
-  .feature-list { list-style: none; padding: 0; margin: 0; }
-  .feature-list li { 
-    margin-bottom: 30px; 
-    border-left: 1px solid #2a251a; 
-    padding-left: 30px; 
-    transition: border-color 0.4s ease;
-  }
-  .feature-list li:hover { border-color: #c5a059; }
-  .feature-list h4 { 
-    color: #e8e4db; 
-    font-size: 16px; 
-    font-weight: 500; 
-    margin: 0 0 10px 0; 
-    letter-spacing: 0.5px; 
-  }
-  .feature-list p { 
-    font-size: 14px; 
-    line-height: 1.7; 
-    margin: 0; 
-    font-weight: 300;
-  }
-
-  /* BOTTOM CTA */
-  .closing {
-    background: #080808;
-    padding: 120px 0;
-    text-align: left;
-    border-top: 1px solid #1a1a1c;
-  }
-  .closing h2 { font-size: 42px; font-weight: 400; margin: 0 0 25px 0; letter-spacing: -0.5px; }
-  .closing p.desc { font-size: 16px; line-height: 1.8; max-width: 600px; margin: 0 0 45px 0; font-weight: 300; }
-  .closing p.sub-desc { color: #666; font-size: 12px; line-height: 1.8; max-width: 600px; margin: 45px 0 0 0; }
-
-  /* CONFIDENTIAL FOOTER */
-  .footer { 
-    background: #030303; 
-    padding: 60px 0; 
-    border-top: 1px solid #111; 
-  }
-  .confidential-note {
-    font-size: 10px;
-    line-height: 1.8;
-    color: #555;
-    text-align: justify;
-    margin-bottom: 30px;
-  }
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #111;
-    padding-top: 30px;
-    font-size: 10px;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .footer-logo {
-    color: #333;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 3px;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .split-section, .split-section.reverse { flex-direction: column; gap: 40px; padding: 80px 0; }
-    .split-text { flex: 1 1 auto; padding-right: 0; }
-    .split-image { width: 100%; min-height: 350px; }
-    .hero h1 { font-size: 38px; }
-    .stats { flex-direction: column; gap: 30px; }
-    .stat-sep { width: 60px; height: 1px; }
-    .closing h2 { font-size: 34px; }
-    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
-  }
-</style>
 </head>
-<body>
+<body style="margin: 0; padding: 0; background-color: #000000; font-family: Arial, sans-serif; color: #d1cfc9;">
 
-<div class="wrap">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #000000; padding: 30px 0;">
+    <tr>
+      <td align="center">
+        
+        <!-- Main Container -->
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #050505; max-width: 600px; width: 100%;">
+          
+          <!-- ==============================
+               HERO IMAGE (ปรับขนาดให้พอดี)
+          =============================== -->
+          <tr>
+            <td style="padding: 0 0 20px 0;">
+              <!-- ใช้ภาพฮีโร่ที่คุณส่งมา -->
+              <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg" alt="Welcome to the Private Client Channel" style="display: block; width: 100%; max-width: 600px; height: auto;">
+            </td>
+          </tr>
 
-  <!-- HERO SECTION -->
-  <div class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="eyebrow">Invitation Only</div>
-        <h1 class="serif white">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
-        <p class="serif" style="font-style:italic;">&ldquo;Clarity, access, and complete discretion.&rdquo;</p>
-        <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
-      </div>
-    </div>
-  </div>
+          <!-- ==============================
+               STATS BAR (ไอคอนลายเส้น)
+          =============================== -->
+          <tr>
+            <td style="padding: 10px 30px 30px 30px; text-align: center;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="33%" align="center" style="vertical-align: top;">
+                    <div style="font-size: 14px; font-weight: bold; color: #d0a85c; margin-bottom: 6px;">
+                      <!-- Shield Icon -->
+                      <img src="https://img.icons8.com/ios/50/d0a85c/shield.png" width="16" height="16" style="vertical-align: middle; margin-right: 4px;" alt="Shield">
+                      SEC-Licensed
+                    </div>
+                    <div style="font-size: 10px; color: #888888; text-transform: uppercase;">Digital Asset Broker<br>in Thailand</div>
+                  </td>
+                  <td width="33%" align="center" style="vertical-align: top;">
+                    <div style="font-size: 14px; font-weight: bold; color: #d0a85c; margin-bottom: 6px;">
+                      <!-- Star Icon -->
+                      <img src="https://img.icons8.com/ios/50/d0a85c/star--v1.png" width="16" height="16" style="vertical-align: middle; margin-right: 4px;" alt="Star">
+                      7+ Years
+                    </div>
+                    <div style="font-size: 10px; color: #888888; text-transform: uppercase;">Digital Asset Market<br>Experience</div>
+                  </td>
+                  <td width="33%" align="center" style="vertical-align: top;">
+                    <div style="font-size: 14px; font-weight: bold; color: #d0a85c; margin-bottom: 6px;">
+                      <!-- Mail Icon -->
+                      <img src="https://img.icons8.com/ios/50/d0a85c/mail.png" width="16" height="16" style="vertical-align: middle; margin-right: 4px;" alt="Mail">
+                      Private Channels
+                    </div>
+                    <div style="font-size: 10px; color: #888888; text-transform: uppercase;">Direct Line · WhatsApp<br>LINE · Telegram</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-  <!-- STATS BAR -->
-  <div class="stats-wrap">
-    <div class="container">
-      <div class="stats">
-        <div class="stat">
-          <div class="num gold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
-            SEC-Licensed
-          </div>
-          <div class="lbl">Digital asset broker in Thailand</div>
-        </div>
-        <div class="stat-sep"></div>
-        <div class="stat">
-          <div class="num gold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            7+ Years
-          </div>
-          <div class="lbl">Digital Asset Market Experience</div>
-        </div>
-        <div class="stat-sep"></div>
-        <div class="stat">
-          <div class="num gold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            Private Channels
-          </div>
-          <div class="lbl">Direct line · WhatsApp · LINE · Telegram</div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <!-- ==============================
+               SECTION 1: EXECUTION & ADVANTAGE
+          =============================== -->
+          <tr>
+            <td style="padding: 30px 40px;">
+              <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #d0a85c; font-weight: bold; margin-bottom: 15px;">Strategic Planning</div>
+              
+              <!-- หัวข้อสไตล์เรียบหรู -->
+              <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: normal; color: #ffffff; margin: 0 0 5px 0;">
+                Execution &
+              </h2>
+              <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: normal; color: #d0a85c; font-style: italic; margin: 0 0 25px 0;">
+                Advantage
+              </h2>
+              
+              <p style="font-size: 14px; line-height: 1.6; color: #a0a0a0; margin: 0 0 15px 0;">
+                <strong style="color: #ffffff;">Institutional Execution:</strong> Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.
+              </p>
+              <p style="font-size: 14px; line-height: 1.6; color: #a0a0a0; margin: 0 0 30px 0;">
+                <strong style="color: #ffffff;">Priority Operations:</strong> Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.
+              </p>
+            </td>
+          </tr>
 
-  <!-- SECTION 1: EXECUTION (Text Left, Image Right) -->
-  <div class="container">
-    <div class="split-section">
-      <div class="split-text">
-        <div class="eyebrow">Strategic Planning</div>
-        <h2 class="serif white">Execution & <br><span class="gold" style="font-style:italic;">Advantage</span></h2>
-        <ul class="feature-list">
-          <li>
-            <h4>Institutional Execution</h4>
-            <p>Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.</p>
-          </li>
-          <li>
-            <h4>Priority Operations</h4>
-            <p>Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.</p>
-          </li>
-        </ul>
-      </div>
-      <div class="split-image chess"></div>
-    </div>
-  </div>
+          <!-- IMAGE 2 (Chess - มี Padding ไม่ให้ชิดขอบ) -->
+          <tr>
+            <td style="padding: 0 40px 30px 40px;">
+              <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Planning" style="display: block; width: 100%; border-radius: 4px;">
+            </td>
+          </tr>
 
-  <!-- SECTION 2: ADVISORY (Image Left, Text Right) -->
-  <div class="container">
-    <div class="split-section reverse">
-      <div class="split-text">
-        <div class="eyebrow">What You Receive</div>
-        <h2 class="serif white">High-Touch Advisory <br><span class="gold" style="font-style:italic;">& Dedicated Team</span></h2>
-        <ul class="feature-list">
-          <li>
-            <h4>Dedicated Advisory Team</h4>
-            <p>Direct access to a specialized desk of experts who know your portfolio, trading history, and execution preferences — no general queues or repeating yourself.</p>
-          </li>
-          <li>
-            <h4>Direct, Private Channels</h4>
-            <p>Immediate access via direct line, WhatsApp, LINE, or Telegram with full confidentiality and discreet consultation options.</p>
-          </li>
-          <li>
-            <h4>Proactive & Priority Service</h4>
-            <p>Faster request handling, internal team coordination, and proactive follow-ups before you have to ask.</p>
-          </li>
-          <li>
-            <h4>Tailored Trading Strategies</h4>
-            <p>Customized execution structures, bespoke risk parameters, and flexible liquidity solutions designed specifically for high-volume trading and complex market strategies.</p>
-          </li>
-        </ul>
-      </div>
-      <div class="split-image ele"></div>
-    </div>
-  </div>
+          <!-- ==============================
+               SECTION 2: HIGH-TOUCH ADVISORY
+          =============================== -->
+          <tr>
+            <td style="padding: 30px 40px;">
+              <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #d0a85c; font-weight: bold; margin-bottom: 15px;">What You Receive</div>
+              
+              <!-- หัวข้อสไตล์เรียบหรู -->
+              <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: normal; color: #ffffff; margin: 0 0 5px 0;">
+                High-Touch Advisory
+              </h2>
+              <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 32px; font-weight: normal; color: #d0a85c; font-style: italic; margin: 0 0 25px 0;">
+                & Dedicated Team
+              </h2>
 
-  <!-- SECTION 3: PERKS (Text Left, Image Right) -->
-  <div class="container">
-    <div class="split-section">
-      <div class="split-text">
-        <div class="eyebrow">Beyond Execution</div>
-        <h2 class="serif white">Exclusive Access <br><span class="gold" style="font-style:italic;">& Perks</span></h2>
-        <ul class="feature-list">
-          <li>
-            <h4>Bespoke Engagement</h4>
-            <p>Named invitations to exclusive Private Client events and thoughtful, personalized updates without automated noise.</p>
-          </li>
-        </ul>
-      </div>
-      <div class="split-image btz"></div>
-    </div>
-  </div>
+              <p style="font-size: 14px; line-height: 1.6; color: #a0a0a0; margin: 0 0 15px 0;">
+                <strong style="color: #ffffff;">Dedicated Advisory Team:</strong> Direct access to a specialized desk of experts who know your portfolio, trading history, and execution preferences — no general queues or repeating yourself.
+              </p>
+              <p style="font-size: 14px; line-height: 1.6; color: #a0a0a0; margin: 0 0 15px 0;">
+                <strong style="color: #ffffff;">Direct, Private Channels:</strong> Immediate access via direct line, WhatsApp, LINE, or Telegram with full confidentiality and discreet consultation options.
+              </p>
+              <p style="font-size: 14px; line-height: 1.6; color: #a0a0a0; margin: 0 0 15px 0;">
+                <strong style="color: #ffffff;">Proactive & Priority Service:</strong> Faster request handling, internal team coordination, and proactive follow-ups before you have to ask.
+              </p>
+              <p style="font-size: 14px; line-height: 1.6; color: #a0a0a0; margin: 0 0 30px 0;">
+                <strong style="color: #ffffff;">Tailored Trading Strategies:</strong> Customized execution structures, bespoke risk parameters, and flexible liquidity solutions designed specifically for high-volume trading and complex market strategies.
+              </p>
+            </td>
+          </tr>
 
-  <!-- BOTTOM CTA -->
-  <div class="closing" id="request">
-    <div class="container">
-      <div class="eyebrow">Our Focus</div>
-      <h2 class="serif white">Your Goals, <span class="gold" style="font-style:italic;">Our Focus.</span></h2>
-      <p class="desc">
-        Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.
-      </p>
-      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
-      <p class="sub-desc">
-        Reply directly with your preferred channel and contact details, and your Relationship Manager will be in touch personally.
-      </p>
-    </div>
-  </div>
+          <!-- IMAGE 3 (btz.jpg) -->
+          <tr>
+            <td style="padding: 0 40px 30px 40px;">
+              <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg" alt="Exclusive Access" style="display: block; width: 100%; border-radius: 4px;">
+            </td>
+          </tr>
 
-  <!-- CONFIDENTIAL FOOTER -->
-  <div class="footer">
-    <div class="container">
-      <div class="confidential-note">
-        <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
-      </div>
-      <div class="footer-bottom">
-        <div>This invitation was extended personally and is not transferable.</div>
-        <div class="footer-logo">BITAZZA</div>
-        <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; www.bitazza.com</div>
-      </div>
-    </div>
-  </div>
+          <!-- ==============================
+               SECTION 3: EXCLUSIVE ACCESS & PERKS
+          =============================== -->
+          <tr>
+            <td style="padding: 10px 40px 40px 40px;">
+              <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 24px; font-weight: normal; color: #ffffff; margin: 0 0 15px 0;">
+                Exclusive Access & Perks
+              </h2>
+              <p style="font-size: 14px; line-height: 1.6; color: #a0a0a0; margin: 0;">
+                <strong style="color: #ffffff;">Bespoke Engagement:</strong> Named invitations to exclusive Private Client events and thoughtful, personalized updates without automated noise.
+              </p>
+            </td>
+          </tr>
 
-</div>
+          <!-- ==============================
+               BOTTOM CTA: YOUR GOALS, OUR FOCUS
+          =============================== -->
+          <tr>
+            <td style="background-color: #0a0a0a; padding: 50px 40px; border-top: 1px solid #1a1a1a; text-align: left;">
+              <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #d0a85c; font-weight: bold; margin-bottom: 15px;">Our Focus</div>
+              
+              <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 30px; font-weight: normal; color: #ffffff; margin: 0 0 20px 0;">
+                Your Goals, <span style="color: #d0a85c; font-style: italic;">Our Focus.</span>
+              </h2>
+              
+              <p style="font-size: 14px; line-height: 1.6; color: #888888; margin: 0 0 30px 0; max-width: 90%;">
+                Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.
+              </p>
+              
+              <a href="https://chiraphats-stack.github.io/vip-form/" target="_blank" style="background-color: #d0a85c; color: #000000; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; padding: 15px 30px; text-decoration: none; border-radius: 2px; display: inline-block; margin-bottom: 30px;">
+                Request an Introduction
+              </a>
+              
+              <p style="font-size: 13px; line-height: 1.6; color: #666666; margin: 0;">
+                Reply directly with your preferred channel and contact details, and your Relationship Manager will be in touch personally.
+              </p>
+            </td>
+          </tr>
+
+          <!-- ==============================
+               CONFIDENTIAL FOOTER
+          =============================== -->
+          <tr>
+            <td style="background-color: #050505; padding: 40px; border-top: 1px solid #1a1a1a;">
+              <p style="font-size: 10px; line-height: 1.5; color: #444444; margin: 0 0 20px 0; text-align: justify;">
+                <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
+              </p>
+              
+              <p style="font-size: 11px; color: #666666; margin: 0 0 10px 0;">
+                This invitation was extended personally and is not transferable.
+              </p>
+              
+              <p style="font-size: 11px; color: #666666; margin: 0;">
+                152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; <a href="http://www.bitazza.com" style="color: #666666; text-decoration: none;">www.bitazza.com</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
 </body>
 </html>
