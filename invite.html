@@ -31,7 +31,7 @@
   .reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); /* ความสมูทระดับ Apple/Luxury Brand */
+    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
   }
   .reveal.active {
     opacity: 1;
@@ -78,12 +78,15 @@
     margin-bottom:14px;
   }
 
-  /* NAV */
+  /* ------------------------------------------------
+     NAV BAR (ปรับใหม่ตาม Screenshot 14.57.17)
+  ------------------------------------------------- */
   .nav { display:flex; align-items:center; justify-content:space-between; padding: 22px 40px; }
+  .nav-left { display:flex; align-items:center; gap:20px; }
+  .dots { width:36px; height:36px; border:1px solid #3a372f; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; color:#cfccc2;}
   .logo { font-size:19px; letter-spacing:2px; font-weight:600; }
   .nav-links { display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:#cfccc2; }
-  .nav-right { display:flex; align-items:center; gap:14px; }
-  .dots { width:34px; height:34px; border:1px solid #3a372f; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; color:#cfccc2;}
+  .nav-right { display:flex; align-items:center; }
 
   /* ------------------------------------------------
      HERO SECTION
@@ -135,7 +138,7 @@
     background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.0) 60%);
     padding: 26px 26px 20px 26px;
   }
-  .goals-overlay .tag { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#c9a24b; margin-bottom:6px; font-family: 'Jost', sans-serif; font-weight: 600; }
+  .goals-overlay .tag { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#c9a24b; margin-bottom:6px; font-weight: 600; }
   .goals-overlay .title { font-size:22px; color:#f2efe6; font-weight:500; }
 
   /* FEATURE LIST */
@@ -156,7 +159,6 @@
     font-size: 14px; 
     line-height: 1.7; 
     margin: 0; 
-    font-family: 'Jost', sans-serif;
   }
 
   /* ------------------------------------------------
@@ -188,11 +190,12 @@
 
   @media (max-width: 760px) {
     .nav-links { display:none; }
+    .nav-left { gap: 10px; }
     .hero { background-position: center 30%; min-height: 400px; }
     .hero h1 { font-size:36px; }
     .stats { flex-wrap:wrap; gap:16px; border-radius:20px; }
     .stat-sep { display:none; }
-    .goals { flex-direction:column; padding: 60px 30px; gap: 30px; }
+    .goals, .goals.reverse { flex-direction:column; padding: 60px 30px; gap: 30px; }
     .goals-text { flex:1 1 auto; }
     .goals-image { min-height: 300px; width: 100%; }
     .closing { padding: 60px 30px; }
@@ -204,9 +207,12 @@
 
 <div class="wrap">
 
-  <!-- NAV -->
+  <!-- NAV (ปรับใหม่ตามแบบ) -->
   <div class="nav reveal">
-    <div class="logo cream">◆ BITAZZA</div>
+    <div class="nav-left">
+      <div class="dots">⋯</div>
+      <div class="logo cream">◆ BITAZZA</div>
+    </div>
     <div class="nav-links">
       <span>PRIVATE CLIENT</span>
       <span>SERVICES</span>
@@ -214,8 +220,7 @@
       <span>CONTACT</span>
     </div>
     <div class="nav-right">
-      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn-outline" target="_blank">Get In Touch</a>
-      <div class="dots">⋯</div>
+      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn-outline" target="_blank">GET IN TOUCH</a>
     </div>
   </div>
 
@@ -258,33 +263,8 @@
     </div>
   </div>
 
-  <!-- SECTION 1: EXECUTION -->
+  <!-- SECTION 1: ADVISORY (ย้ายมาเป็นอันดับ 1 - ข้อความซ้าย, รูปขวา) -->
   <div class="goals">
-    <div class="goals-text reveal">
-      <div class="eyebrow">Strategic Planning</div>
-      <h2 class="serif cream">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
-      
-      <ul class="feature-list" style="margin-top: 30px;">
-        <li>
-          <h4 class="serif">Institutional Execution</h4>
-          <p>Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.</p>
-        </li>
-        <li>
-          <h4 class="serif">Priority Operations</h4>
-          <p>Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="goals-image chess reveal delay-1">
-      <div class="goals-overlay">
-        <div class="tag">Strategic Planning</div>
-        <div class="title serif">Bespoke Execution</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 2: ADVISORY -->
-  <div class="goals reverse" style="padding-top: 40px;">
     <div class="goals-text reveal">
       <div class="eyebrow">What You Receive</div>
       <h2 class="serif cream">High-Touch Advisory <br><span class="gold serif" style="font-style:italic;">& Dedicated Team</span></h2>
@@ -311,6 +291,31 @@
     <div class="goals-image ele reveal delay-1"></div>
   </div>
 
+  <!-- SECTION 2: EXECUTION (ย้ายมาเป็นอันดับ 2 - สลับรูปซ้าย, ข้อความขวา) -->
+  <div class="goals reverse" style="padding-top: 40px;">
+    <div class="goals-text reveal">
+      <div class="eyebrow">Strategic Planning</div>
+      <h2 class="serif cream">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
+      
+      <ul class="feature-list" style="margin-top: 30px;">
+        <li>
+          <h4 class="serif">Institutional Execution</h4>
+          <p>Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.</p>
+        </li>
+        <li>
+          <h4 class="serif">Priority Operations</h4>
+          <p>Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="goals-image chess reveal delay-1">
+      <div class="goals-overlay">
+        <div class="tag">Strategic Planning</div>
+        <div class="title serif">Bespoke Execution</div>
+      </div>
+    </div>
+  </div>
+
   <!-- SECTION 3: PERKS -->
   <div class="goals" style="padding-top: 40px;">
     <div class="goals-text reveal">
@@ -327,7 +332,7 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- BOTTOM CTA: YOUR GOALS, OUR FOCUS -->
+  <!-- BOTTOM CTA -->
   <div class="closing reveal" id="request">
     <div class="eyebrow">Our Focus</div>
     <h2 class="serif cream">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
@@ -361,14 +366,14 @@
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.15 // ทำงานเมื่อกล่องโผล่มา 15% ของจอ
+      threshold: 0.15 
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          observer.unobserve(entry.target); // รันครั้งเดียวแล้วจบ
+          observer.unobserve(entry.target); 
         }
       });
     }, observerOptions);
