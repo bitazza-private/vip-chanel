@@ -39,20 +39,20 @@
   .theme-dark .feature-list li { border-left-color: #3a3220; }
 
   /* ------------------------------------------------
-     GRADIENT FLOW BACKGROUNDS (หัวใจหลักของการไล่สี)
+     GRADIENT FLOW BACKGROUNDS (แก้ไขรอยตัดให้เนียนกริบ)
   ------------------------------------------------- */
   .bg-white { background-color: #ffffff; }
   
-  /* 2. ไล่เฉดเป็นเทาเข้ม */
-  .bg-grad-grey { background: linear-gradient(180deg, #2d2d30 0%, #151518 100%); }
+  /* แก้ไข: ไล่เฉดจาก ขาว -> เทาเข้ม (ให้ช่วง 120px แรกเป็นโซนละลายสี) */
+  .bg-grad-grey { background: linear-gradient(180deg, #ffffff 0%, #2d2d30 120px, #151518 100%); }
   
-  /* 3. ไล่เฉดจากเทาไปดำ */
+  /* ไล่เฉดจากเทาไปดำ */
   .bg-grad-black { background: linear-gradient(180deg, #151518 0%, #050505 100%); }
   
-  /* 4. ไล่เฉดจากดำกลับมาเทา */
+  /* ไล่เฉดจากดำกลับมาเทา */
   .bg-grad-cta { background: linear-gradient(180deg, #050505 0%, #2d2d30 100%); }
   
-  /* 5. ไล่เฉดจากเทาเฟดไปขาว (เฟดจบที่ 150px แรก) */
+  /* ไล่เฉดจากเทาเฟดไปขาว */
   .bg-grad-footer { background: linear-gradient(180deg, #2d2d30 0%, #ffffff 150px, #ffffff 100%); }
 
 
@@ -123,7 +123,7 @@
   .hero p { font-size: 17px; line-height: 1.8; color: #666666; max-width: 430px; margin: 0 0 30px 0; font-style: italic; }
 
   /* ------------------------------------------------
-     STATS BAR (แคปซูลพื้นขาว ขอบเทาอ่อน เงาบางๆ)
+     STATS BAR
   ------------------------------------------------- */
   .stats-wrap { padding: 0 40px; margin-top: -34px; position: relative; z-index: 3; }
   .stats {
@@ -174,7 +174,7 @@
   .closing p.sub-desc { font-size: 13px; line-height: 1.8; max-width: 650px; margin: 35px 0 0 0; opacity: 0.7; }
 
   /* ------------------------------------------------
-     FOOTER (เพิ่ม Padding ด้านบนเพื่อให้สีเฟดจากเทาเป็นขาวจนเสร็จก่อนถึงตัวหนังสือ)
+     FOOTER
   ------------------------------------------------- */
   .footer { padding: 140px 40px 34px 40px; }
   .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; color: #999999; }
@@ -285,7 +285,7 @@
     <div class="goals-image ele reveal delay-1"></div>
   </div>
 
-  <!-- SECTION 2: EXECUTION (ไล่เฉดลงมาเป็นเทาเข้ม) -->
+  <!-- SECTION 2: EXECUTION (ไล่เฉดจาก ขาว -> เทาเข้ม) -->
   <div class="goals reverse theme-dark bg-grad-grey">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Strategic Planning</div>
@@ -310,7 +310,7 @@
     </div>
   </div>
 
-  <!-- SECTION 3: PERKS (ไล่เฉดจากเทาเข้มไปดำสนิท) -->
+  <!-- SECTION 3: PERKS (ไล่เฉดจาก เทาเข้ม -> ดำสนิท) -->
   <div class="goals theme-dark bg-grad-black">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Beyond Execution</div>
@@ -326,7 +326,7 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- BOTTOM CTA (ไล่เฉดจากดำกลับมาเทา) -->
+  <!-- BOTTOM CTA (ไล่เฉดจาก ดำ -> เทา) -->
   <div class="closing theme-dark bg-grad-cta reveal" id="request">
     <div class="eyebrow gold">Our Focus</div>
     <h2 class="serif">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
@@ -340,7 +340,7 @@
     </p>
   </div>
 
-  <!-- FOOTER (ไล่เฉดจากเทาเฟดไปจนเป็นสีขาวล้วน) -->
+  <!-- FOOTER (ไล่เฉดจาก เทา -> ขาวล้วน) -->
   <div class="footer theme-light bg-grad-footer reveal">
     <div class="confidential-note">
       <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
