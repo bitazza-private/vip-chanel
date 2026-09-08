@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite — Private Client Channel</title>
 <style>
-  /* อิมพอร์ตฟอนต์ใหม่: Cormorant Garamond (หรูหรา High-class สุดๆ ตัว & สวยมาก) และ Jost (สำหรับเนื้อหา) */
+  /* ฟอนต์หรูหรา High-class */
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap');
 
   * { box-sizing: border-box; }
-  body, html { margin:0; padding:0; background:#0a0a0b; }
+  body, html { margin:0; padding:0; background:#0a0a0b; scroll-behavior: smooth; }
   
   body { 
     font-family: 'Jost', Helvetica, Arial, sans-serif; 
@@ -17,18 +17,30 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ฟอนต์หัวข้อที่เปลี่ยนใหม่ หรูหรา ไฮคลาส */
   .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-  
-  /* โทนสี ดำ-เทา-ทอง */
   .gold { color: #c9a24b; }
   .cream { color: #f2efe6; }
   .muted { color: #9a978f; }
 
   .wrap { max-width: 1040px; margin:0 auto; overflow: hidden; background:#0a0a0b; }
-
   a { text-decoration:none; }
 
+  /* ------------------------------------------------
+     ANIMATION (เอฟเฟกต์เฟดอินนุ่มๆ สไตล์หรูหรา)
+  ------------------------------------------------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); /* ความสมูทระดับ Apple/Luxury Brand */
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .delay-1 { transition-delay: 0.2s; }
+  .delay-2 { transition-delay: 0.4s; }
+
+  /* ปุ่มกด */
   .btn {
     display:inline-block;
     background:#c9a24b;
@@ -39,9 +51,9 @@
     font-weight:600;
     padding:15px 32px;
     border-radius:2px;
-    transition: background 0.3s ease;
+    transition: all 0.4s ease;
   }
-  .btn:hover { background:#dfb658; }
+  .btn:hover { background:#dfb658; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(201, 162, 75, 0.15); }
 
   .btn-outline {
     display:inline-block;
@@ -67,24 +79,21 @@
   }
 
   /* NAV */
-  .nav {
-    display:flex; align-items:center; justify-content:space-between;
-    padding: 22px 40px;
-  }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding: 22px 40px; }
   .logo { font-size:19px; letter-spacing:2px; font-weight:600; }
   .nav-links { display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:#cfccc2; }
   .nav-right { display:flex; align-items:center; gap:14px; }
   .dots { width:34px; height:34px; border:1px solid #3a372f; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; color:#cfccc2;}
 
   /* ------------------------------------------------
-     HERO SECTION (ปรับให้เล็กลง พอดีสายตา ไม่ใหญ่เทอะทะ)
+     HERO SECTION
   ------------------------------------------------- */
   .hero {
     position:relative;
     background: linear-gradient(100deg, rgba(6,6,7,0.97) 0%, rgba(6,6,7,0.88) 32%, rgba(6,6,7,0.25) 62%, rgba(6,6,7,0.05) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg');
     background-size: cover;
     background-position: center 20%;
-    min-height: 480px; /* ลดความสูงลงให้พอดี */
+    min-height: 480px; 
     display:flex;
     align-items:center;
   }
@@ -93,14 +102,14 @@
   .hero p { font-size:17px; line-height:1.8; color:#c7c4ba; max-width:430px; margin:0 0 30px 0; font-style: italic; }
 
   /* ------------------------------------------------
-     STATS BAR (แคปซูลวงรี มีมิติ วางลอยทับขอบเหมือนเดิมเป๊ะ)
+     STATS BAR 
   ------------------------------------------------- */
   .stats-wrap { padding: 0 40px; margin-top:-34px; position:relative; z-index:3; }
   .stats {
-    background:#111113; border:1px solid #232326; border-radius: 60px; /* ขอบวงรี */
+    background:#111113; border:1px solid #232326; border-radius: 60px; 
     display:flex; justify-content:space-around; align-items:center;
     padding: 26px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* เพิ่มเงาให้มีมิติ */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
   }
   .stat { text-align:center; padding: 0 14px; display: flex; flex-direction: column; align-items: center; }
   .stat .num { font-size:15px; font-weight:600; display: flex; align-items: center; gap: 8px; color: #c9a24b; }
@@ -138,7 +147,7 @@
   }
   .feature-list h4 { 
     color: #c9a24b; 
-    font-size: 18px; /* เพิ่มขนาดหัวข้อย่อยให้สวยขึ้น */
+    font-size: 18px; 
     font-weight: 500; 
     margin: 0 0 8px 0; 
   }
@@ -151,7 +160,7 @@
   }
 
   /* ------------------------------------------------
-     BOTTOM CTA: YOUR GOALS, OUR FOCUS 
+     BOTTOM CTA 
   ------------------------------------------------- */
   .closing {
     background:#050505;
@@ -196,7 +205,7 @@
 <div class="wrap">
 
   <!-- NAV -->
-  <div class="nav">
+  <div class="nav reveal">
     <div class="logo cream">◆ BITAZZA</div>
     <div class="nav-links">
       <span>PRIVATE CLIENT</span>
@@ -212,7 +221,7 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-inner">
+    <div class="hero-inner reveal delay-1">
       <div class="eyebrow">Invitation Only</div>
       <h1 class="serif cream">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
       <p class="serif">"Clarity, access, and complete discretion."</p>
@@ -220,8 +229,8 @@
     </div>
   </div>
 
-  <!-- STATS BAR (ทรงแคปซูลมีมิติ) -->
-  <div class="stats-wrap">
+  <!-- STATS BAR -->
+  <div class="stats-wrap reveal delay-2">
     <div class="stats">
       <div class="stat">
         <div class="num gold">
@@ -251,7 +260,7 @@
 
   <!-- SECTION 1: EXECUTION -->
   <div class="goals">
-    <div class="goals-text">
+    <div class="goals-text reveal">
       <div class="eyebrow">Strategic Planning</div>
       <h2 class="serif cream">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
       
@@ -266,7 +275,7 @@
         </li>
       </ul>
     </div>
-    <div class="goals-image chess">
+    <div class="goals-image chess reveal delay-1">
       <div class="goals-overlay">
         <div class="tag">Strategic Planning</div>
         <div class="title serif">Bespoke Execution</div>
@@ -276,7 +285,7 @@
 
   <!-- SECTION 2: ADVISORY -->
   <div class="goals reverse" style="padding-top: 40px;">
-    <div class="goals-text">
+    <div class="goals-text reveal">
       <div class="eyebrow">What You Receive</div>
       <h2 class="serif cream">High-Touch Advisory <br><span class="gold serif" style="font-style:italic;">& Dedicated Team</span></h2>
       
@@ -299,12 +308,12 @@
         </li>
       </ul>
     </div>
-    <div class="goals-image ele"></div>
+    <div class="goals-image ele reveal delay-1"></div>
   </div>
 
   <!-- SECTION 3: PERKS -->
   <div class="goals" style="padding-top: 40px;">
-    <div class="goals-text">
+    <div class="goals-text reveal">
       <div class="eyebrow">Beyond Execution</div>
       <h2 class="serif cream">Exclusive Access <br><span class="gold serif" style="font-style:italic;">& Perks</span></h2>
       
@@ -315,11 +324,11 @@
         </li>
       </ul>
     </div>
-    <div class="goals-image btz"></div>
+    <div class="goals-image btz reveal delay-1"></div>
   </div>
 
   <!-- BOTTOM CTA: YOUR GOALS, OUR FOCUS -->
-  <div class="closing" id="request">
+  <div class="closing reveal" id="request">
     <div class="eyebrow">Our Focus</div>
     <h2 class="serif cream">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
     <p class="desc">
@@ -333,7 +342,7 @@
   </div>
 
   <!-- FOOTER -->
-  <div class="footer">
+  <div class="footer reveal">
     <div class="confidential-note">
       <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
     </div>
@@ -345,5 +354,29 @@
   </div>
 
 </div>
+
+<!-- SCRIPT สำหรับสร้างเอฟเฟกต์ Scroll Reveal -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.15 // ทำงานเมื่อกล่องโผล่มา 15% ของจอ
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // รันครั้งเดียวแล้วจบ
+        }
+      });
+    }, observerOptions);
+
+    const elementsToReveal = document.querySelectorAll('.reveal');
+    elementsToReveal.forEach(el => observer.observe(el));
+  });
+</script>
+
 </body>
 </html>
