@@ -13,30 +13,39 @@
   
   body { 
     font-family: 'Jost', Helvetica, Arial, sans-serif; 
-    color: #555555; /* ตัวหนังสือสีเทาเข้ม อ่านสบายตา */
     -webkit-font-smoothing: antialiased;
   }
 
   .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
   
-  /* โทนสีใหม่ */
-  .gold { color: #b8860b; } /* ปรับทองให้เข้มขึ้นนิดนึงเพื่อให้ชัดบนพื้นขาว */
-  .dark { color: #111111; } /* สีดำสนิทสำหรับหัวข้อ */
-  
-  .bg-white { background-color: #ffffff; }
-  .bg-light { background-color: #f8f9fa; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; } /* สีเทาอ่อน */
-
-  .wrap { max-width: 1040px; margin: 0 auto; overflow: hidden; background: #ffffff; }
+  .wrap { max-width: 1040px; margin: 0 auto; overflow: hidden; background: #ffffff; box-shadow: 0 0 50px rgba(0,0,0,0.05); }
   a { text-decoration: none; }
+
+  /* ------------------------------------------------
+     THEME CLASSES (สำหรับสลับเลเยอร์สีให้มีชั้นเชิง)
+  ------------------------------------------------- */
+  /* Theme Light (ขาว / เทาอ่อน) */
+  .theme-light { background-color: #ffffff; color: #666666; }
+  .theme-light.bg-light { background-color: #f8f9fa; border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; }
+  .theme-light h2.serif { color: #111111; }
+  .theme-light .gold { color: #b8860b; }
+  .theme-light .feature-list h4 { color: #111111; }
+  .theme-light .feature-list li { border-left-color: #e0e0e0; }
+
+  /* Theme Dark (ดำเทาไล่เฉด สุดหรู) */
+  .theme-dark { 
+    background: linear-gradient(135deg, #242428 0%, #0a0a0c 100%); 
+    color: #9a978f; 
+  }
+  .theme-dark h2.serif { color: #f2efe6; }
+  .theme-dark .gold { color: #c9a24b; }
+  .theme-dark .feature-list h4 { color: #e8e4db; }
+  .theme-dark .feature-list li { border-left-color: #3a3220; }
 
   /* ------------------------------------------------
      ANIMATION (เอฟเฟกต์เฟดอินนุ่มๆ)
   ------------------------------------------------- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
-  }
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
   .reveal.active { opacity: 1; transform: translateY(0); }
   .delay-1 { transition-delay: 0.2s; }
   .delay-2 { transition-delay: 0.4s; }
@@ -44,8 +53,8 @@
   /* ปุ่มกด */
   .btn {
     display: inline-block;
-    background: #b8860b;
-    color: #ffffff !important;
+    background: #c9a24b;
+    color: #111111 !important;
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -54,7 +63,8 @@
     border-radius: 2px;
     transition: all 0.4s ease;
   }
-  .btn:hover { background: #d4a017; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2); }
+  .theme-light .btn { background: #b8860b; color: #ffffff !important; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2); }
 
   .btn-outline {
     display: inline-block;
@@ -74,15 +84,14 @@
     font-size: 10px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #b8860b;
     font-weight: 500;
     margin-bottom: 20px;
   }
 
   /* ------------------------------------------------
-     NAV BAR (พื้นขาว ตัวหนังสือดำ)
+     NAV BAR
   ------------------------------------------------- */
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; background: #ffffff; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; }
   .nav-left { display: flex; align-items: center; gap: 20px; }
   .dots { width: 36px; height: 36px; border: 1px solid #eeeeee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #111111;}
   .logo { font-size: 19px; letter-spacing: 2px; font-weight: 600; color: #111111; }
@@ -90,7 +99,7 @@
   .nav-right { display: flex; align-items: center; }
 
   /* ------------------------------------------------
-     HERO SECTION (เปลี่ยนเกรเดียนท์เป็นสีขาวโปร่ง)
+     HERO SECTION
   ------------------------------------------------- */
   .hero {
     position: relative;
@@ -106,7 +115,7 @@
   .hero p { font-size: 17px; line-height: 1.8; color: #666666; max-width: 430px; margin: 0 0 30px 0; font-style: italic; }
 
   /* ------------------------------------------------
-     STATS BAR (แคปซูลพื้นขาว ขอบเทาอ่อน เงาบางๆ)
+     STATS BAR 
   ------------------------------------------------- */
   .stats-wrap { padding: 0 40px; margin-top: -34px; position: relative; z-index: 3; }
   .stats {
@@ -127,9 +136,9 @@
   .goals.reverse { flex-direction: row-reverse; }
   
   .goals-text { flex: 0 0 42%; }
-  .goals-text h2 { font-size: 40px; line-height: 1.15; font-weight: 600; margin: 0 0 25px 0; color: #111111; }
+  .goals-text h2 { font-size: 40px; line-height: 1.15; font-weight: 600; margin: 0 0 25px 0; }
   
-  .goals-image { flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 380px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+  .goals-image { flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 380px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
   .goals-image.chess { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg') center/cover; }
   .goals-image.ele { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg') center/cover; }
   .goals-image.btz { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg') center/cover; }
@@ -144,48 +153,25 @@
 
   /* FEATURE LIST */
   .feature-list { list-style: none; padding: 0; margin: 0; }
-  .feature-list li { 
-    margin-bottom: 24px; 
-    border-left: 1px solid #e0e0e0; 
-    padding-left: 24px; 
-  }
-  .feature-list h4 { 
-    color: #111111; 
-    font-size: 18px; 
-    font-weight: 600; 
-    margin: 0 0 8px 0; 
-  }
-  .feature-list p { 
-    color: #666666; 
-    font-size: 14px; 
-    line-height: 1.7; 
-    margin: 0; 
-  }
+  .feature-list li { margin-bottom: 24px; border-left: 1px solid; padding-left: 24px; }
+  .feature-list h4 { font-size: 18px; font-weight: 600; margin: 0 0 8px 0; }
+  .feature-list p { font-size: 14px; line-height: 1.7; margin: 0; }
 
   /* ------------------------------------------------
      BOTTOM CTA 
   ------------------------------------------------- */
-  .closing {
-    padding: 100px 40px;
-    text-align: left; 
-  }
-  .closing h2 { font-size: 42px; font-weight: 600; margin: 0 0 20px 0; color: #111111; }
-  .closing p.desc { color: #555555; font-size: 15px; line-height: 1.8; max-width: 650px; margin: 0 0 35px 0; }
-  .closing p.sub-desc { color: #888888; font-size: 13px; line-height: 1.8; max-width: 650px; margin: 35px 0 0 0; }
+  .closing { padding: 100px 40px; text-align: left; }
+  .closing h2 { font-size: 42px; font-weight: 600; margin: 0 0 20px 0; }
+  .closing p.desc { font-size: 15px; line-height: 1.8; max-width: 650px; margin: 0 0 35px 0; }
+  .closing p.sub-desc { font-size: 13px; line-height: 1.8; max-width: 650px; margin: 35px 0 0 0; opacity: 0.7; }
 
   /* ------------------------------------------------
      FOOTER 
   ------------------------------------------------- */
-  .footer { background: #ffffff; padding: 60px 40px 34px 40px; border-top: 1px solid #eeeeee; }
-  .confidential-note {
-    font-size: 11px;
-    line-height: 1.8;
-    color: #999999;
-    text-align: justify;
-    margin-bottom: 40px;
-  }
-  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #eeeeee; font-size: 11px; color: #999999; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px;}
-  .footer-logo { font-size: 14px; font-weight: 600; letter-spacing: 3px; color: #111111; }
+  .footer { background: #050505; padding: 60px 40px 34px 40px; border-top: 1px solid #1c1c1e; color: #726f68; }
+  .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; }
+  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #1c1c1e; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px;}
+  .footer-logo { font-size: 14px; font-weight: 600; letter-spacing: 3px; color: #9a978f; }
 
   @media (max-width: 760px) {
     .nav-links { display: none; }
@@ -206,8 +192,8 @@
 
 <div class="wrap">
 
-  <!-- NAV -->
-  <div class="nav reveal">
+  <!-- NAV (Theme Light) -->
+  <div class="nav theme-light reveal">
     <div class="nav-left">
       <div class="dots">⋯</div>
       <div class="logo">◆ BITAZZA</div>
@@ -223,10 +209,10 @@
     </div>
   </div>
 
-  <!-- HERO -->
-  <div class="hero">
+  <!-- HERO (Theme Light) -->
+  <div class="hero theme-light">
     <div class="hero-inner reveal delay-1">
-      <div class="eyebrow">Invitation Only</div>
+      <div class="eyebrow gold">Invitation Only</div>
       <h1 class="serif">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
       <p class="serif">"Clarity, access, and complete discretion."</p>
       <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
@@ -263,10 +249,10 @@
   </div>
 
   <!-- SECTION 1: ADVISORY (พื้นขาว) -->
-  <div class="goals bg-white">
+  <div class="goals theme-light">
     <div class="goals-text reveal">
-      <div class="eyebrow">What You Receive</div>
-      <h2 class="serif dark">High-Touch Advisory <br><span class="gold serif" style="font-style:italic;">& Dedicated Team</span></h2>
+      <div class="eyebrow gold">What You Receive</div>
+      <h2 class="serif">High-Touch Advisory <br><span class="gold serif" style="font-style:italic;">& Dedicated Team</span></h2>
       
       <ul class="feature-list">
         <li>
@@ -290,11 +276,11 @@
     <div class="goals-image ele reveal delay-1"></div>
   </div>
 
-  <!-- SECTION 2: EXECUTION (พื้นเทาอ่อน สลับสี) -->
-  <div class="goals reverse bg-light">
+  <!-- SECTION 2: EXECUTION (สลับเลเยอร์เป็น ดำเทาไล่เฉด สวยเด่นป๊อปอัป) -->
+  <div class="goals reverse theme-dark">
     <div class="goals-text reveal">
-      <div class="eyebrow">Strategic Planning</div>
-      <h2 class="serif dark">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
+      <div class="eyebrow gold">Strategic Planning</div>
+      <h2 class="serif">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
       
       <ul class="feature-list" style="margin-top: 30px;">
         <li>
@@ -315,11 +301,11 @@
     </div>
   </div>
 
-  <!-- SECTION 3: PERKS (พื้นขาว) -->
-  <div class="goals bg-white">
+  <!-- SECTION 3: PERKS (สลับกลับมาเป็น สีเทาอ่อน) -->
+  <div class="goals theme-light bg-light">
     <div class="goals-text reveal">
-      <div class="eyebrow">Beyond Execution</div>
-      <h2 class="serif dark">Exclusive Access <br><span class="gold serif" style="font-style:italic;">& Perks</span></h2>
+      <div class="eyebrow gold">Beyond Execution</div>
+      <h2 class="serif">Exclusive Access <br><span class="gold serif" style="font-style:italic;">& Perks</span></h2>
       
       <ul class="feature-list">
         <li>
@@ -331,10 +317,10 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- BOTTOM CTA (พื้นเทาอ่อน) -->
-  <div class="closing bg-light reveal" id="request">
-    <div class="eyebrow">Our Focus</div>
-    <h2 class="serif dark">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
+  <!-- BOTTOM CTA (ดำเทาไล่เฉด - ปิดท้ายอย่างหนักแน่น) -->
+  <div class="closing theme-dark reveal" id="request">
+    <div class="eyebrow gold">Our Focus</div>
+    <h2 class="serif">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
     <p class="desc">
       Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.
     </p>
@@ -345,7 +331,7 @@
     </p>
   </div>
 
-  <!-- FOOTER (พื้นขาว) -->
+  <!-- FOOTER (สีดำสนิท) -->
   <div class="footer reveal">
     <div class="confidential-note">
       <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
@@ -353,7 +339,7 @@
     <div class="footer-bottom">
       <div>This invitation was extended personally and is not transferable.</div>
       <div class="footer-logo">BITAZZA</div>
-      <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; <a href="https://www.bitazza.com" style="color: #999999; text-decoration: none;">www.bitazza.com</a></div>
+      <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; <a href="https://www.bitazza.com" style="color: #726f68; text-decoration: none;">www.bitazza.com</a></div>
     </div>
   </div>
 
