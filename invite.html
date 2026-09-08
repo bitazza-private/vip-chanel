@@ -9,7 +9,9 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap');
 
   * { box-sizing: border-box; }
-  body, html { margin: 0; padding: 0; background-color: #ffffff; scroll-behavior: smooth; }
+  
+  /* ดรอปสีขาวจั๊วะ (#ffffff) เป็นสีขาวออฟไวท์ (#f4f3ed) ให้ดูนุ่มนวล ไม่แสบตา */
+  body, html { margin: 0; padding: 0; background-color: #f4f3ed; scroll-behavior: smooth; }
   
   body { 
     font-family: 'Jost', Helvetica, Arial, sans-serif; 
@@ -18,7 +20,7 @@
 
   .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
   
-  .wrap { max-width: 1040px; margin: 0 auto; overflow: hidden; background: #ffffff; box-shadow: 0 0 50px rgba(0,0,0,0.05); }
+  .wrap { max-width: 1040px; margin: 0 auto; overflow: hidden; background: #f4f3ed; box-shadow: 0 0 50px rgba(0,0,0,0.03); }
   a { text-decoration: none; }
 
   /* ------------------------------------------------
@@ -31,25 +33,24 @@
   .theme-light .feature-list li { border-left-color: #d1c8b4; } 
 
   /* ------------------------------------------------
-     GRADIENT FLOW BACKGROUNDS (อัปเดตการไหลของสีใหม่ทั้งหมด)
+     GRADIENT FLOW BACKGROUNDS (ขาวออฟไวท์ -> ทราย -> แชมเปญ)
   ------------------------------------------------- */
-  .bg-white { background-color: #ffffff; }
+  .bg-offwhite { background-color: #f4f3ed; }
   
-  /* 1. ไล่เฉดจาก ขาว -> ทรายอ่อนสุด (เริ่มที่ Section 1 ให้ละมุนตั้งแต่ต้น) */
-  .bg-grad-sand-1 { background: linear-gradient(180deg, #ffffff 0%, #fcfaf5 100%); }
+  /* 1. ไล่เฉดจาก ออฟไวท์ -> ทรายอ่อนสุด */
+  .bg-grad-sand-1 { background: linear-gradient(180deg, #f4f3ed 0%, #efece4 100%); }
   
-  /* 2. ไล่เฉดจาก ทรายอ่อนสุด -> ทรายกลาง (Section 2) */
-  .bg-grad-sand-2 { background: linear-gradient(180deg, #fcfaf5 0%, #f4efe1 100%); }
+  /* 2. ไล่เฉดจาก ทรายอ่อนสุด -> ทรายกลาง */
+  .bg-grad-sand-2 { background: linear-gradient(180deg, #efece4 0%, #e8e4d8 100%); }
   
-  /* 3. ไล่เฉดจาก ทรายกลาง -> ทองแชมเปญอุ่นๆ (Section 3) */
-  .bg-grad-sand-3 { background: linear-gradient(180deg, #f4efe1 0%, #ebe2c9 100%); }
+  /* 3. ไล่เฉดจาก ทรายกลาง -> ทองแชมเปญอุ่นๆ */
+  .bg-grad-sand-3 { background: linear-gradient(180deg, #e8e4d8 0%, #dfd8c6 100%); }
   
-  /* 4. ไล่เฉดจาก ทองแชมเปญกลับมา -> ทรายอ่อนสุด (Bottom CTA) */
-  .bg-grad-cta { background: linear-gradient(180deg, #ebe2c9 0%, #fcfaf5 100%); }
+  /* 4. ไล่เฉดจาก ทองแชมเปญกลับมา -> ทรายอ่อนสุด */
+  .bg-grad-cta { background: linear-gradient(180deg, #dfd8c6 0%, #efece4 100%); }
   
-  /* 5. ไล่เฉดจาก ทรายอ่อนสุดเฟดไป -> ขาวล้วนตอนจบ (Footer) */
-  .bg-grad-footer { background: linear-gradient(180deg, #fcfaf5 0%, #ffffff 150px, #ffffff 100%); }
-
+  /* 5. ไล่เฉดจาก ทรายอ่อนสุดเฟดไป -> ออฟไวท์ตอนจบ */
+  .bg-grad-footer { background: linear-gradient(180deg, #efece4 0%, #f4f3ed 150px, #f4f3ed 100%); }
 
   /* ------------------------------------------------
      ANIMATION
@@ -95,7 +96,7 @@
   ------------------------------------------------- */
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; }
   .nav-left { display: flex; align-items: center; gap: 20px; }
-  .dots { width: 36px; height: 36px; border: 1px solid #eae5d9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1a1814;}
+  .dots { width: 36px; height: 36px; border: 1px solid #e1ddce; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1a1814;}
   .logo { font-size: 19px; letter-spacing: 2px; font-weight: 600; color: #1a1814; }
   .nav-links { display: flex; gap: 34px; font-size: 12px; letter-spacing: 1px; color: #5c574f; }
   .nav-right { display: flex; align-items: center; }
@@ -105,7 +106,8 @@
   ------------------------------------------------- */
   .hero {
     position: relative;
-    background: linear-gradient(100deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 45%, rgba(255,255,255,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg');
+    /* เปลี่ยนสี Overlay ให้กลืนกับออฟไวท์ */
+    background: linear-gradient(100deg, rgba(244,243,237,0.97) 0%, rgba(244,243,237,0.88) 45%, rgba(244,243,237,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg');
     background-size: cover;
     background-position: center 20%;
     min-height: 480px; 
@@ -117,11 +119,11 @@
   .hero p { font-size: 17px; line-height: 1.8; color: #5c574f; max-width: 430px; margin: 0 0 30px 0; font-style: italic; }
 
   /* ------------------------------------------------
-     STATS BAR 
+     STATS BAR (ปรับพื้นหลังแคปซูลให้อ่อนกว่าพื้นหลังนิดนึงเพื่อให้ป๊อปอัป)
   ------------------------------------------------- */
   .stats-wrap { padding: 0 40px; margin-top: -34px; position: relative; z-index: 3; }
   .stats {
-    background: #ffffff; border: 1px solid #f4efe1; border-radius: 60px; 
+    background: #fdfcf9; border: 1px solid #ebe6da; border-radius: 60px; 
     display: flex; justify-content: space-around; align-items: center;
     padding: 26px 20px;
     box-shadow: 0 15px 35px rgba(26,24,20,0.06); 
@@ -129,7 +131,7 @@
   .stat { text-align: center; padding: 0 14px; display: flex; flex-direction: column; align-items: center; }
   .stat .num { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 8px; color: #1a1814; }
   .stat .lbl { font-size: 11px; color: #8a8377; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
-  .stat-sep { width: 1px; height: 34px; background: #eae5d9; }
+  .stat-sep { width: 1px; height: 34px; background: #e1ddce; }
 
   /* ------------------------------------------------
      SECTIONS (Z-PATTERN) 
@@ -145,7 +147,6 @@
   .goals-image.ele { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg') center/cover; }
   .goals-image.btz { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg') center/cover; }
   
-  /* ปรับ Overlay ภาพให้เป็นโทนชาร์โคลอุ่นๆ */
   .goals-overlay {
     position: absolute; left: 0; right: 0; bottom: 0;
     background: linear-gradient(0deg, rgba(26,24,20,0.85) 0%, rgba(26,24,20,0.0) 70%);
@@ -173,7 +174,7 @@
   ------------------------------------------------- */
   .footer { padding: 140px 40px 34px 40px; }
   .confidential-note { font-size: 11px; line-height: 1.8; text-align: justify; margin-bottom: 40px; color: #8a8377; }
-  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #eae5d9; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8a8377;}
+  .footer-bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid #e1ddce; font-size: 11px; flex-wrap: wrap; gap: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8a8377;}
   .footer-logo { font-size: 14px; font-weight: 600; letter-spacing: 3px; color: #1a1814; }
 
   @media (max-width: 760px) {
@@ -196,8 +197,8 @@
 
 <div class="wrap">
 
-  <!-- NAV -->
-  <div class="nav theme-light bg-white reveal">
+  <!-- NAV (ออฟไวท์) -->
+  <div class="nav theme-light bg-offwhite reveal">
     <div class="nav-left">
       <div class="dots">⋯</div>
       <div class="logo">◆ BITAZZA</div>
@@ -213,8 +214,8 @@
     </div>
   </div>
 
-  <!-- HERO -->
-  <div class="hero theme-light bg-white">
+  <!-- HERO (ออฟไวท์) -->
+  <div class="hero theme-light bg-offwhite">
     <div class="hero-inner reveal delay-1">
       <div class="eyebrow gold">Invitation Only</div>
       <h1 class="serif">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
@@ -223,7 +224,7 @@
     </div>
   </div>
 
-  <!-- STATS BAR -->
+  <!-- STATS BAR (แคปซูลสว่างกว่าพื้นนิดนึงเพื่อให้ป๊อป) -->
   <div class="stats-wrap reveal delay-2">
     <div class="stats">
       <div class="stat">
@@ -252,7 +253,7 @@
     </div>
   </div>
 
-  <!-- SECTION 1: ADVISORY (เฟดจาก ขาว -> ทรายอ่อนสุด ตั้งแต่เริ่มเลย) -->
+  <!-- SECTION 1: ADVISORY (ออฟไวท์ -> ทรายอ่อนสุด) -->
   <div class="goals theme-light bg-grad-sand-1">
     <div class="goals-text reveal">
       <div class="eyebrow gold">What You Receive</div>
@@ -280,7 +281,7 @@
     <div class="goals-image ele reveal delay-1"></div>
   </div>
 
-  <!-- SECTION 2: EXECUTION (เฟดจาก ทรายอ่อนสุด -> ทรายกลาง) -->
+  <!-- SECTION 2: EXECUTION (ทรายอ่อนสุด -> ทรายกลาง) -->
   <div class="goals reverse theme-light bg-grad-sand-2">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Strategic Planning</div>
@@ -305,7 +306,7 @@
     </div>
   </div>
 
-  <!-- SECTION 3: PERKS (เฟดจาก ทรายกลาง -> ทองแชมเปญ) -->
+  <!-- SECTION 3: PERKS (ทรายกลาง -> ทองแชมเปญอุ่นๆ) -->
   <div class="goals theme-light bg-grad-sand-3">
     <div class="goals-text reveal">
       <div class="eyebrow gold">Beyond Execution</div>
@@ -321,7 +322,7 @@
     <div class="goals-image btz reveal delay-1"></div>
   </div>
 
-  <!-- BOTTOM CTA (เฟดจาก ทองแชมเปญ -> ทรายอ่อนสุด) -->
+  <!-- BOTTOM CTA (ทองแชมเปญอุ่นๆ -> ทรายอ่อนสุด) -->
   <div class="closing theme-light bg-grad-cta reveal" id="request">
     <div class="eyebrow gold">Our Focus</div>
     <h2 class="serif">Your Goals, <span class="gold serif" style="font-style:italic;">Our Focus.</span></h2>
@@ -335,7 +336,7 @@
     </p>
   </div>
 
-  <!-- FOOTER (เฟดจาก ทรายอ่อนสุด -> ขาวล้วน) -->
+  <!-- FOOTER (ทรายอ่อนสุด -> ออฟไวท์) -->
   <div class="footer theme-light bg-grad-footer reveal">
     <div class="confidential-note">
       <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
