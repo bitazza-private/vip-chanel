@@ -5,179 +5,163 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite — Private Client Channel</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+  /* อิมพอร์ตฟอนต์ระดับ FinTech Luxury (Inter + Playfair Display) */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
   * { box-sizing: border-box; }
-  body, html { margin:0; padding:0; background:#0a0a0b; }
-  body { font-family:'Jost', Helvetica, Arial, sans-serif; color:#ece7dc; }
+  body, html { margin:0; padding:0; background-color:#030303; }
+  
+  /* ฟอนต์หลักสำหรับเนื้อหา (คมชัด ทันสมัย) */
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #a19d94; -webkit-font-smoothing: antialiased; }
 
-  .serif { font-family:'Playfair Display', Georgia, serif; }
-  .gold { color:#c9a24b; }
-  .cream { color:#f2efe6; }
-  .muted { color:#9a978f; }
+  /* ฟอนต์สำหรับหัวข้อ (หรูหรา คลาสสิก) */
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+  
+  /* สีหลักของแบรนด์ */
+  .gold { color: #d0a85c; }
+  .white { color: #ffffff; }
 
-  .wrap { max-width: 1040px; margin:0 auto; overflow: hidden; }
+  .wrap { max-width: 100%; margin: 0 auto; overflow: hidden; background-color: #050505; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 
   a { text-decoration:none; }
 
+  /* ปุ่มกดสไตล์ Modern Luxury */
   .btn {
-    display:inline-block;
-    background:#c9a24b;
-    color:#0a0a0b !important;
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    font-weight:600;
-    padding:16px 35px;
-    border-radius:2px;
-    transition: background 0.3s ease;
+    display: inline-block;
+    background: #c5a059;
+    color: #000000 !important;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 16px 36px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
-  .btn:hover { background:#dfb658; }
-
-  .btn-outline {
-    display:inline-block;
-    border:1px solid #3a372f;
-    color:#f2efe6 !important;
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    font-weight:500;
-    padding:13px 26px;
-    border-radius:2px;
-    transition: border-color 0.3s ease;
-  }
-  .btn-outline:hover { border-color:#c9a24b; }
+  .btn:hover { background: #dfb658; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.15); }
 
   .eyebrow {
-    font-size:11px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:#c9a24b;
-    font-weight:600;
-    margin-bottom:14px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c5a059;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
 
-  /* NAV */
-  .nav {
-    display:flex; align-items:center; justify-content:space-between;
-    padding: 22px 40px;
-  }
-  .logo { font-size:19px; letter-spacing:2px; font-weight:600; }
-  .nav-links { display:flex; gap:34px; font-size:12px; letter-spacing:1px; color:#cfccc2; }
-  .nav-right { display:flex; align-items:center; gap:14px; }
-  .dots { width:34px; height:34px; border:1px solid #3a372f; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; color:#cfccc2;}
-
-  /* HERO */
+  /* HERO SECTION */
   .hero {
-    position:relative;
-    background: linear-gradient(100deg, rgba(6,6,7,0.97) 0%, rgba(6,6,7,0.88) 32%, rgba(6,6,7,0.25) 62%, rgba(6,6,7,0.05) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg');
+    position: relative;
+    background: linear-gradient(100deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.80) 40%, rgba(5,5,5,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg');
     background-size: cover;
-    background-position: center right;
-    min-height: 560px;
-    display:flex;
-    align-items:center;
+    background-position: center 20%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
-  .hero-inner { padding: 60px 40px; max-width: 560px; }
-  .hero h1 { font-size:42px; line-height:1.18; font-weight:500; margin:0 0 20px 0; }
-  .hero p { font-size:15px; line-height:1.8; color:#c7c4ba; max-width:430px; margin:0 0 30px 0; }
+  .hero-inner { max-width: 600px; }
+  .hero h1 { font-size: 52px; line-height: 1.15; font-weight: 400; margin: 0 0 25px 0; letter-spacing: -0.5px; }
+  .hero p { font-size: 16px; line-height: 1.8; color: #b5b1a8; max-width: 450px; margin: 0 0 40px 0; font-weight: 300; }
 
   /* STATS BAR */
-  .stats-wrap { padding: 0 40px; margin-top:-34px; position:relative; z-index:3; }
+  .stats-wrap { background: #0a0a0b; border-top: 1px solid #1a1a1c; border-bottom: 1px solid #1a1a1c; }
   .stats {
-    background:#111113; border:1px solid #232326; border-radius: 60px;
-    display:flex; justify-content:space-around; align-items:center;
-    padding: 26px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 35px 0;
   }
-  .stat { text-align:center; padding: 0 14px; display: flex; flex-direction: column; align-items: center; }
-  .stat .num { font-size:15px; font-weight:600; display: flex; align-items: center; gap: 8px; }
-  .stat .lbl { font-size:11px; color:#8f8c84; margin-top:6px; letter-spacing:.3px; }
-  .stat-sep { width:1px; height:34px; background:#232326; }
+  .stat { flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .stat .num { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 10px; letter-spacing: 0.5px; }
+  .stat .lbl { font-size: 11px; color: #726f68; margin-top: 8px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .stat-sep { width: 1px; height: 40px; background: #1a1a1c; }
 
-  /* SECTION 1: EXECUTION & ADVANTAGE */
-  .goals { display:flex; gap: 50px; padding: 90px 40px 40px 40px; background:#0e0e0f; align-items:center; }
-  .goals-text { flex: 0 0 42%; }
-  .goals-text h2 { font-size:34px; line-height:1.25; font-weight:500; margin:0 0 25px 0; }
+  /* SPLIT SECTIONS (Z-Pattern Layout) */
+  .split-section { display: flex; gap: 80px; padding: 120px 0; align-items: center; }
+  .split-section.reverse { flex-direction: row-reverse; }
   
-  .goals-image { flex:1; position:relative; border-radius:10px; overflow:hidden; min-height:380px;
-    background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg');
-    background-size: cover; background-position:center;
-  }
-  .goals-overlay {
-    position:absolute; left:0; right:0; bottom:0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.0) 60%);
-    padding: 26px 26px 20px 26px;
-  }
-  .goals-overlay .tag { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#c9a24b; margin-bottom:6px; }
-  .goals-overlay .title { font-family:'Playfair Display',serif; font-size:20px; color:#f2efe6; font-weight:600; }
+  .split-text { flex: 0 0 45%; }
+  .split-text h2 { font-size: 38px; line-height: 1.2; font-weight: 400; margin: 0 0 35px 0; letter-spacing: -0.5px; }
+  
+  .split-image { flex: 1; position: relative; border-radius: 4px; overflow: hidden; min-height: 450px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+  .split-image.chess { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg') center/cover; }
+  .split-image.ele { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg') center/cover; }
+  .split-image.btz { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg') center/cover; }
 
-  /* SECTION 2: ADVISORY */
-  .advisory { display:flex; gap: 60px; padding: 60px 40px 90px 40px; background:#0e0e0f; align-items:center; }
-  .advisory-image { flex: 0 0 45%; position:relative; border-radius:10px; overflow:hidden; min-height:500px;
-    background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg');
-    background-size: cover; background-position:center;
-  }
-  .advisory-text { flex:1; }
-  .advisory-text h2 { font-size:32px; line-height:1.25; font-weight:500; margin:0 0 30px 0; }
-  
-  /* FEATURE LIST STYLES */
+  /* FEATURE LIST */
   .feature-list { list-style: none; padding: 0; margin: 0; }
   .feature-list li { 
-    margin-bottom: 24px; 
-    border-left: 1px solid #332811; 
-    padding-left: 24px; 
-    transition: border-color 0.3s ease;
+    margin-bottom: 30px; 
+    border-left: 1px solid #2a251a; 
+    padding-left: 30px; 
+    transition: border-color 0.4s ease;
   }
-  .feature-list li:hover { border-color: #c9a24b; }
+  .feature-list li:hover { border-color: #c5a059; }
   .feature-list h4 { 
-    color: #c9a24b; 
-    font-size: 15px; 
+    color: #e8e4db; 
+    font-size: 16px; 
     font-weight: 500; 
-    margin: 0 0 8px 0; 
-    font-family: 'Playfair Display', serif; 
+    margin: 0 0 10px 0; 
     letter-spacing: 0.5px; 
   }
   .feature-list p { 
-    color: #9a978f; 
-    font-size: 13.5px; 
-    line-height: 1.6; 
+    font-size: 14px; 
+    line-height: 1.7; 
     margin: 0; 
+    font-weight: 300;
   }
 
-  /* BOTTOM CTA: YOUR GOALS, OUR FOCUS */
+  /* BOTTOM CTA */
   .closing {
-    background:#050505;
-    padding: 90px 40px;
-    text-align:left; /* ชิดซ้ายตามรูป Ref */
-    border-top:1px solid #1c1c1e;
+    background: #080808;
+    padding: 120px 0;
+    text-align: left;
+    border-top: 1px solid #1a1a1c;
   }
-  .closing h2 { font-size:36px; font-weight:500; margin:0 0 20px 0; }
-  .closing p.desc { color:#9a978f; font-size:15px; line-height:1.8; max-width:650px; margin:0 0 35px 0; }
-  .closing p.sub-desc { color:#726f68; font-size:13px; line-height:1.8; max-width:650px; margin:35px 0 0 0; }
+  .closing h2 { font-size: 42px; font-weight: 400; margin: 0 0 25px 0; letter-spacing: -0.5px; }
+  .closing p.desc { font-size: 16px; line-height: 1.8; max-width: 600px; margin: 0 0 45px 0; font-weight: 300; }
+  .closing p.sub-desc { color: #666; font-size: 12px; line-height: 1.8; max-width: 600px; margin: 45px 0 0 0; }
 
-  /* FOOTER */
-  .footer { background:#000000; padding: 60px 40px 34px 40px; border-top:1px solid #1c1c1e; }
-  .footer-top { display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; padding-bottom:36px; }
-  .footer h3 { font-size:26px; font-weight:500; line-height:1.35; margin:0 0 22px 0; max-width:260px; }
-  .footer-col p { font-size:13px; color:#a09d95; line-height:2; margin:0; }
-  .footer-logo { text-align:right; }
-  .footer-logo .logo { margin-bottom:10px; }
-  .footer-logo p { font-size:12px; color:#726f68; max-width:220px; margin-left:auto; line-height:1.7; }
-  .footer-bottom { display:flex; justify-content:space-between; padding-top:26px; border-top:1px solid #1c1c1e; font-size:11px; color:#5c5a54; flex-wrap:wrap; gap:10px; }
+  /* CONFIDENTIAL FOOTER */
+  .footer { 
+    background: #030303; 
+    padding: 60px 0; 
+    border-top: 1px solid #111; 
+  }
+  .confidential-note {
+    font-size: 10px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 30px;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #111;
+    padding-top: 30px;
+    font-size: 10px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .footer-logo {
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
 
-  @media (max-width: 760px) {
-    .nav-links { display:none; }
-    .hero { background-position: center 30%; }
-    .hero-inner { max-width:100%; }
-    .hero h1 { font-size:30px; }
-    .stats { flex-wrap:wrap; gap:16px; border-radius:20px; }
-    .stat-sep { display:none; }
-    .goals, .advisory { flex-direction:column; padding: 60px 30px; gap: 30px; }
-    .goals-text, .advisory-text { flex:1 1 auto; }
-    .advisory-image { min-height: 300px; width: 100%; }
-    .closing { padding: 60px 30px; }
-    .footer-top { flex-direction:column; }
-    .footer-logo { text-align:left; }
-    .footer-logo p { margin-left:0; }
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .split-section, .split-section.reverse { flex-direction: column; gap: 40px; padding: 80px 0; }
+    .split-text { flex: 1 1 auto; padding-right: 0; }
+    .split-image { width: 100%; min-height: 350px; }
+    .hero h1 { font-size: 38px; }
+    .stats { flex-direction: column; gap: 30px; }
+    .stat-sep { width: 60px; height: 1px; }
+    .closing h2 { font-size: 34px; }
+    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
   }
 </style>
 </head>
@@ -185,148 +169,142 @@
 
 <div class="wrap">
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="logo cream">◆ BITAZZA</div>
-    <div class="nav-links">
-      <span>PRIVATE CLIENT</span>
-      <span>SERVICES</span>
-      <span>ABOUT</span>
-      <span>CONTACT</span>
-    </div>
-    <div class="nav-right">
-      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn-outline" target="_blank">Get In Touch</a>
-      <div class="dots">⋯</div>
-    </div>
-  </div>
-
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <div class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Invitation Only</div>
-      <h1 class="serif cream">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
-      <p class="serif" style="font-style:italic;">&ldquo;Clarity, access, and complete discretion.&rdquo;</p>
-      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="eyebrow">Invitation Only</div>
+        <h1 class="serif white">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
+        <p class="serif" style="font-style:italic;">&ldquo;Clarity, access, and complete discretion.&rdquo;</p>
+        <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
+      </div>
     </div>
   </div>
 
-  <!-- STATS BAR (Updated Icons) -->
+  <!-- STATS BAR -->
   <div class="stats-wrap">
-    <div class="stats">
-      <div class="stat">
-        <div class="num gold">
-          <!-- Shield Check SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
-          SEC-Licensed
+    <div class="container">
+      <div class="stats">
+        <div class="stat">
+          <div class="num gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            SEC-Licensed
+          </div>
+          <div class="lbl">Digital asset broker in Thailand</div>
         </div>
-        <div class="lbl">Digital asset broker in Thailand</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat">
-        <div class="num gold">
-          <!-- Star Outline SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          7+ Years
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <div class="num gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            7+ Years
+          </div>
+          <div class="lbl">Digital Asset Market Experience</div>
         </div>
-        <div class="lbl">Digital Asset Market Experience</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat">
-        <div class="num gold">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a24b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Private Channels
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <div class="num gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Private Channels
+          </div>
+          <div class="lbl">Direct line · WhatsApp · LINE · Telegram</div>
         </div>
-        <div class="lbl">Direct line · WhatsApp · LINE · Telegram</div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 1: EXECUTION & ADVANTAGE (Text Left, Image Right) -->
-  <div class="goals">
-    <div class="goals-text">
-      <div class="eyebrow">Strategic Planning</div>
-      <h2 class="serif cream">Execution & <br><span class="gold" style="font-style:italic;">Advantage</span></h2>
-      
-      <ul class="feature-list" style="margin-top: 30px;">
-        <li>
-          <h4>Institutional Execution</h4>
-          <p>Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.</p>
-        </li>
-        <li>
-          <h4>Priority Operations</h4>
-          <p>Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.</p>
-        </li>
-      </ul>
-
-    </div>
-    <div class="goals-image">
-      <div class="goals-overlay">
-        <div class="tag">Strategic Planning</div>
-        <div class="title">Bespoke Execution</div>
+  <!-- SECTION 1: EXECUTION (Text Left, Image Right) -->
+  <div class="container">
+    <div class="split-section">
+      <div class="split-text">
+        <div class="eyebrow">Strategic Planning</div>
+        <h2 class="serif white">Execution & <br><span class="gold" style="font-style:italic;">Advantage</span></h2>
+        <ul class="feature-list">
+          <li>
+            <h4>Institutional Execution</h4>
+            <p>Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.</p>
+          </li>
+          <li>
+            <h4>Priority Operations</h4>
+            <p>Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.</p>
+          </li>
+        </ul>
       </div>
+      <div class="split-image chess"></div>
     </div>
   </div>
 
   <!-- SECTION 2: ADVISORY (Image Left, Text Right) -->
-  <div class="advisory">
-    <div class="advisory-image">
-      <!-- รูปภาพ ele.jpg (image.jpeg) แสดงตรงนี้ -->
-    </div>
-    <div class="advisory-text">
-      <div class="eyebrow">What You Receive</div>
-      <h2 class="serif cream">High-Touch Advisory <br><span class="gold" style="font-style:italic;">& Dedicated Team</span></h2>
-      
-      <ul class="feature-list">
-        <li>
-          <h4>Dedicated Advisory Team</h4>
-          <p>Direct access to a specialized desk of experts who know your portfolio, trading history, and execution preferences — no general queues or repeating yourself.</p>
-        </li>
-        <li>
-          <h4>Direct, Private Channels</h4>
-          <p>Immediate access via direct line, WhatsApp, LINE, or Telegram with full confidentiality and discreet consultation options.</p>
-        </li>
-        <li>
-          <h4>Proactive & Priority Service</h4>
-          <p>Faster request handling, internal team coordination, and proactive follow-ups before you have to ask.</p>
-        </li>
-        <li>
-          <h4>Tailored Trading Strategies</h4>
-          <p>Customized execution structures, bespoke risk parameters, and flexible liquidity solutions designed specifically for high-volume trading and complex market strategies.</p>
-        </li>
-      </ul>
+  <div class="container">
+    <div class="split-section reverse">
+      <div class="split-text">
+        <div class="eyebrow">What You Receive</div>
+        <h2 class="serif white">High-Touch Advisory <br><span class="gold" style="font-style:italic;">& Dedicated Team</span></h2>
+        <ul class="feature-list">
+          <li>
+            <h4>Dedicated Advisory Team</h4>
+            <p>Direct access to a specialized desk of experts who know your portfolio, trading history, and execution preferences — no general queues or repeating yourself.</p>
+          </li>
+          <li>
+            <h4>Direct, Private Channels</h4>
+            <p>Immediate access via direct line, WhatsApp, LINE, or Telegram with full confidentiality and discreet consultation options.</p>
+          </li>
+          <li>
+            <h4>Proactive & Priority Service</h4>
+            <p>Faster request handling, internal team coordination, and proactive follow-ups before you have to ask.</p>
+          </li>
+          <li>
+            <h4>Tailored Trading Strategies</h4>
+            <p>Customized execution structures, bespoke risk parameters, and flexible liquidity solutions designed specifically for high-volume trading and complex market strategies.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="split-image ele"></div>
     </div>
   </div>
 
-  <!-- BOTTOM CTA: YOUR GOALS, OUR FOCUS (ชิดซ้ายตามรูป Ref 2) -->
+  <!-- SECTION 3: PERKS (Text Left, Image Right) -->
+  <div class="container">
+    <div class="split-section">
+      <div class="split-text">
+        <div class="eyebrow">Beyond Execution</div>
+        <h2 class="serif white">Exclusive Access <br><span class="gold" style="font-style:italic;">& Perks</span></h2>
+        <ul class="feature-list">
+          <li>
+            <h4>Bespoke Engagement</h4>
+            <p>Named invitations to exclusive Private Client events and thoughtful, personalized updates without automated noise.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="split-image btz"></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
   <div class="closing" id="request">
-    <div class="eyebrow">Our Focus</div>
-    <h2 class="serif cream">Your Goals, <span class="gold" style="font-style:italic;">Our Focus.</span></h2>
-    <p class="desc">
-      Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.
-    </p>
-    <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
-    
-    <p class="sub-desc">
-      Reply directly with your preferred channel and contact details, and your Relationship Manager will be in touch personally.
-    </p>
+    <div class="container">
+      <div class="eyebrow">Our Focus</div>
+      <h2 class="serif white">Your Goals, <span class="gold" style="font-style:italic;">Our Focus.</span></h2>
+      <p class="desc">
+        Request a private introduction. Share what you need support with — our team will review your request and guide the right next step, privately.
+      </p>
+      <a href="https://chiraphats-stack.github.io/vip-form/" class="btn" target="_blank">Request an Introduction</a>
+      <p class="sub-desc">
+        Reply directly with your preferred channel and contact details, and your Relationship Manager will be in touch personally.
+      </p>
+    </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- CONFIDENTIAL FOOTER -->
   <div class="footer">
-    <div class="footer-top">
-      <div class="footer-col">
-        <h3 class="serif cream">Let&rsquo;s Talk<br>Privately</h3>
-        <p>elitethailand@bitazza.com</p>
-        <p>www.bitazza.com</p>
+    <div class="container">
+      <div class="confidential-note">
+        <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.
       </div>
-      <div class="footer-logo">
-        <div class="logo cream">◆ BITAZZA</div>
-        <p>SEC-licensed digital asset broker delivering institutional-grade access with complete discretion.</p>
+      <div class="footer-bottom">
+        <div>This invitation was extended personally and is not transferable.</div>
+        <div class="footer-logo">BITAZZA</div>
+        <div>152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110 &nbsp;|&nbsp; www.bitazza.com</div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Bitazza. All rights reserved.</span>
-      <span>Sent to you as an invited private client.</span>
     </div>
   </div>
 
