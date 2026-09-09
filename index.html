@@ -1,213 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exclusive Access</title>
-  <!-- นำเข้าฟอนต์หรูหราจาก Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: #050505; /* พื้นหลังดำสนิทแบบพรีเมียม */
-      color: #e6e6e6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      font-family: 'Inter', sans-serif;
-    }
-    .container {
-      background: #0d0d0d;
-      border: 1px solid #222;
-      border-radius: 12px;
-      padding: 40px 30px;
-      max-width: 450px;
-      width: 100%;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-    }
-    h2 {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      margin-bottom: 15px;
-      /* โค้ดทำตัวอักษรไล่เฉดสีทอง */
-      background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
-    p.subtitle {
-      text-align: center;
-      color: #888;
-      font-size: 13px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      font-weight: 300;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #d4af37;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-    }
-    input {
-      width: 100%;
-      padding: 14px 16px;
-      background: #141414;
-      border: 1px solid #2a2a2a;
-      border-radius: 6px;
-      color: #fff;
-      font-size: 14px;
-      outline: none;
-      transition: all 0.3s ease;
-    }
-    input::placeholder {
-      color: #444;
-    }
-    input:focus {
-      border-color: #d4af37;
-      box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
-      background: #1a1a1a;
-    }
-    .divider {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      margin: 35px 0 25px;
-    }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      border-bottom: 1px solid #333;
-    }
-    .divider span {
-      padding: 0 15px;
-      color: #e6cca3;
-      font-size: 15px;
-      font-family: 'Playfair Display', serif;
-    }
-    button {
-      width: 100%;
-      padding: 16px;
-      /* ปุ่มไล่เฉดสีทองแบบมีมิติ */
-      background: linear-gradient(90deg, #b38728 0%, #fbf5b7 50%, #b38728 100%);
-      border: none;
-      border-radius: 6px;
-      color: #000;
-      font-weight: 600;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      background: linear-gradient(90deg, #d4af37 0%, #fffbd4 50%, #d4af37 100%);
-      transform: translateY(-1px);
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
-    }
-    button:disabled {
-      background: #333;
-      color: #777;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitazza Elite — Exclusive Access</title>
+<style>
+  /* ดึงฟอนต์หรูหราแบบเดียวกับ V2 มาใช้ */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
+
+  * { box-sizing: border-box; }
+  body, html { 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f4f3ed; /* พื้นหลังสีทราย */
+    font-family: 'Jost', Helvetica, Arial, sans-serif; 
+    color: #5c574f; 
+    -webkit-font-smoothing: antialiased; 
+  }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  /* กล่องฟอร์มตรงกลาง */
+  .wrap { 
+    max-width: 540px; 
+    margin: 60px auto; 
+    padding: 50px 40px; 
+    background: #fdfcf9; /* สีขาวออฟไวท์ */
+    border: 1px solid #ebe6da; 
+    border-radius: 8px; 
+    box-shadow: 0 20px 50px rgba(26,24,20,0.06); 
+  }
+
+  .logo { text-align: center; margin-bottom: 35px; }
+  /* โลโก้แบบดึงพื้นขาวทิ้ง กลมกลืนไปกับพื้นหลัง */
+  .logo img { height: 50px; mix-blend-mode: multiply; }
+
+  .header { text-align: center; margin-bottom: 40px; }
+  .header h1 { font-size: 38px; font-weight: 600; color: #b8923c; margin: 0 0 15px 0; }
+  .header p { font-size: 15px; line-height: 1.8; color: #6a645b; margin: 0; }
+
+  /* สไตล์กล่องกรอกข้อมูล */
+  .form-group { margin-bottom: 25px; }
+  .form-group label { 
+    display: block; 
+    font-size: 11px; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    color: #b8923c; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+  }
+  .form-group input { 
+    width: 100%; 
+    padding: 16px 20px; 
+    font-family: 'Jost', sans-serif; 
+    font-size: 14px; 
+    color: #1a1814; 
+    background: #ffffff; 
+    border: 1px solid #d1c8b4; 
+    border-radius: 2px; 
+    transition: border-color 0.3s ease; 
+  }
+  .form-group input:focus { border-color: #b8923c; outline: none; }
+  .form-group input::placeholder { color: #a8a396; }
+
+  /* เส้นคั่นกลางแบบหรูหรา */
+  .divider { 
+    display: flex; 
+    align-items: center; 
+    text-align: center; 
+    margin: 40px 0 25px 0; 
+  }
+  .divider::before, .divider::after { 
+    content: ''; 
+    flex: 1; 
+    border-bottom: 1px solid #d1c8b4; 
+  }
+  .divider span { 
+    padding: 0 20px; 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 22px; 
+    font-weight: 600; 
+    color: #1a1814; 
+  }
+
+  /* ปุ่มเลือกช่องทางติดต่อ (ดีไซน์ใหม่) */
+  .radio-group { 
+    display: flex; 
+    gap: 12px; 
+    flex-wrap: wrap; 
+  }
+  .radio-label { 
+    flex: 1; 
+    min-width: 110px; 
+    text-align: center; 
+  }
+  .radio-label input { display: none; }
+  .radio-label span { 
+    display: block; 
+    padding: 14px 10px; 
+    border: 1px solid #d1c8b4; 
+    border-radius: 2px; 
+    font-size: 13px; 
+    font-weight: 500;
+    color: #6a645b; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    background: #ffffff; 
+  }
+  /* พอกดเลือกแล้วจะกลายเป็นสีทอง */
+  .radio-label input:checked + span { 
+    background: #b8923c; 
+    color: #ffffff; 
+    border-color: #b8923c; 
+  }
+  .radio-label span:hover { border-color: #b8923c; }
+
+  /* ปุ่มกด Submit */
+  .btn { 
+    display: block; 
+    width: 100%; 
+    background: #1a1814; 
+    color: #ffffff !important; 
+    font-size: 12px; 
+    letter-spacing: 2.5px; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    padding: 20px 0; 
+    border: none; 
+    border-radius: 2px; 
+    cursor: pointer; 
+    transition: all 0.4s ease; 
+    text-align: center; 
+    text-decoration: none; 
+    margin-top: 40px;
+  }
+  .btn:hover { 
+    background: #b8923c; 
+    transform: translateY(-2px); 
+    box-shadow: 0 10px 20px rgba(184, 146, 60, 0.25); 
+  }
+
+  .back-link { 
+    display: block; 
+    text-align: center; 
+    margin-top: 30px; 
+    font-size: 11px; 
+    letter-spacing: 1px; 
+    color: #8a8377; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+  }
+  .back-link:hover { color: #b8923c; }
+
+  /* สำหรับมือถือ */
+  @media (max-width: 600px) {
+    .wrap { margin: 20px; padding: 40px 24px; }
+    .header h1 { font-size: 32px; }
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <h2>Exclusive Access</h2>
-    <p class="subtitle">
-      Please provide your details below to initiate your private request.<br><br>
-      Our executive team will contact you shortly.
-    </p>
-
-    <form id="goldForm">
-      <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" name="entry.1855821471" placeholder="Enter your full name" required>
-      </div>
-
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="entry.1951851605" placeholder="Enter your email" required>
-      </div>
-
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" name="entry.1554064553" placeholder="+66 8X XXX XXXX" required>
-      </div>
-
-      <div class="divider">
-        <span>Preferred Contact Channel</span>
-      </div>
-
-      <div class="form-group">
-        <label>Line ID (Optional)</label>
-        <input type="text" name="entry.565526970" placeholder="Your Line ID">
-      </div>
-
-      <div class="form-group">
-        <label>Telegram (Optional)</label>
-        <input type="text" name="entry.390137682" placeholder="@username">
-      </div>
-
-      <div class="form-group">
-        <label>WhatsApp (Optional)</label>
-        <input type="text" name="entry.786941682" placeholder="WhatsApp Number">
-      </div>
-
-      <button type="submit" id="submitBtn">Submit Private Request</button>
-    </form>
+<div class="wrap">
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite">
   </div>
 
-  <script>
-    const form = document.getElementById('goldForm');
-    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdkH60UvWyGf6oIuiRbqQm-2TklefgJbjv3cxLkYuMIyFiXxQ/formResponse';
+  <div class="header">
+    <h1 class="serif">Exclusive Access</h1>
+    <p>Please provide your details below to initiate your private request.<br>Our executive team will contact you shortly.</p>
+  </div>
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const btn = document.getElementById("submitBtn");
-      btn.innerText = "PROCESSING...";
-      btn.disabled = true;
+  <form action="#" method="POST">
+    
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your full name" required>
+    </div>
 
-      const formData = new FormData(form);
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter your email" required>
+    </div>
 
-      fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
-      }).then(() => {
-        alert("Your private request has been submitted successfully.");
-        form.reset();
-        btn.innerText = "SUBMIT PRIVATE REQUEST";
-        btn.disabled = false;
-      }).catch(error => {
-        alert("Error submitting request. Please try again.");
-        btn.innerText = "SUBMIT PRIVATE REQUEST";
-        btn.disabled = false;
-      });
-    });
-  </script>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+66 8X XXX XXXX" required>
+    </div>
+
+    <div class="divider">
+      <span>Preferred Contact Channel</span>
+    </div>
+
+    <!-- เปลี่ยนเป็นปุ่มกดเลือกช่องทางที่ดูพรีเมียมขึ้น -->
+    <div class="radio-group">
+      <label class="radio-label">
+        <input type="radio" name="channel" value="Line" checked>
+        <span>LINE</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="channel" value="WhatsApp">
+        <span>WhatsApp</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="channel" value="Telegram">
+        <span>Telegram</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="channel" value="Direct Call">
+        <span>Direct Call</span>
+      </label>
+    </div>
+
+    <button type="submit" class="btn">Submit Request</button>
+  </form>
+
+  <a href="https://bitazza-private.github.io/vip-chanel/v2.html" class="back-link">← Return to Main Page</a>
+
+</div>
 
 </body>
 </html>
