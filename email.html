@@ -3,208 +3,271 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitazza Elite: Exclusive Invitation</title>
+<title>Bitazza Elite — Exclusive Access</title>
 <style>
-    /* Reset CSS สำหรับ Email */
-    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
-    table { border-collapse: collapse !important; }
-    body { background-color: #f4f3ed; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  /* ดึงฟอนต์หรูหราแบบเดียวกับ V2 มาใช้ */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
+
+  * { box-sizing: border-box; }
+  body, html { 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f4f3ed; 
+    font-family: 'Jost', Helvetica, Arial, sans-serif; 
+    color: #5c574f; 
+    -webkit-font-smoothing: antialiased; 
+  }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  /* กล่องฟอร์มตรงกลาง */
+  .wrap { 
+    max-width: 540px; 
+    margin: 60px auto; 
+    padding: 50px 40px; 
+    background: #fdfcf9; 
+    border: 1px solid #ebe6da; 
+    border-radius: 8px; 
+    box-shadow: 0 20px 50px rgba(26,24,20,0.06); 
+  }
+
+  .logo { text-align: center; margin-bottom: 35px; }
+  .logo img { height: 50px; mix-blend-mode: multiply; }
+
+  .header { text-align: center; margin-bottom: 40px; }
+  .header h1 { font-size: 38px; font-weight: 600; color: #b8923c; margin: 0 0 15px 0; }
+  .header p { font-size: 15px; line-height: 1.8; color: #6a645b; margin: 0; }
+
+  /* สไตล์กล่องกรอกข้อมูล */
+  .form-group { margin-bottom: 25px; }
+  .form-group label { 
+    display: block; 
+    font-size: 11px; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    color: #b8923c; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+  }
+  .form-group input { 
+    width: 100%; 
+    padding: 16px 20px; 
+    font-family: 'Jost', sans-serif; 
+    font-size: 14px; 
+    color: #1a1814; 
+    background: #ffffff; 
+    border: 1px solid #d1c8b4; 
+    border-radius: 2px; 
+    transition: border-color 0.3s ease; 
+  }
+  .form-group input:focus { border-color: #b8923c; outline: none; }
+  .form-group input::placeholder { color: #a8a396; }
+
+  /* เส้นคั่นกลางแบบหรูหรา */
+  .divider { 
+    display: flex; 
+    align-items: center; 
+    text-align: center; 
+    margin: 40px 0 30px 0; 
+  }
+  .divider::before, .divider::after { 
+    content: ''; 
+    flex: 1; 
+    border-bottom: 1px solid #d1c8b4; 
+  }
+  .divider span { 
+    padding: 0 20px; 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 22px; 
+    font-weight: 600; 
+    color: #1a1814; 
+  }
+
+  /* ปุ่มเลือกช่องทางติดต่อ (Grid 3 คอลัมน์) */
+  .channel-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 12px; 
+    margin-bottom: 20px;
+  }
+  
+  /* ให้ปุ่ม Direct call กินพื้นที่เต็ม 3 ช่อง */
+  .full-width { grid-column: span 3; }
+
+  .checkbox-label { text-align: center; }
+  .checkbox-label input { display: none; }
+  .checkbox-label span { 
+    display: block; 
+    padding: 16px 10px; 
+    border: 1px solid #d1c8b4; 
+    border-radius: 2px; 
+    font-size: 13px; 
+    font-weight: 500;
+    color: #6a645b; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    background: #ffffff; 
+  }
+  
+  /* พอกดเลือกแล้วจะกลายเป็นสีทอง */
+  .checkbox-label input:checked + span { 
+    background: #b8923c; 
+    color: #ffffff; 
+    border-color: #b8923c; 
+  }
+  .checkbox-label span:hover { border-color: #b8923c; }
+
+  /* ช่องกรอกข้อมูลที่ซ่อนอยู่ (จะโผล่มาเมื่อกดติ๊ก) */
+  .dynamic-input { 
+    display: none; 
+    margin-top: 15px; 
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ปุ่มกด Submit */
+  .btn { 
+    display: block; 
+    width: 100%; 
+    background: #1a1814; 
+    color: #ffffff !important; 
+    font-size: 12px; 
+    letter-spacing: 2.5px; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    padding: 20px 0; 
+    border: none; 
+    border-radius: 2px; 
+    cursor: pointer; 
+    transition: all 0.4s ease; 
+    text-align: center; 
+    text-decoration: none; 
+    margin-top: 40px;
+  }
+  .btn:hover { 
+    background: #b8923c; 
+    transform: translateY(-2px); 
+    box-shadow: 0 10px 20px rgba(184, 146, 60, 0.25); 
+  }
+
+  .back-link { 
+    display: block; 
+    text-align: center; 
+    margin-top: 30px; 
+    font-size: 11px; 
+    letter-spacing: 1px; 
+    color: #8a8377; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+  }
+  .back-link:hover { color: #b8923c; }
+
+  /* สำหรับมือถือ */
+  @media (max-width: 600px) {
+    .wrap { margin: 20px; padding: 40px 24px; }
+    .header h1 { font-size: 32px; }
+    .channel-grid { grid-template-columns: 1fr; } /* มือถือให้เรียงเป็นแนวตั้ง */
+    .full-width { grid-column: span 1; }
+  }
 </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f4f3ed;">
+<body>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f4f3ed; padding: 40px 15px;">
-    <tr>
-        <td align="center">
-            
-            <!-- MAIN WRAPPER -->
-            <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e1ddce; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                
-                <!-- 1. HEADER (Logo) -->
-                <tr>
-                    <td align="center" style="padding: 40px 40px 30px 40px; background-color: #ffffff;">
-                        <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" width="100" style="display: block; border: 0;">
-                        <p style="margin: 20px 0 0 0; font-size: 10px; letter-spacing: 3px; color: #b8923c; text-transform: uppercase; font-weight: bold;">
-                            By Invitation Only
-                        </p>
-                    </td>
-                </tr>
+<div class="wrap">
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite">
+  </div>
 
-                <!-- 2. HERO IMAGE -->
-                <tr>
-                    <td align="center" style="padding: 0 0 30px 0;">
-                        <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg" alt="Private Client Channel" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
-                    </td>
-                </tr>
+  <div class="header">
+    <h1 class="serif">Exclusive Access</h1>
+    <p>Please provide your details below to initiate your private request.<br>Our executive team will contact you shortly.</p>
+  </div>
 
-                <!-- 3. TITLE & INTRO -->
-                <tr>
-                    <td align="center" style="padding: 0 40px 30px 40px;">
-                        <h1 style="margin: 0 0 15px 0; font-size: 32px; font-weight: normal; color: #1a1814; font-family: Georgia, serif; line-height: 1.2;">
-                            Welcome to the<br>
-                            <span style="font-style: italic; color: #b8923c;">Private Client Channel</span>
-                        </h1>
-                        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b; max-width: 450px;">
-                            A private channel for a select group of investors and high-net-worth clients who seek clarity, access, and an edge in the digital asset market.
-                        </p>
-                    </td>
-                </tr>
+  <form action="#" method="POST">
+    
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your full name" required>
+    </div>
 
-                <!-- 4. TRUST BADGES -->
-                <tr>
-                    <td align="center" style="padding: 0 40px 40px 40px;">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px;">
-                            <tr>
-                                <td align="center" width="50%" style="padding: 20px 15px; border-right: 1px solid #ebe6da; border-bottom: 1px solid #ebe6da;">
-                                    <strong style="font-size: 13px; color: #1a1814;">✓ SEC-Licensed</strong><br>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Broker in Thailand</span>
-                                </td>
-                                <td align="center" width="50%" style="padding: 20px 15px; border-bottom: 1px solid #ebe6da;">
-                                    <strong style="font-size: 13px; color: #1a1814;">1M+ Users</strong><br>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Trust Us</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center" width="50%" style="padding: 20px 15px; border-right: 1px solid #ebe6da;">
-                                    <strong style="font-size: 13px; color: #1a1814;">Top-Tier Security</strong><br>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Bank-Grade Compliance</span>
-                                </td>
-                                <td align="center" width="50%" style="padding: 20px 15px;">
-                                    <strong style="font-size: 13px; color: #1a1814;">24/7 Support</strong><br>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Dedicated to Success</span>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter your email" required>
+    </div>
 
-                <!-- DIVIDER -->
-                <tr>
-                    <td align="center" style="padding: 0 40px;">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr><td style="border-top: 1px solid #e1ddce; height: 1px; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
-                        </table>
-                    </td>
-                </tr>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+66 8X XXX XXXX" required>
+    </div>
 
-                <!-- 5. CORE PILLARS -->
-                <tr>
-                    <td align="center" style="padding: 40px 40px;">
-                        <p style="margin: 0 0 35px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase; text-align: center; font-weight: bold;">
-                            What You Will Receive
-                        </p>
+    <div class="divider">
+      <span>Preferred Contact Channel</span>
+    </div>
 
-                        <!-- แถวที่ 1 -->
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
-                            <tr>
-                                <td width="45%" valign="middle">
-                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg" alt="Dedicated Support" width="100%" style="border-radius: 6px; display: block; border: 0;">
-                                </td>
-                                <td width="5%"></td>
-                                <td width="50%" valign="middle">
-                                    <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">VIP Access</h3>
-                                    <p style="margin: 0 0 10px 0; font-size: 13px; line-height: 1.6; color: #6a645b;">A more direct relationship with our team via LINE, WhatsApp, or Telegram.</p>
-                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Clear, transparent, and direct communication.</p>
-                                </td>
-                            </tr>
-                        </table>
+    <!-- เปลี่ยนเป็น Checkbox ให้เลือกได้มากกว่า 1 อัน -->
+    <div class="channel-grid">
+      <label class="checkbox-label">
+        <input type="checkbox" name="channels" value="Line" id="cb-line" onchange="toggleInput('line')">
+        <span>LINE</span>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="channels" value="WhatsApp" id="cb-whatsapp" onchange="toggleInput('whatsapp')">
+        <span>WhatsApp</span>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="channels" value="Telegram" id="cb-telegram" onchange="toggleInput('telegram')">
+        <span>Telegram</span>
+      </label>
+      <label class="checkbox-label full-width">
+        <input type="checkbox" name="channels" value="Direct Call">
+        <span>Direct Call</span>
+      </label>
+    </div>
 
-                        <!-- แถวที่ 2 -->
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td width="50%" valign="middle">
-                                    <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Execution & Advantage</h3>
-                                    <p style="margin: 0 0 10px 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Execution you can count on, when it matters most.</p>
-                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Competitive OTC pricing, deep liquidity access, and tailored solutions.</p>
-                                </td>
-                                <td width="5%"></td>
-                                <td width="45%" valign="middle">
-                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Execution" width="100%" style="border-radius: 6px; display: block; border: 0;">
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
+    <!-- โซนช่องกรอก ID ที่ซ่อนอยู่ จะเด้งขึ้นมาเมื่อติ๊ก Checkbox -->
+    <div id="line-input-group" class="form-group dynamic-input">
+      <label>LINE ID</label>
+      <input type="text" name="line_id" placeholder="Enter your LINE ID">
+    </div>
 
-                <!-- 6. HIGHLIGHT BOX & 2 CTA OPTIONS -->
-                <tr>
-                    <td align="center" style="padding: 0 40px 40px 40px;">
-                        <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; padding: 35px 25px;">
-                            <h2 style="margin: 0 0 15px 0; font-size: 22px; font-weight: normal; color: #1a1814; font-family: Georgia, serif;">
-                                Experience Service<br><span style="color: #b8923c; font-style: italic;">Designed Around You</span>
-                            </h2>
-                            <p style="margin: 0 0 25px 0; font-size: 13px; line-height: 1.8; color: #6a645b;">
-                                Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.
-                            </p>
-                            
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <!-- Option 1: ดูรายละเอียดเพิ่มเติม (เด้งไป v2.html) -->
-                                <tr>
-                                    <td align="center">
-                                        <a href="https://bitazza-private.github.io/vip-chanel/v2.html" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
-                                            Discover Full Privileges
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!-- Option 2: กรอกข้อมูล (เด้งไปหน้าฟอร์ม index.html) -->
-                                <tr>
-                                    <td align="center" style="padding-top: 15px;">
-                                        <a href="https://bitazza-private.github.io/vip-chanel/" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
-                                            Request an Introduction
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
+    <div id="whatsapp-input-group" class="form-group dynamic-input">
+      <label>WhatsApp Number</label>
+      <input type="tel" name="whatsapp_number" placeholder="Enter your WhatsApp number (e.g. +66...)">
+    </div>
 
-                        </div>
-                    </td>
-                </tr>
+    <div id="telegram-input-group" class="form-group dynamic-input">
+      <label>Telegram Username</label>
+      <input type="text" name="telegram_user" placeholder="Enter your Telegram username (@username)">
+    </div>
 
-                <!-- 7. SIGN-OFF SECTION -->
-                <tr>
-                    <td align="left" style="padding: 0 40px 40px 40px;">
-                        <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
-                            Yours sincerely,<br>
-                            <strong style="color: #1a1814;">Bitazza Elite Thailand</strong><br>
-                            <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; <a href="https://www.bitazza.com" target="_blank" style="color: #b8923c; text-decoration: none;">www.bitazza.com</a>
-                        </p>
-                    </td>
-                </tr>
+    <button type="submit" class="btn">Submit Request</button>
+  </form>
 
-            </table>
+  <a href="https://bitazza-private.github.io/vip-chanel/v2.html" class="back-link">← Return to Main Page</a>
 
-            <!-- 8. FOOTER WRAPPER -->
-            <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px;">
-                <tr>
-                    <td align="center" style="padding: 30px 20px;">
-                        
-                        <!-- Social Text Links -->
-                        <p style="margin: 0 0 20px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase;">
-                            <a href="https://www.facebook.com/bitazza" style="color: #6a645b; text-decoration: none; font-weight: bold;">FB</a> &nbsp;&middot;&nbsp; 
-                            <a href="https://www.linkedin.com/company/bitazza" style="color: #6a645b; text-decoration: none; font-weight: bold;">IN</a> &nbsp;&middot;&nbsp; 
-                            <a href="https://line.me/ti/g2/XNIJmH98kyHBdlN0GZVMBA" style="color: #6a645b; text-decoration: none; font-weight: bold;">LINE</a> &nbsp;&middot;&nbsp; 
-                            <a href="https://x.com/bitazzaofficial" style="color: #6a645b; text-decoration: none; font-weight: bold;">X</a> &nbsp;&middot;&nbsp; 
-                            <a href="https://coinmarketcap.com/exchanges/bitazza/" style="color: #6a645b; text-decoration: none; font-weight: bold;">CMC</a> &nbsp;&middot;&nbsp; 
-                            <a href="https://www.coingecko.com/en/exchanges/bitazza" style="color: #6a645b; text-decoration: none; font-weight: bold;">CG</a>
-                        </p>
+</div>
 
-                        <p style="margin: 0 0 10px 0; font-size: 11px; line-height: 1.6; color: #8a8377; text-align: justify;">
-                            <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law.
-                        </p>
-                        
-                        <p style="margin: 0; font-size: 10px; line-height: 1.8; color: #8a8377; text-transform: uppercase; letter-spacing: 1px;">
-                            This invitation was extended personally and is not transferable.<br>
-                            152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110
-                        </p>
-                    </td>
-                </tr>
-            </table>
-
-        </td>
-    </tr>
-</table>
+<!-- สคริปต์ JavaScript สำหรับซ่อน/โชว์ช่องกรอกข้อมูล -->
+<script>
+  function toggleInput(channel) {
+    const inputDiv = document.getElementById(channel + '-input-group');
+    const checkbox = document.getElementById('cb-' + channel);
+    
+    // ถ้ามีการติ๊กเลือก ให้แสดงช่องกรอกข้อมูล และบังคับให้ต้องกรอก (required)
+    if(checkbox.checked) {
+      inputDiv.style.display = 'block';
+      inputDiv.querySelector('input').required = true;
+    } else {
+      // ถ้าเอาติ๊กออก ให้ซ่อนช่อง ยกเลิกการบังคับกรอก และลบข้อความทิ้ง
+      inputDiv.style.display = 'none';
+      inputDiv.querySelector('input').required = false;
+      inputDiv.querySelector('input').value = ''; 
+    }
+  }
+</script>
 
 </body>
 </html>
