@@ -12,7 +12,7 @@
   body, html { 
     margin: 0; 
     padding: 0; 
-    background-color: #f4f3ed; /* พื้นหลังสีทราย */
+    background-color: #f4f3ed; 
     font-family: 'Jost', Helvetica, Arial, sans-serif; 
     color: #5c574f; 
     -webkit-font-smoothing: antialiased; 
@@ -24,14 +24,13 @@
     max-width: 540px; 
     margin: 60px auto; 
     padding: 50px 40px; 
-    background: #fdfcf9; /* สีขาวออฟไวท์ */
+    background: #fdfcf9; 
     border: 1px solid #ebe6da; 
     border-radius: 8px; 
     box-shadow: 0 20px 50px rgba(26,24,20,0.06); 
   }
 
   .logo { text-align: center; margin-bottom: 35px; }
-  /* โลโก้แบบดึงพื้นขาวทิ้ง กลมกลืนไปกับพื้นหลัง */
   .logo img { height: 50px; mix-blend-mode: multiply; }
 
   .header { text-align: center; margin-bottom: 40px; }
@@ -68,7 +67,7 @@
     display: flex; 
     align-items: center; 
     text-align: center; 
-    margin: 40px 0 25px 0; 
+    margin: 40px 0 30px 0; 
   }
   .divider::before, .divider::after { 
     content: ''; 
@@ -83,21 +82,22 @@
     color: #1a1814; 
   }
 
-  /* ปุ่มเลือกช่องทางติดต่อ (ดีไซน์ใหม่) */
-  .radio-group { 
-    display: flex; 
+  /* ปุ่มเลือกช่องทางติดต่อ (Grid 3 คอลัมน์) */
+  .channel-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 12px; 
-    flex-wrap: wrap; 
+    margin-bottom: 20px;
   }
-  .radio-label { 
-    flex: 1; 
-    min-width: 110px; 
-    text-align: center; 
-  }
-  .radio-label input { display: none; }
-  .radio-label span { 
+  
+  /* ให้ปุ่ม Direct call กินพื้นที่เต็ม 3 ช่อง */
+  .full-width { grid-column: span 3; }
+
+  .checkbox-label { text-align: center; }
+  .checkbox-label input { display: none; }
+  .checkbox-label span { 
     display: block; 
-    padding: 14px 10px; 
+    padding: 16px 10px; 
     border: 1px solid #d1c8b4; 
     border-radius: 2px; 
     font-size: 13px; 
@@ -107,13 +107,25 @@
     transition: all 0.3s ease; 
     background: #ffffff; 
   }
+  
   /* พอกดเลือกแล้วจะกลายเป็นสีทอง */
-  .radio-label input:checked + span { 
+  .checkbox-label input:checked + span { 
     background: #b8923c; 
     color: #ffffff; 
     border-color: #b8923c; 
   }
-  .radio-label span:hover { border-color: #b8923c; }
+  .checkbox-label span:hover { border-color: #b8923c; }
+
+  /* ช่องกรอกข้อมูลที่ซ่อนอยู่ (จะโผล่มาเมื่อกดติ๊ก) */
+  .dynamic-input { 
+    display: none; 
+    margin-top: 15px; 
+    animation: fadeIn 0.4s ease forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
   /* ปุ่มกด Submit */
   .btn { 
@@ -157,6 +169,8 @@
   @media (max-width: 600px) {
     .wrap { margin: 20px; padding: 40px 24px; }
     .header h1 { font-size: 32px; }
+    .channel-grid { grid-template-columns: 1fr; } /* มือถือให้เรียงเป็นแนวตั้ง */
+    .full-width { grid-column: span 1; }
   }
 </style>
 </head>
@@ -193,24 +207,40 @@
       <span>Preferred Contact Channel</span>
     </div>
 
-    <!-- เปลี่ยนเป็นปุ่มกดเลือกช่องทางที่ดูพรีเมียมขึ้น -->
-    <div class="radio-group">
-      <label class="radio-label">
-        <input type="radio" name="channel" value="Line" checked>
+    <!-- เปลี่ยนเป็น Checkbox ให้เลือกได้มากกว่า 1 อัน -->
+    <div class="channel-grid">
+      <label class="checkbox-label">
+        <input type="checkbox" name="channels" value="Line" id="cb-line" onchange="toggleInput('line')">
         <span>LINE</span>
       </label>
-      <label class="radio-label">
-        <input type="radio" name="channel" value="WhatsApp">
+      <label class="checkbox-label">
+        <input type="checkbox" name="channels" value="WhatsApp" id="cb-whatsapp" onchange="toggleInput('whatsapp')">
         <span>WhatsApp</span>
       </label>
-      <label class="radio-label">
-        <input type="radio" name="channel" value="Telegram">
+      <label class="checkbox-label">
+        <input type="checkbox" name="channels" value="Telegram" id="cb-telegram" onchange="toggleInput('telegram')">
         <span>Telegram</span>
       </label>
-      <label class="radio-label">
-        <input type="radio" name="channel" value="Direct Call">
+      <label class="checkbox-label full-width">
+        <input type="checkbox" name="channels" value="Direct Call">
         <span>Direct Call</span>
       </label>
+    </div>
+
+    <!-- โซนช่องกรอก ID ที่ซ่อนอยู่ จะเด้งขึ้นมาเมื่อติ๊ก Checkbox -->
+    <div id="line-input-group" class="form-group dynamic-input">
+      <label>LINE ID</label>
+      <input type="text" name="line_id" placeholder="Enter your LINE ID">
+    </div>
+
+    <div id="whatsapp-input-group" class="form-group dynamic-input">
+      <label>WhatsApp Number</label>
+      <input type="tel" name="whatsapp_number" placeholder="Enter your WhatsApp number (e.g. +66...)">
+    </div>
+
+    <div id="telegram-input-group" class="form-group dynamic-input">
+      <label>Telegram Username</label>
+      <input type="text" name="telegram_user" placeholder="Enter your Telegram username (@username)">
     </div>
 
     <button type="submit" class="btn">Submit Request</button>
@@ -219,6 +249,25 @@
   <a href="https://bitazza-private.github.io/vip-chanel/v2.html" class="back-link">← Return to Main Page</a>
 
 </div>
+
+<!-- สคริปต์ JavaScript สำหรับซ่อน/โชว์ช่องกรอกข้อมูล -->
+<script>
+  function toggleInput(channel) {
+    const inputDiv = document.getElementById(channel + '-input-group');
+    const checkbox = document.getElementById('cb-' + channel);
+    
+    // ถ้ามีการติ๊กเลือก ให้แสดงช่องกรอกข้อมูล และบังคับให้ต้องกรอก (required)
+    if(checkbox.checked) {
+      inputDiv.style.display = 'block';
+      inputDiv.querySelector('input').required = true;
+    } else {
+      // ถ้าเอาติ๊กออก ให้ซ่อนช่อง ยกเลิกการบังคับกรอก และลบข้อความทิ้ง
+      inputDiv.style.display = 'none';
+      inputDiv.querySelector('input').required = false;
+      inputDiv.querySelector('input').value = ''; 
+    }
+  }
+</script>
 
 </body>
 </html>
