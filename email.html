@@ -10,7 +10,7 @@
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
     table { border-collapse: collapse !important; }
-    body { background-color: #f4f3ed; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    body { background-color: #f4f3ed; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
     
     /* สไตล์สำหรับพับคอลัมน์ในมือถือ */
     @media only screen and (max-width: 600px) {
@@ -42,41 +42,46 @@
                     </td>
                 </tr>
 
-                <!-- 2. TITLE & INTRO (อัปเดตคำเชิญใหม่) -->
+                <!-- 2. HERO IMAGE -->
                 <tr>
-                    <td align="center" style="padding: 0 40px 30px 40px;" class="mobile-padding">
+                    <td align="center" style="padding: 0 0 30px 0;">
+                        <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg" alt="Private Client Channel" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
+                    </td>
+                </tr>
+
+                <!-- 3. TITLE & INTRO -->
+                <tr>
+                    <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
                         <h1 style="margin: 0 0 15px 0; font-size: 32px; font-weight: normal; color: #1a1814; font-family: Georgia, serif; line-height: 1.2;">
                             Welcome to Your<br>
                             <span style="font-style: italic; color: #b8923c;">Exclusive Invitation</span>
                         </h1>
-                        <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #6a645b; max-width: 450px;">
-                            An invitation to join a select group of investors and high-net-worth clients who seek clarity, access, and an edge in the digital asset market.
+                        <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #6a645b; max-width: 480px;">
+                            An invitation to an exclusive client circle—designed to empower your investments with clear communication, direct expert access, and a decisive edge in digital assets.
                         </p>
                     </td>
                 </tr>
 
-                <!-- 3. TRUST BADGES (ดีไซน์ Grid 4 ช่องแบบใหม่) -->
+                <!-- 4. 3 PILLARS (Priority, Precision, Privilege) -->
                 <tr>
                     <td align="center" style="padding: 0 40px 30px 40px;" class="mobile-padding">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #fdfcf9; border: 1px solid #ebe6da;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td align="center" width="50%" class="mobile-border-right" style="padding: 25px 15px; border-right: 1px solid #ebe6da; border-bottom: 1px solid #ebe6da;">
-                                    <strong style="font-size: 14px; color: #1a1814; display: block; margin-bottom: 6px;">✓ SEC-Licensed</strong>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Broker in Thailand</span>
-                                </td>
-                                <td align="center" width="50%" style="padding: 25px 15px; border-bottom: 1px solid #ebe6da;">
-                                    <strong style="font-size: 14px; color: #1a1814; display: block; margin-bottom: 6px;">1M+ Users</strong>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Trust Us</span>
+                                <td align="center" style="padding-bottom: 20px;">
+                                    <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">Priority</strong>
+                                    <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">A direct line to your dedicated Relationship Manager with fast-tracked operational support.</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" width="50%" class="mobile-border-right" style="padding: 25px 15px; border-right: 1px solid #ebe6da;">
-                                    <strong style="font-size: 14px; color: #1a1814; display: block; margin-bottom: 6px;">Top-Tier Security</strong>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Bank-Grade Compliance</span>
+                                <td align="center" style="padding-bottom: 20px;">
+                                    <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">Precision</strong>
+                                    <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">Clear, transparent communication paired with bespoke execution strategies and deep liquidity.</span>
                                 </td>
-                                <td align="center" width="50%" style="padding: 25px 15px;">
-                                    <strong style="font-size: 14px; color: #1a1814; display: block; margin-bottom: 6px;">24/7 Support</strong>
-                                    <span style="font-size: 10px; color: #8a8377; text-transform: uppercase; letter-spacing: 0.5px;">Dedicated to Success</span>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding-bottom: 10px;">
+                                    <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">Privilege</strong>
+                                    <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">Exclusive access to private client events, tailored perks, and noise-free updates.</span>
                                 </td>
                             </tr>
                         </table>
@@ -92,14 +97,14 @@
                     </td>
                 </tr>
 
-                <!-- 4. WHAT YOU WILL RECEIVE (สลับซ้าย-ขวา) -->
+                <!-- 5. WHAT YOU WILL RECEIVE (สลับซ้าย-ขวา) -->
                 <tr>
                     <td align="center" style="padding: 40px 40px 10px 40px;" class="mobile-padding">
                         <p style="margin: 0 0 35px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase; text-align: center; font-weight: bold;">
                             What You Will Receive
                         </p>
 
-                        <!-- แถวที่ 1 -->
+                        <!-- Block 1: High-Touch Advisory -->
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
                             <tr>
                                 <td class="stack-column" width="45%" valign="middle">
@@ -108,12 +113,12 @@
                                 <td class="hide-mobile" width="5%"></td>
                                 <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
                                     <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">High-Touch Advisory</h3>
-                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Direct access to specialized experts who understand your portfolio. Enjoy proactive service and tailored trading strategies via your preferred private channels.</p>
+                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Direct access to a specialized desk of experts who know your portfolio and execution preferences. Enjoy proactive service, custom trading strategies, and discreet communication via your preferred private channels.</p>
                                 </td>
                             </tr>
                         </table>
 
-                        <!-- แถวที่ 2 -->
+                        <!-- Block 2: Execution Advantage -->
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 40px;">
                             <tr>
                                 <td class="stack-column" width="45%" valign="middle" dir="ltr">
@@ -122,12 +127,12 @@
                                 <td class="hide-mobile" width="5%"></td>
                                 <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
                                     <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Execution Advantage</h3>
-                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Institutional-grade execution offering competitive OTC pricing, deep liquidity access, and fast-tracked priority operations built for sophisticated investors.</p>
+                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Institutional-grade execution engineered for high-volume traders. Access competitive OTC pricing, deep liquidity pools, and fast-tracked priority operations for seamless, large-order settlements.</p>
                                 </td>
                             </tr>
                         </table>
 
-                        <!-- แถวที่ 3 -->
+                        <!-- Block 3: Exclusive Access -->
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
                             <tr>
                                 <td class="stack-column" width="45%" valign="middle">
@@ -136,7 +141,7 @@
                                 <td class="hide-mobile" width="5%"></td>
                                 <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
                                     <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Exclusive Access</h3>
-                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Experience bespoke engagement with named invitations to private events and thoughtful, personalized market updates without the automated noise.</p>
+                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Bespoke engagement beyond trading. Receive named invitations to private client events and thoughtful, personalized updates tailored to your goals—completely free from automated noise.</p>
                                 </td>
                             </tr>
                         </table>
@@ -144,7 +149,7 @@
                     </td>
                 </tr>
 
-                <!-- 5. HIGHLIGHT BOX & 2 CTA OPTIONS -->
+                <!-- 6. HIGHLIGHT BOX & CTA -->
                 <tr>
                     <td align="center" style="padding: 0 40px 40px 40px;" class="mobile-padding">
                         <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; padding: 35px 25px;">
@@ -158,15 +163,15 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td align="center">
-                                        <a href="https://bitazza-private.github.io/vip-chanel/v2.html" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
+                                        <a href="https://bitazza-private.github.io/vip-chanel/invite.html" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
                                             Discover Full Privileges
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center" style="padding-top: 15px;">
-                                        <a href="https://bitazza-private.github.io/vip-chanel/#request" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
-                                            Request an Introduction
+                                        <a href="https://bitazza-private.github.io/vip-chanel/invite.html#request" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
+                                            Accept Invitation
                                         </a>
                                     </td>
                                 </tr>
@@ -176,7 +181,7 @@
                     </td>
                 </tr>
 
-                <!-- 6. SIGN-OFF SECTION -->
+                <!-- 7. SIGN-OFF SECTION -->
                 <tr>
                     <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
                         <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
@@ -189,7 +194,7 @@
 
             </table>
 
-            <!-- 7. FOOTER WRAPPER -->
+            <!-- 8. FOOTER WRAPPER -->
             <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px;">
                 <tr>
                     <td align="center" style="padding: 30px 20px;">
