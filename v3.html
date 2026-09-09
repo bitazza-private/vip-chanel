@@ -31,7 +31,7 @@
   .nav-left { display: flex; align-items: center; }
   .logo-img { height: 60px; object-fit: contain; }
 
-  .hero { position: relative; background: linear-gradient(100deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.85) 55%, rgba(5,5,5,0.2) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: center 20%; display: flex; align-items: center; padding: 40px 0 60px 0; border-bottom: 1px solid #1a1a1a; }
+  .hero { position: relative; background: linear-gradient(100deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.85) 55%, rgba(5,5,5,0.2) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: 80% center; display: flex; align-items: center; padding: 40px 0 60px 0; border-bottom: 1px solid #1a1a1a; }
   .hero-inner { padding: 0 40px; max-width: 620px; }
   .hero h1 { font-size: 42px; line-height: 1.15; font-weight: 500; margin: 0 0 12px 0; color: #f2efe6; }
   .hero p.quote { font-size: 16px; line-height: 1.8; color: #888888; margin: 0 0 25px 0; font-style: italic; }
@@ -78,6 +78,7 @@
 
   .footer { background: #000000; padding: 15px 40px 40px 40px; }
   .confidential-note { font-size: 11px; line-height: 1.8; color: #444444; text-align: justify; margin-bottom: 30px; }
+  
   .footer-bottom { padding-top: 25px; border-top: 1px solid #111111; display: flex; justify-content: space-between; align-items: center; }
   .footer-address { font-size: 11px; line-height: 1.8; text-transform: uppercase; letter-spacing: 1.5px; color: #555555; text-align: left; }
   
@@ -90,7 +91,6 @@
   .footer-logo { height: 20px; object-fit: contain; filter: grayscale(100%) opacity(0.3) invert(1); }
 
   @media (max-width: 760px) {
-    /* 💥 ขยับภาพมือถือไปขวา 80% เช่นกัน */
     .hero { background-position: 80% center; padding: 40px 0; }
     .hero h1 { font-size: 32px; }
     .hero-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -160,7 +160,8 @@
       <div class="stat-sep"></div>
       <div class="stat">
         <div class="num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c5a059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>Private Channels</div>
-        <div class="lbl">Direct line · WhatsApp · LINE</div>
+        <!-- แก้ไขช่องทางตรงนี้แล้ว -->
+        <div class="lbl">LINE · WhatsApp · Telegram</div>
       </div>
     </div>
   </div>
@@ -202,15 +203,11 @@
   </div>
 
   <div class="closing reveal" id="request">
-    <h2 class="serif">Schedule a Private Consultation</h2>
-    <p class="desc">Share your support requirements with us. Our specialized team will review your request and recommend the optimal solution in complete confidence.</p>
+    <!-- ดันหัวข้อ Experience Service มาแทนที่ Schedule -->
+    <h2 class="serif">Experience Service Designed Around You</h2>
+    <p class="desc">Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.</p>
     
-    <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" target="_blank">Request an Introduction</a>
-    
-    <div style="margin-top: 40px;">
-      <h3 class="serif" style="font-size: 26px; margin-bottom: 12px; font-weight: 500;">Experience Service Designed Around You</h3>
-      <p class="desc">Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.</p>
-    </div>
+    <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" target="_blank" style="margin-top: 10px;">Request an Introduction</a>
     
     <div class="sign-off">
       Yours sincerely,<br>
