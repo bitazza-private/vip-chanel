@@ -41,7 +41,7 @@
   .nav-left { display: flex; align-items: center; }
   .logo-img { height: 60px; object-fit: contain; mix-blend-mode: multiply; }
 
-  .hero { position: relative; background: linear-gradient(100deg, rgba(244,243,237,0.97) 0%, rgba(244,243,237,0.90) 55%, rgba(244,243,237,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: center 20%; display: flex; align-items: center; padding: 40px 0 60px 0; }
+  .hero { position: relative; background: linear-gradient(100deg, rgba(244,243,237,0.97) 0%, rgba(244,243,237,0.90) 55%, rgba(244,243,237,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: 80% center; display: flex; align-items: center; padding: 40px 0 60px 0; }
   .hero-inner { padding: 0 40px; max-width: 620px; }
   .hero h1 { font-size: 42px; line-height: 1.15; font-weight: 600; margin: 0 0 12px 0; color: #1a1814; }
   .hero p.quote { font-size: 16px; line-height: 1.8; color: #5c574f; margin: 0 0 25px 0; font-style: italic; }
@@ -100,7 +100,6 @@
   .footer-logo { height: 20px; object-fit: contain; mix-blend-mode: multiply; filter: grayscale(100%) opacity(0.5); }
 
   @media (max-width: 760px) {
-    /* 💥 แก้ตรงนี้! ขยับภาพไปขวา 80% เพื่อโชว์หน้าผู้ชายหล่อๆ */
     .hero { background-position: 80% center; padding: 40px 0; }
     .hero h1 { font-size: 32px; }
     .hero-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -170,7 +169,8 @@
       <div class="stat-sep"></div>
       <div class="stat">
         <div class="num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>Private Channels</div>
-        <div class="lbl">Direct line · WhatsApp · LINE</div>
+        <!-- แก้ไขช่องทางตรงนี้แล้ว -->
+        <div class="lbl">LINE · WhatsApp · Telegram</div>
       </div>
     </div>
   </div>
@@ -212,15 +212,11 @@
   </div>
 
   <div class="closing bg-grad-cta reveal" id="request">
-    <h2 class="serif">Schedule a Private Consultation</h2>
-    <p class="desc">Share your support requirements with us. Our specialized team will review your request and recommend the optimal solution in complete confidence.</p>
+    <!-- ตัดหัวข้อ Schedule ออก และดัน Experience ขึ้นมาแทนที่ -->
+    <h2 class="serif">Experience Service Designed Around You</h2>
+    <p class="desc">Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.</p>
     
-    <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" target="_blank">Request an Introduction</a>
-    
-    <div style="margin-top: 40px;">
-      <h3 class="serif" style="font-size: 26px; color: #1a1814; margin-bottom: 12px; font-weight: 600;">Experience Service Designed Around You</h3>
-      <p class="desc">Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.</p>
-    </div>
+    <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" target="_blank" style="margin-top: 10px;">Request an Introduction</a>
     
     <div class="sign-off">
       Yours sincerely,<br>
