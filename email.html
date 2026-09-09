@@ -11,6 +11,15 @@
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
     table { border-collapse: collapse !important; }
     body { background-color: #f4f3ed; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    
+    /* สไตล์สำหรับพับคอลัมน์ในมือถือ */
+    @media only screen and (max-width: 600px) {
+        .stack-column { display: block !important; width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; margin-bottom: 20px !important; text-align: center !important; }
+        .stack-column h3 { text-align: center !important; }
+        .stack-column p { text-align: center !important; margin: 0 auto !important; }
+        .hide-mobile { display: none !important; }
+        .mobile-padding { padding: 30px 20px !important; }
+    }
 </style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f4f3ed;">
@@ -41,7 +50,7 @@
 
                 <!-- 3. TITLE & INTRO -->
                 <tr>
-                    <td align="center" style="padding: 0 40px 20px 40px;">
+                    <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
                         <h1 style="margin: 0 0 15px 0; font-size: 32px; font-weight: normal; color: #1a1814; font-family: Georgia, serif; line-height: 1.2;">
                             Welcome to the<br>
                             <span style="font-style: italic; color: #b8923c;">Private Client Channel</span>
@@ -54,7 +63,7 @@
 
                 <!-- 4. 4 PILLARS (ย่อแบบกระชับ 2x2 Grid) -->
                 <tr>
-                    <td align="center" style="padding: 0 40px 30px 40px;">
+                    <td align="center" style="padding: 0 40px 30px 40px;" class="mobile-padding">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td width="50%" valign="top" style="padding: 0 10px 20px 0;">
@@ -89,63 +98,62 @@
                     </td>
                 </tr>
 
-                <!-- 5. WHAT YOU WILL RECEIVE (รูปภาพครบ + ข้อมูลย่อกระชับ) -->
+                <!-- 5. WHAT YOU WILL RECEIVE (สลับซ้าย-ขวา) -->
                 <tr>
-                    <td align="center" style="padding: 40px 40px 10px 40px;">
+                    <td align="center" style="padding: 40px 40px 10px 40px;" class="mobile-padding">
                         <p style="margin: 0 0 35px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase; text-align: center; font-weight: bold;">
                             What You Will Receive
                         </p>
 
-                        <!-- Section 1: Advisory (รูปช้าง) -->
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px;">
+                        <!-- แถวที่ 1: รูปอยู่ซ้าย - ข้อความอยู่ขวา -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
                             <tr>
-                                <td align="center">
-                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg" alt="Dedicated Support" width="520" style="width: 100%; max-width: 520px; border-radius: 6px; display: block; border: 0;">
+                                <td class="stack-column" width="45%" valign="middle">
+                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg" alt="Dedicated Support" width="100%" style="border-radius: 6px; display: block; border: 0;">
                                 </td>
-                            </tr>
-                            <tr>
-                                <td align="center" style="padding-top: 20px;">
-                                    <h3 style="margin: 0 0 10px 0; font-size: 20px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">High-Touch Advisory & Dedicated Team</h3>
-                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6a645b;">Direct access to specialized experts who understand your portfolio. Enjoy proactive service and tailored trading strategies via your preferred private channels.</p>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <!-- Section 2: Execution (รูปหมากรุก) -->
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px;">
-                            <tr>
-                                <td align="center">
-                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Execution" width="520" style="width: 100%; max-width: 520px; border-radius: 6px; display: block; border: 0;">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center" style="padding-top: 20px;">
-                                    <h3 style="margin: 0 0 10px 0; font-size: 20px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Execution Advantage</h3>
-                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6a645b;">Institutional-grade execution offering competitive OTC pricing, deep liquidity access, and fast-tracked priority operations built for sophisticated investors.</p>
+                                <td class="hide-mobile" width="5%"></td>
+                                <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                    <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">High-Touch Advisory</h3>
+                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Direct access to specialized experts who understand your portfolio. Enjoy proactive service and tailored trading strategies via your preferred private channels.</p>
                                 </td>
                             </tr>
                         </table>
 
-                        <!-- Section 3: Perks (รูปตึก) -->
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px;">
+                        <!-- แถวที่ 2: ข้อความอยู่ซ้าย - รูปอยู่ขวา 
+                             (ใช้ dir="rtl" เพื่อให้ในมือถือรูปโดนพับขึ้นไปอยู่บนข้อความแบบสวยๆ) -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 40px;">
                             <tr>
-                                <td align="center">
-                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg" alt="Exclusive Access" width="520" style="width: 100%; max-width: 520px; border-radius: 6px; display: block; border: 0;">
+                                <td class="stack-column" width="45%" valign="middle" dir="ltr">
+                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Execution" width="100%" style="border-radius: 6px; display: block; border: 0;">
                                 </td>
-                            </tr>
-                            <tr>
-                                <td align="center" style="padding-top: 20px;">
-                                    <h3 style="margin: 0 0 10px 0; font-size: 20px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Exclusive Access & Perks</h3>
-                                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6a645b;">Experience bespoke engagement with named invitations to private events and thoughtful, personalized market updates without the automated noise.</p>
+                                <td class="hide-mobile" width="5%"></td>
+                                <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                                    <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Execution Advantage</h3>
+                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Institutional-grade execution offering competitive OTC pricing, deep liquidity access, and fast-tracked priority operations built for sophisticated investors.</p>
                                 </td>
                             </tr>
                         </table>
+
+                        <!-- แถวที่ 3: รูปอยู่ซ้าย - ข้อความอยู่ขวา -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
+                            <tr>
+                                <td class="stack-column" width="45%" valign="middle">
+                                    <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg" alt="Exclusive Access" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                                </td>
+                                <td class="hide-mobile" width="5%"></td>
+                                <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                    <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Exclusive Access</h3>
+                                    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Experience bespoke engagement with named invitations to private events and thoughtful, personalized market updates without the automated noise.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        
                     </td>
                 </tr>
 
                 <!-- 6. HIGHLIGHT BOX & 2 CTA OPTIONS -->
                 <tr>
-                    <td align="center" style="padding: 0 40px 40px 40px;">
+                    <td align="center" style="padding: 0 40px 40px 40px;" class="mobile-padding">
                         <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; padding: 35px 25px;">
                             <h2 style="margin: 0 0 15px 0; font-size: 22px; font-weight: normal; color: #1a1814; font-family: Georgia, serif;">
                                 Experience Service<br><span style="color: #b8923c; font-style: italic;">Designed Around You</span>
@@ -179,7 +187,7 @@
 
                 <!-- 7. SIGN-OFF SECTION -->
                 <tr>
-                    <td align="left" style="padding: 0 40px 40px 40px;">
+                    <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
                         <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                             Yours sincerely,<br>
                             <strong style="color: #1a1814;">Bitazza Elite Thailand</strong><br>
