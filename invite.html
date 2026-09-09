@@ -17,8 +17,6 @@
 
   h2.serif { color: #1a1814; } 
   .gold { color: #b8923c; } 
-  .feature-list h4 { color: #1a1814; }
-  .feature-list li { border-left-color: #d1c8b4; } 
 
   .bg-offwhite { background-color: #f4f3ed; }
   .bg-grad-sand-1 { background: linear-gradient(180deg, #f4f3ed 0%, #efece4 100%); }
@@ -30,87 +28,45 @@
   .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
   .reveal.active { opacity: 1; transform: translateY(0); }
   .delay-1 { transition-delay: 0.1s; }
-  .delay-2 { transition-delay: 0.2s; }
 
-  .btn { display: inline-block; background: #b8923c; color: #ffffff !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 15px 32px; border-radius: 2px; transition: all 0.4s ease; }
+  .btn { display: inline-block; background: #b8923c; color: #ffffff !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 15px 32px; border-radius: 2px; transition: all 0.4s ease; cursor: pointer; border: none; }
   .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 146, 60, 0.25); background: #d4a94a; }
-  .btn-outline { display: inline-block; border: 1px solid #d1c8b4; color: #1a1814 !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 12px 24px; border-radius: 2px; transition: border-color 0.3s ease; }
-  .btn-outline:hover { border-color: #b8923c; }
+  .btn-outline { display: inline-block; border: 1px solid #d1c8b4; color: #1a1814 !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 12px 24px; border-radius: 2px; }
 
+  /* เมนูเลือกภาษา */
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; }
-  .nav-left { display: flex; align-items: center; }
   .logo-img { height: 60px; object-fit: contain; mix-blend-mode: multiply; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .lang-switcher { display: flex; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 1px; color: #8a8377; }
+  .lang-switcher span { cursor: pointer; transition: color 0.3s; padding: 5px; }
+  .lang-switcher span:hover, .lang-switcher span.active { color: #b8923c; }
 
   .hero { position: relative; background: linear-gradient(100deg, rgba(244,243,237,0.97) 0%, rgba(244,243,237,0.90) 55%, rgba(244,243,237,0.1) 100%), url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg'); background-size: cover; background-position: 80% center; display: flex; align-items: center; padding: 40px 0 60px 0; }
   .hero-inner { padding: 0 40px; max-width: 680px; }
   .hero h1 { font-size: 42px; line-height: 1.15; font-weight: 600; margin: 0 0 12px 0; color: #1a1814; }
   .hero p.quote { font-size: 18px; line-height: 1.8; color: #b8923c; margin: 0 0 30px 0; font-style: italic; font-weight: 500; }
 
-  /* แก้ไข Grid เป็น 3 ช่อง */
   .hero-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 30px; }
   .grid-item h4 { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #1a1814; margin: 0 0 6px 0; display: flex; align-items: center; gap: 8px; }
-  .grid-item h4 svg { width: 14px; height: 14px; stroke: #b8923c; }
+  .grid-item h4 svg { width: 14px; height: 14px; stroke: #b8923c; flex-shrink: 0; }
   .grid-item p { font-size: 13px; line-height: 1.6; color: #6a645b; margin: 0; }
 
-  .stats-wrap { padding: 0 40px; margin-top: -20px; position: relative; z-index: 3; }
-  .stats { background: #fdfcf9; border: 1px solid #ebe6da; border-radius: 60px; display: flex; justify-content: space-around; align-items: center; padding: 18px 20px; box-shadow: 0 15px 35px rgba(26,24,20,0.06); }
-  .stat { text-align: center; padding: 0 14px; display: flex; flex-direction: column; align-items: center; }
-  .stat .num { font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 8px; color: #1a1814; }
-  .stat .lbl { font-size: 10px; color: #8a8377; margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
-  .stat-sep { width: 1px; height: 30px; background: #e1ddce; }
-
-  .goals { display: flex; gap: 30px; padding: 45px 40px; align-items: center; }
-  .goals.reverse { flex-direction: row-reverse; }
-  .goals-text { flex: 0 0 44%; }
-  .goals-text h2 { font-size: 34px; line-height: 1.15; font-weight: 600; margin: 0 0 20px 0; }
-  .goals-image { flex: 1; position: relative; border-radius: 8px; overflow: hidden; min-height: 280px; box-shadow: 0 20px 40px rgba(26,24,20,0.12); }
-  
-  .goals-image.chess { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg') center/cover; }
-  .goals-image.ele { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg') center/cover; }
-  .goals-image.btz { background: url('https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg') center/cover; }
-  
-  .goals-overlay { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(26,24,20,0.85) 0%, rgba(26,24,20,0.0) 70%); padding: 20px 24px 16px 24px; }
-  .goals-overlay .tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b8923c; margin-bottom: 4px; font-weight: 600; }
-  .goals-overlay .title { font-size: 20px; color: #ffffff; font-weight: 500; }
-
-  .feature-list { list-style: none; padding: 0; margin: 0; }
-  .feature-list li { margin-bottom: 18px; border-left: 2px solid; padding-left: 16px; }
-  .feature-list h4 { font-size: 17px; font-weight: 600; margin: 0 0 6px 0; }
-  .feature-list p { font-size: 14px; line-height: 1.6; margin: 0; }
-
-  .closing { padding: 45px 40px 10px 40px; text-align: left; }
-  .closing h2 { font-size: 38px; font-weight: 600; margin: 0 0 15px 0; }
-  .closing p.desc { font-size: 15px; line-height: 1.8; max-width: 700px; margin: 0 0 25px 0; }
-
-  .sign-off { margin-top: 40px; font-size: 15px; line-height: 1.8; color: #5c574f; }
-  .sign-off strong { color: #1a1814; font-size: 16px; font-weight: 600; }
-  .sign-off a { color: #b8923c; font-weight: 500; transition: color 0.3s ease; }
-  .sign-off a:hover { color: #8a6a24; }
+  .closing { padding: 60px 40px 40px 40px; text-align: center; }
+  .closing h2 { font-size: 32px; font-weight: 600; margin: 0 0 15px 0; }
+  .closing p.desc { font-size: 15px; line-height: 1.8; max-width: 700px; margin: 0 auto 30px auto; }
 
   .footer { padding: 15px 40px 40px 40px; }
-  .confidential-note { font-size: 11px; line-height: 1.8; color: #8a8377; text-align: justify; margin-bottom: 30px; }
   .footer-bottom { padding-top: 25px; border-top: 1px solid #e1ddce; display: flex; justify-content: space-between; align-items: center; }
   .footer-address { font-size: 11px; line-height: 1.8; text-transform: uppercase; letter-spacing: 1.5px; color: #8a8377; text-align: left; }
-  
-  .social-links { display: flex; gap: 20px; align-items: center; justify-content: center; }
-  .social-links a { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; color: #8a8377; transition: color 0.3s; text-decoration: none; }
-  .social-links a:hover { color: #b8923c; }
-  .social-links svg { width: 100%; height: 100%; fill: currentColor; }
-  .social-text { font-size: 14px; font-weight: 700; letter-spacing: 1px; }
-
   .footer-logo { height: 20px; object-fit: contain; mix-blend-mode: multiply; filter: grayscale(100%) opacity(0.5); }
 
   @media (max-width: 760px) {
+    .nav { flex-direction: column; gap: 15px; padding: 20px; }
     .hero { background-position: 80% center; padding: 40px 0; }
     .hero h1 { font-size: 32px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 20px; } /* มือถือเรียงเป็นแถวเดียว */
-    .stats { flex-wrap: wrap; gap: 12px; border-radius: 16px; padding: 20px; }
-    .stat-sep { display: none; }
-    .goals, .goals.reverse { flex-direction: column; padding: 30px 24px; gap: 24px; }
-    .goals-text { flex: 1 1 auto; }
-    .goals-image { min-height: 240px; width: 100%; }
-    .closing { padding: 40px 24px 10px 24px; }
-    .footer { padding: 20px 24px 20px 24px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+    .closing { padding: 40px 24px; }
+    .footer { padding: 20px 24px; }
     .footer-bottom { flex-direction: column; text-align: center; gap: 25px; }
     .footer-address { text-align: center; }
   }
@@ -119,148 +75,138 @@
 <body>
 <div class="wrap">
 
+  <!-- Navbar & Language Switcher -->
   <div class="nav bg-offwhite reveal">
     <div class="nav-left">
       <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" class="logo-img">
     </div>
     <div class="nav-right">
-      <span class="btn-outline">INVITATION ONLY</span>
+      <div class="lang-switcher">
+        <span class="lang-btn active" onclick="changeLang('en')">EN</span> | 
+        <span class="lang-btn" onclick="changeLang('th')">TH</span> | 
+        <span class="lang-btn" onclick="changeLang('ru')">RU</span>
+      </div>
+      <span class="btn-outline" data-key="nav_invite">INVITATION ONLY</span>
     </div>
   </div>
 
+  <!-- Hero Section -->
   <div class="hero bg-offwhite">
     <div class="hero-inner reveal delay-1">
-      <h1 class="serif">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
+      <h1 class="serif" data-key="hero_title">Welcome to the<br><span class="gold" style="font-style:italic;">Private Client Channel</span></h1>
       
-      <!-- อัปเดต Quote ใหม่ -->
-      <p class="serif quote">"Priority. Precision. Privilege."</p>
+      <p class="serif quote" data-key="hero_quote">"Priority. Precision. Privilege."</p>
       
-      <!-- อัปเดต Grid 3 ข้อใหม่ -->
       <div class="hero-grid">
         <div class="grid-item">
-          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>PRIORITY</h4>
-          <p>A direct line to your dedicated Relationship Manager with fast-tracked operational support.</p>
+          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span data-key="title_priority">PRIORITY</span></h4>
+          <p data-key="desc_priority">A direct line to your dedicated Relationship Manager with fast-tracked operational support.</p>
         </div>
         <div class="grid-item">
-          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>PRECISION</h4>
-          <p>Clear, transparent communication paired with bespoke execution strategies and deep liquidity.</p>
+          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg><span data-key="title_precision">PRECISION</span></h4>
+          <p data-key="desc_precision">Clear, transparent communication paired with bespoke execution strategies and deep liquidity.</p>
         </div>
         <div class="grid-item">
-          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>PRIVILEGE</h4>
-          <p>Exclusive access to private client events, tailored perks, and noise-free updates.</p>
+          <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span data-key="title_privilege">PRIVILEGE</span></h4>
+          <p data-key="desc_privilege">Exclusive access to private client events, tailored perks, and noise-free updates.</p>
         </div>
       </div>
 
-      <!-- เปลี่ยนปุ่มเป็น ACCEPT INVITATION -->
-      <a href="https://bitazza-private.github.io/vip-chanel/" class="btn">Accept Invitation</a>
+      <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" data-key="btn_accept">Accept Invitation</a>
     </div>
   </div>
 
-  <div class="stats-wrap reveal delay-2">
-    <div class="stats">
-      <div class="stat">
-        <div class="num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>SEC-Licensed</div>
-        <div class="lbl">Digital asset broker in Thailand</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat">
-        <div class="num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>7+ Years</div>
-        <div class="lbl">Digital Asset Market Experience</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat">
-        <div class="num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b8923c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>Private Channels</div>
-        <div class="lbl">LINE · WhatsApp · Telegram</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="goals bg-grad-sand-1">
-    <div class="goals-text reveal">
-      <h2 class="serif">High-Touch Advisory <br><span class="gold serif" style="font-style:italic;">& Dedicated Team</span></h2>
-      <ul class="feature-list">
-        <li><h4 class="serif">Dedicated Advisory Team</h4><p>Direct access to a specialized desk of experts who know your portfolio, trading history, and execution preferences.</p></li>
-        <li><h4 class="serif">Direct, Private Channels</h4><p>Immediate access via direct line, WhatsApp, LINE, or Telegram with full confidentiality and discreet consultation.</p></li>
-        <li><h4 class="serif">Proactive & Priority Service</h4><p>Faster request handling, internal team coordination, and proactive follow-ups before you have to ask.</p></li>
-        <li><h4 class="serif">Tailored Trading Strategies</h4><p>Customized execution structures, bespoke risk parameters, and flexible liquidity solutions designed specifically for high-volume.</p></li>
-      </ul>
-    </div>
-    <div class="goals-image ele reveal delay-1"></div>
-  </div>
-
-  <div class="goals reverse bg-grad-sand-2">
-    <div class="goals-text reveal">
-      <h2 class="serif">Execution <span class="gold serif" style="font-style:italic;">&</span><br><span class="gold serif" style="font-style:italic;">Advantage</span></h2>
-      <ul class="feature-list">
-        <li><h4 class="serif">Institutional Execution</h4><p>Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.</p></li>
-        <li><h4 class="serif">Priority Operations</h4><p>Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.</p></li>
-      </ul>
-    </div>
-    <div class="goals-image chess reveal delay-1">
-      <div class="goals-overlay"><div class="tag">Strategic Planning</div><div class="title serif">Bespoke Execution</div></div>
-    </div>
-  </div>
-
-  <div class="goals bg-grad-sand-3">
-    <div class="goals-text reveal">
-      <h2 class="serif">Exclusive Access <br><span class="gold serif" style="font-style:italic;">& Perks</span></h2>
-      <ul class="feature-list">
-        <li><h4 class="serif">Bespoke Engagement</h4><p>Named invitations to exclusive Private Client events and thoughtful, personalized updates without automated noise.</p></li>
-      </ul>
-    </div>
-    <div class="goals-image btz reveal delay-1"></div>
-  </div>
-
+  <!-- CTA Section -->
   <div class="closing bg-grad-cta reveal" id="request">
-    <h2 class="serif">Experience Service Designed Around You</h2>
-    <p class="desc">Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.</p>
+    <h2 class="serif" data-key="cta_title">Experience Service Designed Around You</h2>
+    <p class="desc" data-key="cta_desc">Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.</p>
     
-    <!-- เปลี่ยนปุ่มเป็น ACCEPT INVITATION -->
-    <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" style="margin-top: 10px;">Accept Invitation</a>
-    
-    <div class="sign-off">
-      Yours sincerely,<br>
-      <strong>Bitazza Elite Thailand</strong><br>
-      <a href="mailto:elitethailand@bitazza.com">elitethailand@bitazza.com</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="https://www.bitazza.com" target="_blank">www.bitazza.com</a>
-    </div>
+    <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" data-key="btn_accept_2">Accept Invitation</a>
   </div>
 
+  <!-- Footer -->
   <div class="footer bg-grad-footer reveal">
-    <div class="confidential-note"><strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.</div>
-    
     <div class="footer-bottom">
-      <div class="footer-address">
+      <div class="footer-address" data-key="footer_note">
         THIS INVITATION WAS EXTENDED PERSONALLY AND IS NOT TRANSFERABLE.<br>
         152 SOI MEESUWAN 3, PHRA KHANONG NUA, VADHANA, BANGKOK 10110
       </div>
-      
-      <div class="social-links">
-        <a href="https://www.facebook.com/bitazza" target="_blank" title="Facebook">
-            <svg viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-28.7-1.4-53.7-1.4c-53.3 0-89.8 32.5-89.8 92.5V256h88.6l-14.2 78.2H252.8v170.3C364.3 476.8 512 376 512 256z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/bitazza" target="_blank" title="LinkedIn">
-            <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-        </a>
-        <a href="https://line.me/ti/g2/XNIJmH98kyHBdlN0GZVMBA" target="_blank" title="LINE">
-            <svg viewBox="0 0 496 512"><path d="M248 16.64c-136.78 0-248 94.67-248 211.3 0 104.93 84.77 192.67 202.93 208.97 8.35 1.77 19.67 5.41 22.61 11.75 2.66 5.76 1.75 14.73 1.12 20.4l-3.32 30c-.92 8.39-4.32 20.9 18.23 11.4 22.56-9.51 121.72-71.6 167.31-123.63 32.81-37.45 49.12-76.32 49.12-117.89C496 111.31 384.78 16.64 248 16.64zm-80.4 256.09h-44.52c-5.07 0-9.2-4.13-9.2-9.2v-78.27c0-5.07 4.13-9.2 9.2-9.2s9.2 4.13 9.2 9.2v69.07h35.32c5.07 0 9.2 4.13 9.2 9.2s-4.13 9.2-9.2 9.2zm38.64-9.2c0 5.07-4.13 9.2-9.2 9.2s-9.2-4.13-9.2-9.2v-78.27c0-5.07 4.13-9.2 9.2-9.2s9.2 4.13 9.2 9.2v78.27zm108.31 0h-16.7c-3.14 0-5.96-1.57-7.63-4.05l-33.15-49.3v44.15c0 5.07-4.13 9.2-9.2 9.2s-9.2-4.13-9.2-9.2v-78.27c0-5.07 4.13-9.2 9.2-9.2s9.2 4.13 9.2 9.2v42.92l32.22-47.98c1.69-2.51 4.54-4.14 7.68-4.14h17.58c3.27 0 5.37 3.4 3.96 6.32L304.5 214.2l34.02 42.66c1.6 2.01.6 5.87-2.3 5.87zM425.4 196.2c0 5.07-4.13 9.2-9.2 9.2h-35.32v24.23h35.32c5.07 0 9.2 4.13 9.2 9.2s-4.13 9.2-9.2 9.2h-44.52c-5.07 0-9.2-4.13-9.2-9.2v-78.27c0-5.07 4.13-9.2 9.2-9.2h44.52c5.07 0 9.2 4.13 9.2 9.2s-4.13 9.2-9.2 9.2h-35.32v25.22h35.32c5.07 0 9.2 4.13 9.2 9.2z"/></svg>
-        </a>
-        <a href="https://x.com/bitazzaofficial" target="_blank" title="X (Twitter)">
-            <svg viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-        </a>
-        <a href="https://coinmarketcap.com/exchanges/bitazza/" target="_blank" title="CoinMarketCap">
-            <span class="social-text">CMC</span>
-        </a>
-        <a href="https://www.coingecko.com/en/exchanges/bitazza" target="_blank" title="CoinGecko">
-            <span class="social-text">CG</span>
-        </a>
-      </div>
-      
       <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" class="footer-logo">
     </div>
   </div>
 </div>
 
+<!-- ========================================== -->
+<!-- ⚙️ SCRIPT ระบบแปลภาษา (ภาษาหรู ระดับ VVIP) -->
+<!-- ========================================== -->
 <script>
+  // ข้อมูลคำแปลทั้งหมด แยกตามภาษา (แก้คำได้ตามสบายเลยครับ)
+  const translations = {
+    en: {
+      nav_invite: "INVITATION ONLY",
+      hero_title: "Welcome to the<br><span class='gold' style='font-style:italic;'>Private Client Channel</span>",
+      hero_quote: '"Priority. Precision. Privilege."',
+      title_priority: "PRIORITY",
+      desc_priority: "A direct line to your dedicated Relationship Manager with fast-tracked operational support.",
+      title_precision: "PRECISION",
+      desc_precision: "Clear, transparent communication paired with bespoke execution strategies and deep liquidity.",
+      title_privilege: "PRIVILEGE",
+      desc_privilege: "Exclusive access to private client events, tailored perks, and noise-free updates.",
+      btn_accept: "Accept Invitation",
+      cta_title: "Experience Service Designed Around You",
+      cta_desc: "Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.",
+      btn_accept_2: "Accept Invitation",
+      footer_note: "THIS INVITATION WAS EXTENDED PERSONALLY AND IS NOT TRANSFERABLE.<br>152 SOI MEESUWAN 3, PHRA KHANONG NUA, VADHANA, BANGKOK 10110"
+    },
+    th: {
+      nav_invite: "เฉพาะผู้ได้รับเชิญ",
+      hero_title: "ยินดีต้อนรับสู่<br><span class='gold' style='font-style:italic;'>Private Client Channel</span>",
+      hero_quote: '"เอกสิทธิ์ ความแม่นยำ และบริการเหนือระดับ"',
+      title_priority: "เอกสิทธิ์ (PRIORITY)",
+      desc_priority: "ติดต่อสายตรงกับผู้ดูแลบัญชีส่วนตัวของคุณ พร้อมบริการประสานงานที่รวดเร็วเป็นพิเศษ",
+      title_precision: "ความแม่นยำ (PRECISION)",
+      desc_precision: "การสื่อสารที่ชัดเจน โปร่งใส พร้อมกลยุทธ์การซื้อขายที่สั่งตัดเฉพาะคุณ และสภาพคล่องระดับสูง",
+      title_privilege: "เหนือระดับ (PRIVILEGE)",
+      desc_privilege: "สิทธิ์เข้าร่วมงานอีเวนต์แบบปิด สิทธิประโยชน์พิเศษ และอัปเดตข้อมูลสำคัญโดยปราศจากข้อมูลรบกวน",
+      btn_accept: "ตอบรับคำเชิญ",
+      cta_title: "สัมผัสประสบการณ์ที่ออกแบบมาเพื่อคุณ",
+      cta_desc: "โปรดแจ้งความประสงค์ของคุณด้านล่าง ทีมผู้เชี่ยวชาญของเราจะติดต่อกลับเป็นการส่วนตัว เพื่อมอบบริการและคำแนะนำแบบครบวงจร",
+      btn_accept_2: "ตอบรับคำเชิญ",
+      footer_note: "คำเชิญนี้เป็นสิทธิ์เฉพาะบุคคลและไม่สามารถโอนสิทธิ์ให้ผู้อื่นได้<br>152 ซอยมีสุวรรณ 3 แขวงพระโขนงเหนือ เขตวัฒนา กรุงเทพฯ 10110"
+    },
+    ru: {
+      nav_invite: "ТОЛЬКО ПО ПРИГЛАШЕНИЮ",
+      hero_title: "Добро пожаловать в<br><span class='gold' style='font-style:italic;'>Private Client Channel</span>",
+      hero_quote: '"Приоритет. Точность. Привилегия."',
+      title_priority: "ПРИОРИТЕТ",
+      desc_priority: "Прямая связь с вашим персональным менеджером и ускоренная операционная поддержка.",
+      title_precision: "ТОЧНОСТЬ",
+      desc_precision: "Прозрачная коммуникация в сочетании с индивидуальными стратегиями исполнения и глубокой ликвидностью.",
+      title_privilege: "ПРИВИЛЕГИЯ",
+      desc_privilege: "Эксклюзивный доступ к закрытым мероприятиям, индивидуальным привилегиям и важным обновлениям.",
+      btn_accept: "Принять приглашение",
+      cta_title: "Сервис, созданный специально для вас",
+      cta_desc: "Поделитесь своими предпочтениями ниже. Наши специалисты свяжутся с вами лично, чтобы предоставить комплексное руководство.",
+      btn_accept_2: "Принять приглашение",
+      footer_note: "ЭТО ПРИГЛАШЕНИЕ ЯВЛЯЕТСЯ ЛИЧНЫМ И НЕ ПОДЛЕЖИТ ПЕРЕДАЧЕ.<br>152 SOI MEESUWAN 3, PHRA KHANONG NUA, VADHANA, BANGKOK 10110"
+    }
+  };
+
+  function changeLang(lang) {
+    // 1. เปลี่ยนคลาส active ให้ปุ่มภาษา
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    // 2. ค้นหาแท็กทั้งหมดที่มี data-key แล้วเปลี่ยนข้อความตาม Dictionary
+    document.querySelectorAll('[data-key]').forEach(element => {
+      const key = element.getAttribute('data-key');
+      if (translations[lang] && translations[lang][key]) {
+        element.innerHTML = translations[lang][key]; // ใช้ innerHTML เพื่อให้ <br> ทำงานได้
+      }
+    });
+  }
+
+  // Animation Script
   document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); obs.unobserve(entry.target); } });
