@@ -5,28 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite — Exclusive Access</title>
 <style>
-  /* ดึงฟอนต์หรูหราแบบเดียวกับ V2 มาใช้ */
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap');
 
   * { box-sizing: border-box; }
   body, html { 
-    margin: 0; 
-    padding: 0; 
-    background-color: #f4f3ed; 
-    font-family: 'Jost', Helvetica, Arial, sans-serif; 
-    color: #5c574f; 
-    -webkit-font-smoothing: antialiased; 
+    margin: 0; padding: 0; background-color: #f4f3ed; 
+    font-family: 'Jost', 'Prompt', Helvetica, Arial, sans-serif; 
+    color: #5c574f; -webkit-font-smoothing: antialiased; 
   }
-  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .serif { font-family: 'Cormorant Garamond', 'Prompt', Georgia, serif; }
 
-  /* กล่องฟอร์มตรงกลาง */
   .wrap { 
-    max-width: 540px; 
-    margin: 60px auto; 
-    padding: 50px 40px; 
-    background: #fdfcf9; 
-    border: 1px solid #ebe6da; 
-    border-radius: 8px; 
+    max-width: 540px; margin: 60px auto; padding: 50px 40px; 
+    background: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; 
     box-shadow: 0 20px 50px rgba(26,24,20,0.06); 
   }
 
@@ -37,139 +28,58 @@
   .header h1 { font-size: 38px; font-weight: 600; color: #b8923c; margin: 0 0 15px 0; }
   .header p { font-size: 15px; line-height: 1.8; color: #6a645b; margin: 0; }
 
-  /* สไตล์กล่องกรอกข้อมูล */
   .form-group { margin-bottom: 25px; }
   .form-group label { 
-    display: block; 
-    font-size: 11px; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    color: #b8923c; 
-    font-weight: 600; 
-    margin-bottom: 8px; 
+    display: block; font-size: 11px; letter-spacing: 2px; 
+    text-transform: uppercase; color: #b8923c; font-weight: 600; margin-bottom: 8px; 
   }
   .form-group input { 
-    width: 100%; 
-    padding: 16px 20px; 
-    font-family: 'Jost', sans-serif; 
-    font-size: 14px; 
-    color: #1a1814; 
-    background: #ffffff; 
-    border: 1px solid #d1c8b4; 
-    border-radius: 2px; 
-    transition: border-color 0.3s ease; 
+    width: 100%; padding: 16px 20px; font-family: 'Jost', 'Prompt', sans-serif; 
+    font-size: 14px; color: #1a1814; background: #ffffff; 
+    border: 1px solid #d1c8b4; border-radius: 2px; transition: border-color 0.3s ease; 
   }
   .form-group input:focus { border-color: #b8923c; outline: none; }
   .form-group input::placeholder { color: #a8a396; }
 
-  /* เส้นคั่นกลางแบบหรูหรา */
-  .divider { 
-    display: flex; 
-    align-items: center; 
-    text-align: center; 
-    margin: 40px 0 30px 0; 
-  }
-  .divider::before, .divider::after { 
-    content: ''; 
-    flex: 1; 
-    border-bottom: 1px solid #d1c8b4; 
-  }
-  .divider span { 
-    padding: 0 20px; 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 22px; 
-    font-weight: 600; 
-    color: #1a1814; 
-  }
+  .divider { display: flex; align-items: center; text-align: center; margin: 40px 0 30px 0; }
+  .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #d1c8b4; }
+  .divider span { padding: 0 20px; font-family: 'Cormorant Garamond', 'Prompt', serif; font-size: 22px; font-weight: 600; color: #1a1814; }
 
-  /* ปุ่มเลือกช่องทางติดต่อ (Grid 3 คอลัมน์) */
-  .channel-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 12px; 
-    margin-bottom: 20px;
-  }
-  
-  /* ให้ปุ่ม Direct call กินพื้นที่เต็ม 3 ช่อง */
+  .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
   .full-width { grid-column: span 3; }
 
   .checkbox-label { text-align: center; }
   .checkbox-label input { display: none; }
   .checkbox-label span { 
-    display: block; 
-    padding: 16px 10px; 
-    border: 1px solid #d1c8b4; 
-    border-radius: 2px; 
-    font-size: 13px; 
-    font-weight: 500;
-    color: #6a645b; 
-    cursor: pointer; 
-    transition: all 0.3s ease; 
-    background: #ffffff; 
+    display: block; padding: 16px 10px; border: 1px solid #d1c8b4; 
+    border-radius: 2px; font-size: 13px; font-weight: 500;
+    color: #6a645b; cursor: pointer; transition: all 0.3s ease; background: #ffffff; 
   }
-  
-  /* พอกดเลือกแล้วจะกลายเป็นสีทอง */
-  .checkbox-label input:checked + span { 
-    background: #b8923c; 
-    color: #ffffff; 
-    border-color: #b8923c; 
-  }
+  .checkbox-label input:checked + span { background: #b8923c; color: #ffffff; border-color: #b8923c; }
   .checkbox-label span:hover { border-color: #b8923c; }
 
-  /* ช่องกรอกข้อมูลที่ซ่อนอยู่ (จะโผล่มาเมื่อกดติ๊ก) */
-  .dynamic-input { 
-    display: none; 
-    margin-top: 15px; 
-    animation: fadeIn 0.4s ease forwards;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  .dynamic-input { display: none; margin-top: 15px; animation: fadeIn 0.4s ease forwards; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ปุ่มกด Submit */
   .btn { 
-    display: block; 
-    width: 100%; 
-    background: #1a1814; 
-    color: #ffffff !important; 
-    font-size: 12px; 
-    letter-spacing: 2.5px; 
-    text-transform: uppercase; 
-    font-weight: 600; 
-    padding: 20px 0; 
-    border: none; 
-    border-radius: 2px; 
-    cursor: pointer; 
-    transition: all 0.4s ease; 
-    text-align: center; 
-    text-decoration: none; 
-    margin-top: 40px;
+    display: block; width: 100%; background: #1a1814; color: #ffffff !important; 
+    font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; 
+    padding: 20px 0; border: none; border-radius: 2px; cursor: pointer; 
+    transition: all 0.4s ease; text-align: center; margin-top: 40px;
   }
-  .btn:hover { 
-    background: #b8923c; 
-    transform: translateY(-2px); 
-    box-shadow: 0 10px 20px rgba(184, 146, 60, 0.25); 
-  }
+  .btn:hover { background: #b8923c; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(184, 146, 60, 0.25); }
 
   .back-link { 
-    display: block; 
-    text-align: center; 
-    margin-top: 30px; 
-    font-size: 11px; 
-    letter-spacing: 1px; 
-    color: #8a8377; 
-    text-transform: uppercase; 
-    text-decoration: none; 
+    display: block; text-align: center; margin-top: 30px; font-size: 11px; 
+    letter-spacing: 1px; color: #8a8377; text-transform: uppercase; text-decoration: none; 
     transition: color 0.3s; 
   }
   .back-link:hover { color: #b8923c; }
 
-  /* สำหรับมือถือ */
   @media (max-width: 600px) {
     .wrap { margin: 20px; padding: 40px 24px; }
     .header h1 { font-size: 32px; }
-    .channel-grid { grid-template-columns: 1fr; } /* มือถือให้เรียงเป็นแนวตั้ง */
+    .channel-grid { grid-template-columns: 1fr; }
     .full-width { grid-column: span 1; }
   }
 </style>
@@ -186,85 +96,94 @@
     <p>Please provide your details below to initiate your private request.<br>Our executive team will contact you shortly.</p>
   </div>
 
-  <form action="#" method="POST">
+  <!-- ระบบ iframe ซ่อนการเด้งไปหน้า Google Form -->
+  <script type="text/javascript">var submitted=false;</script>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='https://bitazza-private.github.io/vip-chanel/invite.html';}"></iframe>
+
+  <!-- ฟอร์มยิงเข้า Google Sheet ของโบร (แก้ไข URL ปลายทางและ entry ให้แล้ว) -->
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdkH60UvWyGf6oIuiRbqQm-2TklefgJbjv3cxLkYuMIyFiXxQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
     
     <div class="form-group">
       <label>Full Name</label>
-      <input type="text" placeholder="Enter your full name" required>
+      <input type="text" name="entry.1855821471" placeholder="Enter your full name" required>
     </div>
 
     <div class="form-group">
       <label>Email Address</label>
-      <input type="email" placeholder="Enter your email" required>
+      <input type="email" name="entry.1951851605" placeholder="Enter your email" required>
     </div>
 
     <div class="form-group">
       <label>Phone Number</label>
-      <input type="tel" placeholder="+66 8X XXX XXXX" required>
+      <input type="tel" name="entry.1554064553" placeholder="+66 8X XXX XXXX" required>
     </div>
 
     <div class="divider">
       <span>Preferred Contact Channel</span>
     </div>
 
-    <!-- เปลี่ยนเป็น Checkbox ให้เลือกได้มากกว่า 1 อัน -->
     <div class="channel-grid">
+      <!-- ตั้งชื่อ name เป็นรหัสตัวที่ 4 เพื่อให้เวลากดแล้วมันโผล่ในคอลัมน์ที่ 4 ของ Sheet -->
       <label class="checkbox-label">
-        <input type="checkbox" name="channels" value="Line" id="cb-line" onchange="toggleInput('line')">
+        <input type="radio" name="entry.565526970" value="LINE" id="cb-line" onchange="toggleInput('line')">
         <span>LINE</span>
       </label>
       <label class="checkbox-label">
-        <input type="checkbox" name="channels" value="WhatsApp" id="cb-whatsapp" onchange="toggleInput('whatsapp')">
+        <input type="radio" name="entry.565526970" value="WhatsApp" id="cb-whatsapp" onchange="toggleInput('whatsapp')">
         <span>WhatsApp</span>
       </label>
       <label class="checkbox-label">
-        <input type="checkbox" name="channels" value="Telegram" id="cb-telegram" onchange="toggleInput('telegram')">
+        <input type="radio" name="entry.565526970" value="Telegram" id="cb-telegram" onchange="toggleInput('telegram')">
         <span>Telegram</span>
       </label>
       <label class="checkbox-label full-width">
-        <input type="checkbox" name="channels" value="Direct Call">
+        <input type="radio" name="entry.565526970" value="Direct Call" onchange="toggleInput('call')">
         <span>Direct Call</span>
       </label>
     </div>
 
-    <!-- โซนช่องกรอก ID ที่ซ่อนอยู่ จะเด้งขึ้นมาเมื่อติ๊ก Checkbox -->
+    <!-- โซนช่องกรอก ID ที่ซ่อนอยู่ -->
     <div id="line-input-group" class="form-group dynamic-input">
       <label>LINE ID</label>
-      <input type="text" name="line_id" placeholder="Enter your LINE ID">
+      <input type="text" name="entry.565526970" id="line-input" placeholder="Enter your LINE ID">
     </div>
 
     <div id="whatsapp-input-group" class="form-group dynamic-input">
       <label>WhatsApp Number</label>
-      <input type="tel" name="whatsapp_number" placeholder="Enter your WhatsApp number (e.g. +66...)">
+      <input type="tel" name="entry.565526970" id="whatsapp-input" placeholder="Enter your WhatsApp number (e.g. +66...)">
     </div>
 
     <div id="telegram-input-group" class="form-group dynamic-input">
       <label>Telegram Username</label>
-      <input type="text" name="telegram_user" placeholder="Enter your Telegram username (@username)">
+      <input type="text" name="entry.565526970" id="telegram-input" placeholder="Enter your Telegram username (@username)">
     </div>
 
     <button type="submit" class="btn">Submit Request</button>
   </form>
 
-  <a href="https://bitazza-private.github.io/vip-chanel/v2.html" class="back-link">← Return to Main Page</a>
+  <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="back-link">← Return to Main Page</a>
 
 </div>
 
-<!-- สคริปต์ JavaScript สำหรับซ่อน/โชว์ช่องกรอกข้อมูล -->
 <script>
   function toggleInput(channel) {
-    const inputDiv = document.getElementById(channel + '-input-group');
-    const checkbox = document.getElementById('cb-' + channel);
-    
-    // ถ้ามีการติ๊กเลือก ให้แสดงช่องกรอกข้อมูล และบังคับให้ต้องกรอก (required)
-    if(checkbox.checked) {
-      inputDiv.style.display = 'block';
-      inputDiv.querySelector('input').required = true;
-    } else {
-      // ถ้าเอาติ๊กออก ให้ซ่อนช่อง ยกเลิกการบังคับกรอก และลบข้อความทิ้ง
-      inputDiv.style.display = 'none';
-      inputDiv.querySelector('input').required = false;
-      inputDiv.querySelector('input').value = ''; 
+    // ซ่อนทุกช่องกรอกข้อมูกก่อน และเคลียร์ค่าทิ้ง
+    const allGroups = ['line', 'whatsapp', 'telegram'];
+    allGroups.forEach(ch => {
+      const el = document.getElementById(ch + '-input-group');
+      if(el) {
+        el.style.display = 'none';
+        el.querySelector('input').required = false;
+        el.querySelector('input').disabled = true; // ป้องกันการส่งค่าทับกัน
+      }
+    });
+
+    // ถ้าเลือกช่องทางที่มีการกรอก ID เพิ่ม ให้แสดงช่องนั้น
+    if (channel !== 'call') {
+      const activeGroup = document.getElementById(channel + '-input-group');
+      activeGroup.style.display = 'block';
+      activeGroup.querySelector('input').disabled = false;
+      activeGroup.querySelector('input').required = true;
     }
   }
 </script>
