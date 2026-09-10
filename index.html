@@ -19,9 +19,19 @@
     max-width: 540px; margin: 60px auto; padding: 50px 40px; 
     background: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; 
     box-shadow: 0 20px 50px rgba(26,24,20,0.06); 
+    position: relative; /* สำหรับวางปุ่มภาษา */
   }
 
-  .logo { text-align: center; margin-bottom: 35px; }
+  /* ปุ่มเปลี่ยนภาษามุมขวาบน */
+  .lang-switcher {
+    position: absolute; top: 20px; right: 25px;
+    font-size: 11px; letter-spacing: 1px; color: #a8a396;
+  }
+  .lang-switcher span { cursor: pointer; transition: color 0.3s; padding: 0 5px; }
+  .lang-switcher span:hover { color: #b8923c; }
+  .lang-switcher span.active { color: #b8923c; font-weight: 600; text-decoration: underline; }
+
+  .logo { text-align: center; margin-bottom: 35px; margin-top: 10px; }
   .logo img { height: 50px; mix-blend-mode: multiply; }
 
   .header { text-align: center; margin-bottom: 40px; }
@@ -113,41 +123,47 @@
 <body>
 
 <div class="wrap">
+  
+  <!-- กล่องสลับภาษา -->
+  <div class="lang-switcher">
+    <span id="btn-lang-en" onclick="changeLang('en')" class="active">EN</span> | 
+    <span id="btn-lang-th" onclick="changeLang('th')">TH</span> | 
+    <span id="btn-lang-ru" onclick="changeLang('ru')">RU</span>
+  </div>
+
   <div class="logo">
     <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite">
   </div>
 
   <div class="header">
-    <h1 class="serif">Exclusive Access</h1>
-    <p>Please provide your details below to initiate your private request.<br>Our executive team will contact you shortly.</p>
+    <h1 class="serif" id="txt-title">Exclusive Access</h1>
+    <p id="txt-desc">Please provide your details below to initiate your private request.<br>Our executive team will contact you shortly.</p>
   </div>
 
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-  <!-- เพิ่ม onsubmit ให้ไปเรียกฟังก์ชันแสดง Popup ทันทีที่กดปุ่ม -->
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdkH60UvWyGf6oIuiRbqQm-2TklefgJbjv3cxLkYuMIyFiXxQ/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleFormSubmit();">
     
     <div class="form-group">
-      <label>Full Name</label>
-      <input type="text" name="entry.1855821471" placeholder="Enter your full name" required>
+      <label id="lbl-name">Full Name</label>
+      <input type="text" name="entry.1855821471" id="input-name" placeholder="Enter your full name" required>
     </div>
 
     <div class="form-group">
-      <label>Email Address</label>
-      <input type="email" name="entry.1951851605" placeholder="Enter your email" required>
+      <label id="lbl-email">Email Address</label>
+      <input type="email" name="entry.1951851605" id="input-email" placeholder="Enter your email" required>
     </div>
 
     <div class="form-group">
-      <label>Phone Number</label>
-      <input type="tel" name="entry.1554064553" placeholder="+66 8X XXX XXXX" required>
+      <label id="lbl-phone">Phone Number</label>
+      <input type="tel" name="entry.1554064553" id="input-phone" placeholder="+66 8X XXX XXXX" required>
     </div>
 
     <div class="divider">
-      <span>Preferred Contact Channel</span>
+      <span id="txt-channel">Preferred Contact Channel</span>
     </div>
 
     <div class="channel-grid">
-      <!-- เปลี่ยนกลับเป็น checkbox เพื่อให้เลือกได้หลายข้อ -->
       <label class="checkbox-label">
         <input type="checkbox" name="entry.565526970" value="LINE" id="cb-line" onchange="toggleInput('line')">
         <span>LINE</span>
@@ -162,44 +178,150 @@
       </label>
       <label class="checkbox-label full-width">
         <input type="checkbox" name="entry.565526970" value="Direct Call">
-        <span>Direct Call</span>
+        <span id="lbl-call">Direct Call</span>
       </label>
     </div>
 
-    <!-- โซนช่องกรอก ID ที่ซ่อนอยู่ -->
     <div id="line-input-group" class="form-group dynamic-input">
       <label>LINE ID</label>
-      <input type="text" name="entry.565526970" id="line-input" placeholder="Enter your LINE ID" disabled>
+      <input type="text" name="entry.565526970" id="input-line" placeholder="Enter your LINE ID" disabled>
     </div>
 
     <div id="whatsapp-input-group" class="form-group dynamic-input">
       <label>WhatsApp Number</label>
-      <input type="tel" name="entry.565526970" id="whatsapp-input" placeholder="Enter your WhatsApp number (e.g. +66...)" disabled>
+      <input type="tel" name="entry.565526970" id="input-whatsapp" placeholder="Enter your WhatsApp number" disabled>
     </div>
 
     <div id="telegram-input-group" class="form-group dynamic-input">
       <label>Telegram Username</label>
-      <input type="text" name="entry.565526970" id="telegram-input" placeholder="Enter your Telegram username (@username)" disabled>
+      <input type="text" name="entry.565526970" id="input-telegram" placeholder="Enter your Telegram username (@username)" disabled>
     </div>
 
-    <button type="submit" class="btn">Submit Request</button>
+    <button type="submit" class="btn" id="btn-submit">Submit Request</button>
   </form>
 
-  <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="back-link">← Return to Main Page</a>
+  <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="back-link" id="link-back">← Return to Main Page</a>
 
 </div>
 
 <!-- โค้ดกล่อง Popup -->
 <div class="modal-overlay" id="successModal">
   <div class="modal-content">
-    <h2 class="serif">Request Received</h2>
-    <p>Thank you for accepting the invitation.<br>Our executive team will reach out to you privately to complete your onboarding process.</p>
-    <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="btn">Return to Main Page</a>
+    <h2 class="serif" id="modal-title">Request Received</h2>
+    <p id="modal-desc">Thank you for accepting the invitation.<br>Our executive team will reach out to you privately to complete your onboarding process.</p>
+    <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="btn" id="modal-btn">Return to Main Page</a>
   </div>
 </div>
 
 <script>
-  // ฟังก์ชันแสดง/ซ่อนช่องกรอก ID (ปรับให้รองรับการติ๊กหลายข้อ)
+  // ==========================================
+  // ระบบสมองกลแปลภาษา (i18n Dictionary)
+  // ==========================================
+  const translations = {
+    en: {
+      title: "Exclusive Access",
+      desc: "Please provide your details below to initiate your private request.<br>Our executive team will contact you shortly.",
+      lblName: "Full Name",
+      lblEmail: "Email Address",
+      lblPhone: "Phone Number",
+      txtChannel: "Preferred Contact Channel",
+      lblCall: "Direct Call",
+      phName: "Enter your full name",
+      phEmail: "Enter your email",
+      phLine: "Enter your LINE ID",
+      phWa: "Enter your WhatsApp number (e.g. +66...)",
+      phTg: "Enter your Telegram username (@username)",
+      btnSubmit: "Submit Request",
+      linkBack: "← Return to Main Page",
+      modalTitle: "Request Received",
+      modalDesc: "Thank you for accepting the invitation.<br>Our executive team will reach out to you privately to complete your onboarding process.",
+      modalBtn: "Return to Main Page"
+    },
+    th: {
+      title: "เอกสิทธิ์เหนือระดับ",
+      desc: "กรุณากรอกรายละเอียดด้านล่างเพื่อเริ่มต้นการรับบริการส่วนบุคคล<br>ทีมผู้บริหารของเราจะติดต่อท่านกลับในไม่ช้า",
+      lblName: "ชื่อ-นามสกุล",
+      lblEmail: "อีเมล",
+      lblPhone: "เบอร์โทรศัพท์",
+      txtChannel: "ช่องทางการติดต่อที่ท่านสะดวก",
+      lblCall: "โทรศัพท์โดยตรง",
+      phName: "ระบุชื่อ-นามสกุลของคุณ",
+      phEmail: "ระบุอีเมลของคุณ",
+      phLine: "ระบุ LINE ID ของคุณ",
+      phWa: "ระบุเบอร์ WhatsApp ของคุณ (เช่น +66...)",
+      phTg: "ระบุชื่อผู้ใช้ Telegram (@username)",
+      btnSubmit: "ส่งข้อมูล",
+      linkBack: "← กลับสู่หน้าหลัก",
+      modalTitle: "ได้รับข้อมูลเรียบร้อยแล้ว",
+      modalDesc: "ขอขอบคุณที่ตอบรับคำเชิญ<br>ทีมงานผู้บริหารของเราจะติดต่อท่านกลับเป็นการส่วนตัวเพื่อดำเนินการขั้นตอนต่อไป",
+      modalBtn: "กลับสู่หน้าหลัก"
+    },
+    ru: {
+      title: "Эксклюзивный доступ",
+      desc: "Пожалуйста, укажите свои данные ниже, чтобы инициировать приватный запрос.<br>Наша команда свяжется с вами в ближайшее время.",
+      lblName: "Полное имя",
+      lblEmail: "Электронная почта",
+      lblPhone: "Номер телефона",
+      txtChannel: "Предпочитаемый канал связи",
+      lblCall: "Прямой звонок",
+      phName: "Введите ваше полное имя",
+      phEmail: "Введите ваш email",
+      phLine: "Введите ваш LINE ID",
+      phWa: "Введите ваш номер WhatsApp (напр. +66...)",
+      phTg: "Введите имя пользователя Telegram (@username)",
+      btnSubmit: "Отправить запрос",
+      linkBack: "← Вернуться на главную",
+      modalTitle: "Запрос получен",
+      modalDesc: "Спасибо за принятие приглашения.<br>Наша команда свяжется с вами лично для завершения процесса.",
+      modalBtn: "Вернуться на главную"
+    }
+  };
+
+  // ฟังก์ชันสลับภาษาหน้าเว็บและ Popup
+  function changeLang(lang) {
+    const t = translations[lang];
+
+    // อัปเดตข้อความทั่วไป
+    document.getElementById('txt-title').innerHTML = t.title;
+    document.getElementById('txt-desc').innerHTML = t.desc;
+    document.getElementById('lbl-name').innerText = t.lblName;
+    document.getElementById('lbl-email').innerText = t.lblEmail;
+    document.getElementById('lbl-phone').innerText = t.lblPhone;
+    document.getElementById('txt-channel').innerText = t.txtChannel;
+    document.getElementById('lbl-call').innerText = t.lblCall;
+    document.getElementById('btn-submit').innerText = t.btnSubmit;
+    document.getElementById('link-back').innerText = t.linkBack;
+    
+    // อัปเดตข้อความใน Popup
+    document.getElementById('modal-title').innerText = t.modalTitle;
+    document.getElementById('modal-desc').innerHTML = t.modalDesc;
+    document.getElementById('modal-btn').innerText = t.modalBtn;
+
+    // อัปเดต Placeholder
+    document.getElementById('input-name').placeholder = t.phName;
+    document.getElementById('input-email').placeholder = t.phEmail;
+    document.getElementById('input-line').placeholder = t.phLine;
+    document.getElementById('input-whatsapp').placeholder = t.phWa;
+    document.getElementById('input-telegram').placeholder = t.phTg;
+
+    // เปลี่ยนสถานะปุ่มภาษาด้านบนให้เป็นสีทอง
+    document.querySelectorAll('.lang-switcher span').forEach(el => el.classList.remove('active'));
+    document.getElementById('btn-lang-' + lang).classList.add('active');
+  }
+
+  // เช็ค URL ตอนโหลดหน้าเว็บ ว่ามีพารามิเตอร์ ?lang= มาด้วยไหม
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang'); // เช่น ได้ค่า 'th' มา
+    
+    if(lang && translations[lang]) {
+      changeLang(lang); // ถ้ามีให้แปลทันที
+    }
+  };
+
+  // ==========================================
+  // ระบบเดิม: เปิดปิดช่องใส่ ID และโชว์ Popup
+  // ==========================================
   function toggleInput(channel) {
     const inputDiv = document.getElementById(channel + '-input-group');
     const checkbox = document.getElementById('cb-' + channel);
@@ -217,18 +339,13 @@
     }
   }
 
-  // ฟังก์ชันแสดง Popup ทันทีที่กด Submit
   function handleFormSubmit() {
-    // หน่วงเวลา 0.5 วินาทีเพื่อให้ฟอร์มมีเวลาส่งข้อมูลไป Google Sheet ให้เสร็จ
     setTimeout(function() {
       const modal = document.getElementById('successModal');
       modal.style.display = 'flex';
-      setTimeout(() => {
-        modal.classList.add('show');
-      }, 10);
+      setTimeout(() => { modal.classList.add('show'); }, 10);
     }, 500);
-
-    return true; // ยอมให้ฟอร์มส่งข้อมูลตามปกติ
+    return true; 
   }
 </script>
 
