@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite - Email Generator Tool</title>
 <style>
-    /* =========================================
-       ส่วนที่ 1: แผงควบคุมสำหรับทีมงาน (จะไม่ถูกก๊อปปี้ลงไปในอีเมล)
-       ========================================= */
     body { background-color: #e9e7e0; font-family: sans-serif; margin: 0; padding: 0; }
     .control-panel {
         background: #1a1814; color: white; padding: 20px; text-align: center;
@@ -27,11 +24,21 @@
     }
     .copy-btn:hover { background: #d1c8b4; }
     .copy-msg { display: none; color: #4CAF50; font-weight: bold; margin-left: 15px; font-size: 14px; }
+    
+    /* กล่องสำหรับก๊อปปี้ Subject */
+    .subject-box {
+        margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.05);
+        border-radius: 4px; display: inline-block; font-size: 13px; color: #d1c8b4;
+    }
+    .subject-box strong { color: #ffffff; }
+    .copy-sub-btn {
+        background: transparent; border: 1px solid #b8923c; color: #b8923c;
+        padding: 4px 10px; margin-left: 10px; cursor: pointer; border-radius: 4px; font-size: 12px;
+    }
+    .copy-sub-btn:hover { background: #b8923c; color: #1a1814; }
+
     .email-wrapper { padding: 40px 20px; display: flex; justify-content: center; }
 
-    /* =========================================
-       ส่วนที่ 2: CSS สำหรับอีเมล (ที่โบรเขียนไว้)
-       ========================================= */
     table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
@@ -43,28 +50,40 @@
         .stack-column p { text-align: center !important; margin: 0 auto !important; }
         .hide-mobile { display: none !important; }
         .mobile-padding { padding: 30px 20px !important; }
-        .mobile-border-right { border-right: none !important; border-bottom: 1px solid #ebe6da !important; }
     }
 </style>
 </head>
 <body>
 
-<!-- แผงควบคุม (Control Panel) -->
 <div class="control-panel" id="no-copy-zone">
   <h2>👑 Bitazza Elite - Email Tool</h2>
-  <button class="lang-btn active" onclick="switchLang('en')">English</button>
-  <button class="lang-btn" onclick="switchLang('th')">ภาษาไทย</button>
-  <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
+  <div>
+      <button class="lang-btn active" onclick="switchLang('en')">English</button>
+      <button class="lang-btn" onclick="switchLang('th')">ภาษาไทย</button>
+      <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
+      <button class="copy-btn" onclick="copyEmailContent()">📋 Copy Email Body</button>
+      <span class="copy-msg" id="copy-success">✅ Copied!</span>
+  </div>
   
-  <button class="copy-btn" onclick="copyEmailContent()">📋 Copy Email</button>
-  <span class="copy-msg" id="copy-success">✅ Copied! นำไป Paste ใน Gmail ได้เลย!</span>
+  <!-- กล่องก๊อปปี้ Subject Line -->
+  <div class="subject-box">
+      <strong>Subject:</strong> <span id="email-subject">A Private Invitation from Bitazza, Reserved for You</span>
+      <button class="copy-sub-btn" onclick="copySubject()">📋 Copy Subject</button>
+      <span id="copy-sub-msg" style="display:none; color:#4CAF50; margin-left:5px;">✅</span>
+  </div>
 </div>
 
 <div class="email-wrapper">
-    <!-- กล่องจดหมายหลักที่จะถูกก๊อปปี้ -->
     <table id="email-content" width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e1ddce; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
         
-        <!-- 1. HEADER (Logo) - ใช้ร่วมกันทุกภาษา -->
+        <!-- HIDDEN PREHEADER TEXT (โชว์เฉพาะหน้า Inbox) -->
+        <tr>
+            <td style="display: none !important; visibility: hidden; mso-hide: all; font-size: 1px; color: #ffffff; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+                You’ve been selected for a more personal level of Private Client support.
+            </td>
+        </tr>
+
+        <!-- HEADER -->
         <tr>
             <td align="center" style="padding: 40px 40px 30px 40px; background-color: #ffffff;">
                 <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" width="100" style="display: block; border: 0;">
@@ -74,22 +93,21 @@
             </td>
         </tr>
 
-        <!-- 2. HERO IMAGE - ใช้ร่วมกันทุกภาษา -->
+        <!-- HERO IMAGE (อัปเดตเป็น el.jpg) -->
         <tr>
             <td align="center" style="padding: 0 0 30px 0;">
-                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/hero.jpg" alt="Private Client Channel" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
+                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/el.jpg" alt="Private Client Channel" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
             </td>
         </tr>
 
-        <!-- ==========================================
-             ส่วนเนื้อหาภาษาอังกฤษ (EN) 
-             ========================================== -->
+        <!-- ENGLISH (EN) -->
         <tbody id="content-en" class="email-lang">
             <tr>
                 <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
+                    <!-- อัปเดต Headline -->
                     <h1 style="margin: 0 0 15px 0; font-size: 32px; font-weight: normal; color: #1a1814; font-family: Georgia, serif; line-height: 1.2;">
-                        Welcome to Your<br>
-                        <span style="font-style: italic; color: #b8923c;">Exclusive Invitation</span>
+                        Your Bitazza Experience,<br>
+                        <span style="font-style: italic; color: #b8923c;">Now More Personal</span>
                     </h1>
                     <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #6a645b; max-width: 480px;">
                         An invitation to an exclusive client circle—designed to empower your investments with clear communication, direct expert access, and a decisive edge in digital assets.
@@ -182,14 +200,14 @@
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td align="center">
-                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=en" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
                                         Discover Full Privileges
                                     </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="center" style="padding-top: 15px;">
-                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html#request" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/index.html?lang=en" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
                                         Accept Invitation
                                     </a>
                                 </td>
@@ -203,15 +221,15 @@
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         Yours sincerely,<br>
                         <strong style="color: #1a1814;">Bitazza Elite Thailand</strong><br>
-                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; <a href="https://www.bitazza.com" target="_blank" style="color: #b8923c; text-decoration: none;">www.bitazza.com</a>
+                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; 
+                        <!-- อัปเดตลิงก์ bitazza.co.th -->
+                        <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
                     </p>
                 </td>
             </tr>
         </tbody>
 
-        <!-- ==========================================
-             ส่วนเนื้อหาภาษาไทย (TH) 
-             ========================================== -->
+        <!-- THAI (TH) -->
         <tbody id="content-th" class="email-lang" style="display: none;">
             <tr>
                 <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
@@ -310,14 +328,14 @@
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td align="center">
-                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=th" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
                                         ค้นพบสิทธิพิเศษทั้งหมด
                                     </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="center" style="padding-top: 15px;">
-                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html#request" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/index.html?lang=th" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
                                         ตอบรับคำเชิญ
                                     </a>
                                 </td>
@@ -331,15 +349,14 @@
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         ขอแสดงความนับถือ,<br>
                         <strong style="color: #1a1814;">ทีมงาน Bitazza Elite ประเทศไทย</strong><br>
-                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; <a href="https://www.bitazza.com" target="_blank" style="color: #b8923c; text-decoration: none;">www.bitazza.com</a>
+                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; 
+                        <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
                     </p>
                 </td>
             </tr>
         </tbody>
 
-        <!-- ==========================================
-             ส่วนเนื้อหาภาษารัสเซีย (RU) 
-             ========================================== -->
+        <!-- RUSSIAN (RU) -->
         <tbody id="content-ru" class="email-lang" style="display: none;">
             <tr>
                 <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
@@ -438,14 +455,14 @@
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td align="center">
-                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=ru" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
                                         Узнать о привилегиях
                                     </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="center" style="padding-top: 15px;">
-                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html#request" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/index.html?lang=ru" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
                                         Принять приглашение
                                     </a>
                                 </td>
@@ -459,15 +476,14 @@
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         С уважением,<br>
                         <strong style="color: #1a1814;">Команда Bitazza Elite</strong><br>
-                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; <a href="https://www.bitazza.com" target="_blank" style="color: #b8923c; text-decoration: none;">www.bitazza.com</a>
+                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; 
+                        <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
                     </p>
                 </td>
             </tr>
         </tbody>
 
-        <!-- ==========================================
-             FOOTER (ใช้ร่วมกันทุกภาษา)
-             ========================================== -->
+        <!-- FOOTER -->
         <tr>
             <td align="center" style="padding: 30px 20px;">
                 <p style="margin: 0 0 20px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase;">
@@ -491,20 +507,16 @@
 </div>
 
 <script>
-  // ฟังก์ชันสลับภาษา (เปลี่ยนการแสดงผล <tbody>)
   function switchLang(lang) {
     document.querySelectorAll('.email-lang').forEach(el => {
       el.style.display = 'none';
     });
-    // โชว์เฉพาะภาษาที่ถูกเลือก
     document.getElementById('content-' + lang).style.display = 'table-row-group';
 
-    // เปลี่ยนสีปุ่มที่กำลังใช้งานอยู่
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
   }
 
-  // ฟังก์ชันคลุมดำแล้วก๊อปปี้ตารางอีเมลทั้งหมด
   function copyEmailContent() {
     const emailTable = document.getElementById('email-content');
     const range = document.createRange();
@@ -517,8 +529,22 @@
     document.execCommand('copy');
     windowSelection.removeAllRanges();
     
-    // โชว์ข้อความแจ้งเตือนว่าก๊อปปี้เสร็จแล้ว
     const msg = document.getElementById('copy-success');
+    msg.style.display = 'inline-block';
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+  }
+
+  function copySubject() {
+    const subjectText = document.getElementById('email-subject').innerText;
+    
+    const tempInput = document.createElement("input");
+    tempInput.value = subjectText;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    
+    const msg = document.getElementById('copy-sub-msg');
     msg.style.display = 'inline-block';
     setTimeout(() => { msg.style.display = 'none'; }, 3000);
   }
