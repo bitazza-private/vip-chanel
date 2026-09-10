@@ -122,11 +122,10 @@
     <p>Please provide your details below to initiate your private request.<br>Our executive team will contact you shortly.</p>
   </div>
 
-  <!-- ระบบ iframe ซ่อนการเด้งไปหน้า Google Form (เปลี่ยนไปเรียก popup แทน) -->
-  <script type="text/javascript">var submitted=false;</script>
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessModal(); }"></iframe>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdkH60UvWyGf6oIuiRbqQm-2TklefgJbjv3cxLkYuMIyFiXxQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+  <!-- เพิ่ม onsubmit ให้ไปเรียกฟังก์ชันแสดง Popup ทันทีที่กดปุ่ม -->
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdkH60UvWyGf6oIuiRbqQm-2TklefgJbjv3cxLkYuMIyFiXxQ/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleFormSubmit();">
     
     <div class="form-group">
       <label>Full Name</label>
@@ -148,37 +147,39 @@
     </div>
 
     <div class="channel-grid">
+      <!-- เปลี่ยนกลับเป็น checkbox เพื่อให้เลือกได้หลายข้อ -->
       <label class="checkbox-label">
-        <input type="radio" name="entry.565526970" value="LINE" id="cb-line" onchange="toggleInput('line')">
+        <input type="checkbox" name="entry.565526970" value="LINE" id="cb-line" onchange="toggleInput('line')">
         <span>LINE</span>
       </label>
       <label class="checkbox-label">
-        <input type="radio" name="entry.565526970" value="WhatsApp" id="cb-whatsapp" onchange="toggleInput('whatsapp')">
+        <input type="checkbox" name="entry.565526970" value="WhatsApp" id="cb-whatsapp" onchange="toggleInput('whatsapp')">
         <span>WhatsApp</span>
       </label>
       <label class="checkbox-label">
-        <input type="radio" name="entry.565526970" value="Telegram" id="cb-telegram" onchange="toggleInput('telegram')">
+        <input type="checkbox" name="entry.565526970" value="Telegram" id="cb-telegram" onchange="toggleInput('telegram')">
         <span>Telegram</span>
       </label>
       <label class="checkbox-label full-width">
-        <input type="radio" name="entry.565526970" value="Direct Call" onchange="toggleInput('call')">
+        <input type="checkbox" name="entry.565526970" value="Direct Call">
         <span>Direct Call</span>
       </label>
     </div>
 
+    <!-- โซนช่องกรอก ID ที่ซ่อนอยู่ -->
     <div id="line-input-group" class="form-group dynamic-input">
       <label>LINE ID</label>
-      <input type="text" name="entry.565526970" id="line-input" placeholder="Enter your LINE ID">
+      <input type="text" name="entry.565526970" id="line-input" placeholder="Enter your LINE ID" disabled>
     </div>
 
     <div id="whatsapp-input-group" class="form-group dynamic-input">
       <label>WhatsApp Number</label>
-      <input type="tel" name="entry.565526970" id="whatsapp-input" placeholder="Enter your WhatsApp number (e.g. +66...)">
+      <input type="tel" name="entry.565526970" id="whatsapp-input" placeholder="Enter your WhatsApp number (e.g. +66...)" disabled>
     </div>
 
     <div id="telegram-input-group" class="form-group dynamic-input">
       <label>Telegram Username</label>
-      <input type="text" name="entry.565526970" id="telegram-input" placeholder="Enter your Telegram username (@username)">
+      <input type="text" name="entry.565526970" id="telegram-input" placeholder="Enter your Telegram username (@username)" disabled>
     </div>
 
     <button type="submit" class="btn">Submit Request</button>
@@ -188,44 +189,46 @@
 
 </div>
 
-<!-- โค้ดกล่อง Popup (จะซ่อนอยู่จนกว่าจะส่งข้อมูลเสร็จ) -->
+<!-- โค้ดกล่อง Popup -->
 <div class="modal-overlay" id="successModal">
   <div class="modal-content">
     <h2 class="serif">Request Received</h2>
     <p>Thank you for accepting the invitation.<br>Our executive team will reach out to you privately to complete your onboarding process.</p>
-    <!-- ปุ่มนี้พอกดแล้วจะพากลับไปหน้าหลัก -->
     <a href="https://bitazza-private.github.io/vip-chanel/invite.html" class="btn">Return to Main Page</a>
   </div>
 </div>
 
 <script>
+  // ฟังก์ชันแสดง/ซ่อนช่องกรอก ID (ปรับให้รองรับการติ๊กหลายข้อ)
   function toggleInput(channel) {
-    const allGroups = ['line', 'whatsapp', 'telegram'];
-    allGroups.forEach(ch => {
-      const el = document.getElementById(ch + '-input-group');
-      if(el) {
-        el.style.display = 'none';
-        el.querySelector('input').required = false;
-        el.querySelector('input').disabled = true; 
-      }
-    });
-
-    if (channel !== 'call') {
-      const activeGroup = document.getElementById(channel + '-input-group');
-      activeGroup.style.display = 'block';
-      activeGroup.querySelector('input').disabled = false;
-      activeGroup.querySelector('input').required = true;
+    const inputDiv = document.getElementById(channel + '-input-group');
+    const checkbox = document.getElementById('cb-' + channel);
+    const inputField = inputDiv.querySelector('input');
+    
+    if(checkbox.checked) {
+      inputDiv.style.display = 'block';
+      inputField.disabled = false;
+      inputField.required = true;
+    } else {
+      inputDiv.style.display = 'none';
+      inputField.required = false;
+      inputField.disabled = true;
+      inputField.value = ''; 
     }
   }
 
-  // ฟังก์ชันเรียก Popup ขึ้นมาโชว์
-  function showSuccessModal() {
-    const modal = document.getElementById('successModal');
-    modal.style.display = 'flex';
-    // หน่วงเวลาเล็กน้อยให้ CSS Animation ทำงาน
-    setTimeout(() => {
-      modal.classList.add('show');
-    }, 10);
+  // ฟังก์ชันแสดง Popup ทันทีที่กด Submit
+  function handleFormSubmit() {
+    // หน่วงเวลา 0.5 วินาทีเพื่อให้ฟอร์มมีเวลาส่งข้อมูลไป Google Sheet ให้เสร็จ
+    setTimeout(function() {
+      const modal = document.getElementById('successModal');
+      modal.style.display = 'flex';
+      setTimeout(() => {
+        modal.classList.add('show');
+      }, 10);
+    }, 500);
+
+    return true; // ยอมให้ฟอร์มส่งข้อมูลตามปกติ
   }
 </script>
 
