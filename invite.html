@@ -5,12 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite — Private Client Channel</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap');
+  /* อัปเดตเพิ่มฟอนต์ Prompt สำหรับภาษาไทย */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap');
 
   * { box-sizing: border-box; }
   body, html { margin: 0; padding: 0; background-color: #f4f3ed; scroll-behavior: smooth; }
-  body { font-family: 'Jost', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #5c574f; }
-  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  
+  /* ใส่ Prompt ไว้ต่อท้าย Jost */
+  body { font-family: 'Jost', 'Prompt', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #5c574f; }
+  .serif { font-family: 'Cormorant Garamond', 'Prompt', Georgia, serif; }
   
   .wrap { max-width: 1040px; margin: 0 auto; overflow: hidden; background: #f4f3ed; box-shadow: 0 0 50px rgba(0,0,0,0.03); }
   a { text-decoration: none; }
@@ -129,7 +132,6 @@
       <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" class="logo-img">
     </div>
     <div class="nav-right">
-      <!-- เพิ่มปุ่มสลับภาษาตรงนี้ -->
       <div class="lang-switcher">
         <span class="lang-btn active" onclick="changeLang('en')">EN</span> | 
         <span class="lang-btn" onclick="changeLang('th')">TH</span> | 
