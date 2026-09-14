@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza OTC - RM Intro Email</title>
 <style>
-    body { background-color: #e9e7e0; font-family: sans-serif; margin: 0; padding: 0; }
+    body { background-color: #e9e7e0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
     .control-panel {
         background: #1a1814; color: white; padding: 20px; text-align: center;
         position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -43,10 +43,11 @@
     img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
     table { border-collapse: collapse !important; }
     
+    /* สไตล์สีทองสำหรับจุดที่ต้องแก้ (คลีนๆ ไม่มีพื้นหลัง) */
     .highlight { color: #b8923c; font-weight: bold; }
 
     @media only screen and (max-width: 600px) {
-        .mobile-padding { padding: 30px 20px !important; }
+        .mobile-padding { padding: 30px 24px !important; }
     }
 </style>
 </head>
@@ -67,7 +68,7 @@
       <button class="copy-sub-btn" onclick="copySubject()">📋 Copy Subject</button>
       <span id="copy-sub-msg" style="display:none; color:#4CAF50; margin-left:5px;">✅</span>
   </div>
-  <p style="font-size: 12px; color: #8a8377; margin-top: 10px;">⚠️ Don't forget to replace the <span style="color:#b8923c; font-weight:bold;">[Gold text]</span> before sending!</p>
+  <p style="font-size: 12px; color: #8a8377; margin-top: 10px;">⚠️ Please replace the <span style="color:#b8923c; font-weight:bold;">[Gold Bracket Text]</span> with the client's information before sending.</p>
 </div>
 
 <div class="email-wrapper">
@@ -76,32 +77,32 @@
         <!-- HIDDEN PREHEADER TEXT -->
         <tr>
             <td style="display: none !important; visibility: hidden; mso-hide: all; font-size: 1px; color: #ffffff; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-                I am pleased to introduce myself as your Dedicated Relationship Manager...
+                I am pleased to introduce myself as your Dedicated Relationship Manager.
             </td>
         </tr>
 
         <!-- HEADER -->
         <tr>
-            <td align="center" style="padding: 40px 40px 30px 40px; background-color: #ffffff;">
-                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza OTC" width="100" style="display: block; border: 0;">
+            <td align="center" style="padding: 45px 40px 30px 40px; background-color: #ffffff;">
+                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza OTC" width="110" style="display: block; border: 0;">
                 <p style="margin: 20px 0 0 0; font-size: 10px; letter-spacing: 3px; color: #b8923c; text-transform: uppercase; font-weight: bold;">
-                    Bitazza OTC Desk
+                    Bitazza OTC Desk &middot; Institutional Trading
                 </p>
             </td>
         </tr>
 
-        <!-- HERO IMAGE -->
+        <!-- HERO IMAGE (ใช้รูปซองจดหมายหรูหราเดิม) -->
         <tr>
-            <td align="center" style="padding: 0 0 30px 0;">
-                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/el.jpg" alt="Bitazza OTC" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
+            <td align="center" style="padding: 0 0 35px 0;">
+                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/el.jpg" alt="Bitazza OTC Invitation" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
             </td>
         </tr>
 
         <!-- ENGLISH (EN) -->
         <tbody id="content-en" class="email-lang">
             <tr>
-                <td align="left" style="padding: 0 40px 20px 40px;" class="mobile-padding">
-                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814;">
+                <td align="left" style="padding: 0 45px 15px 45px;" class="mobile-padding">
+                    <p style="margin: 0 0 24px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
                         Dear <span class="highlight">[Customer's Name]</span>,
                     </p>
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
@@ -111,12 +112,33 @@
                         Designed specifically for institutional investors and high-volume traders, Bitazza OTC delivers:
                     </p>
                     
-                    <ul style="margin: 0 0 25px 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Institutional-Grade Execution:</strong> Access deep liquidity pools for large-block transactions with minimal market impact.</li>
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Competitive Pricing:</strong> Enjoy optimized pricing structures tailored to your trading volume.</li>
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Fast-Tracked Operations:</strong> Priority handling ensures rapid, secure, and seamless order settlements.</li>
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">High-Touch Advisory:</strong> Direct, confidential access to a specialized team dedicated to your account.</li>
-                    </ul>
+                    <!-- BULLET POINTS -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">Institutional-Grade Execution:</strong> Access deep liquidity pools for large-block transactions with minimal market impact.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">Competitive Pricing:</strong> Enjoy optimized pricing structures tailored to your trading volume.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">Fast-Tracked Operations:</strong> Priority handling ensures rapid, secure, and seamless order settlements.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">High-Touch Advisory:</strong> Direct, confidential access to a specialized team dedicated to your account.
+                            </td>
+                        </tr>
+                    </table>
 
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         I attempted to reach you earlier today via phone at <span class="highlight">[Customer’s Registered Number]</span> to welcome you personally, but was unable to connect.
@@ -125,19 +147,31 @@
                         To ensure we communicate through the most convenient channel for you, could you please let me know your preferred platform?
                     </p>
                     
-                    <div style="background-color: #fdfcf9; border-left: 3px solid #b8923c; padding: 15px 20px; margin-bottom: 25px;">
-                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>WhatsApp / Telegram / LINE:</strong> <span class="highlight">[Insert Preferred ID or Number]</span></p>
-                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>Alternative Phone:</strong> <span class="highlight">[Insert Number]</span></p>
-                        <p style="margin: 0; font-size: 14px; color: #5c574f;"><strong>Preferred Time for a Call:</strong> <span class="highlight">[Insert Time Slot]</span></p>
+                    <!-- CONTACT PREFERENCE BOX -->
+                    <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="160" style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">WhatsApp/LINE:</td>
+                                <td style="font-size: 13px; color: #5c574f; padding-bottom: 8px;"><span class="highlight">[Insert ID or Number]</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">Alternative Phone:</td>
+                                <td style="font-size: 13px; color: #5c574f; padding-bottom: 8px;"><span class="highlight">[Insert Number]</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 13px; color: #1a1814; font-weight: bold;">Preferred Time:</td>
+                                <td style="font-size: 13px; color: #5c574f;"><span class="highlight">[Insert Time Slot]</span></td>
+                            </tr>
+                        </table>
                     </div>
 
-                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 35px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Simply reply to this email with your preferred contact method, and I will connect with you promptly. We look forward to partnering with you and supporting your institutional trading requirements.
                     </p>
                 </td>
             </tr>
             <tr>
-                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                <td align="left" style="padding: 0 45px 45px 45px;" class="mobile-padding">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         Best regards,<br><br>
                         <strong style="color: #1a1814; font-size: 16px;">Piyathida (Lisa)</strong><br>
@@ -153,40 +187,75 @@
         <!-- THAI (TH) -->
         <tbody id="content-th" class="email-lang" style="display: none;">
             <tr>
-                <td align="left" style="padding: 0 40px 20px 40px;" class="mobile-padding">
-                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814;">
+                <td align="left" style="padding: 0 45px 15px 45px;" class="mobile-padding">
+                    <p style="margin: 0 0 24px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
                         เรียน <span class="highlight">[ชื่อลูกค้า]</span>,
                     </p>
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         ดิฉัน Piyathida (Lisa), Relationship Manager จาก Bitazza ค่ะ ขออนุญาตติดต่อท่านเพื่อแนะนำตัวและพูดคุยเกี่ยวกับบริการ Bitazza OTC (Over-the-Counter) ค่ะ
                     </p>
                     <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        บริการ OTC ของเราดูแลลูกค้าที่ต้องการซื้อขายสินทรัพย์ดิจิทัลในปริมาณที่สูง โดยมีทีมงานคอยดูแลและประสานงานในแต่ละรายการเป็นรายบุคคล ตั้งแต่การเสนอราคา การประสานงานด้านการซื้อขาย ไปจนถึงขั้นตอนการชำระราคา (Settlement) เพื่อให้การทำรายการเป็นไปอย่างราบรื่นและเหมาะสมกับความต้องการของท่านค่ะ
+                        บริการ OTC ของเราดูแลลูกค้าและนักลงทุนสถาบันที่ต้องการซื้อขายสินทรัพย์ดิจิทัลในปริมาณสูง โดยมีทีมงานคอยดูแลและประสานงานรายการของท่านเป็นรายบุคคล เพื่อให้การทำรายการราบรื่นและเหมาะสมกับความต้องการของท่าน ดังนี้:
                     </p>
                     
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">การซื้อขายระดับสถาบัน:</strong> เข้าถึงสภาพคล่องเชิงลึก รองรับการทำธุรกรรมขนาดใหญ่โดยกระทบต่อราคาตลาดน้อยที่สุด
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">ราคาที่ดีที่สุด:</strong> โครงสร้างราคาแบบพิเศษที่ปรับให้เหมาะสมกับปริมาณการซื้อขายของท่าน
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">การดำเนินการที่รวดเร็ว:</strong> บริการ Fast-track ประสานงานและชำระราคา (Settlement) อย่างรวดเร็วและปลอดภัย
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">ทีมที่ปรึกษาส่วนบุคคล:</strong> ทีมงานผู้เชี่ยวชาญคอยดูแลและให้คำแนะนำโดยตรง พร้อมรักษาความลับขั้นสูงสุด
+                            </td>
+                        </tr>
+                    </table>
+
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        ก่อนหน้านี้ ดิฉันได้พยายามติดต่อท่านผ่านหมายเลขโทรศัพท์ที่ลงทะเบียนกับ Bitazza ไว้ <span class="highlight">[เบอร์โทรลูกค้า]</span> โดยใช้หมายเลขติดต่อโดยตรงของดิฉันเพื่อแนะนำตัวและพูดคุยเกี่ยวกับบริการ OTC ค่ะ
+                        ก่อนหน้านี้ ดิฉันได้พยายามติดต่อท่านผ่านหมายเลขโทรศัพท์ที่ลงทะเบียนกับ Bitazza ไว้ที่เบอร์ <span class="highlight">[เบอร์โทรลูกค้า]</span> เพื่อแนะนำตัวและพูดคุยเกี่ยวกับบริการ OTC แต่ยังไม่สามารถติดต่อได้ค่ะ
                     </p>
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        เพื่อความสะดวกในการติดต่อ ไม่ทราบว่าท่านสะดวกให้ดิฉันติดต่อผ่านช่องทางใดเป็นพิเศษคะ เช่น WhatsApp, Telegram หรือ LINE
+                        เพื่อความสะดวกในการติดต่อ ไม่ทราบว่าท่านสะดวกให้ดิฉันติดต่อผ่านช่องทางใดเป็นพิเศษคะ?
                     </p>
                     
-                    <div style="background-color: #fdfcf9; border-left: 3px solid #b8923c; padding: 15px 20px; margin-bottom: 25px;">
-                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>WhatsApp / Telegram / LINE:</strong> <span class="highlight">[ระบุ ID ที่สะดวก]</span></p>
-                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>เบอร์โทรศัพท์อื่น:</strong> <span class="highlight">[ระบุเบอร์โทร]</span></p>
-                        <p style="margin: 0; font-size: 14px; color: #5c574f;"><strong>ช่วงเวลาที่สะดวกให้ติดต่อ:</strong> <span class="highlight">[ระบุเวลา]</span></p>
+                    <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="150" style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">WhatsApp / LINE:</td>
+                                <td style="font-size: 13px; color: #5c574f; padding-bottom: 8px;"><span class="highlight">[ระบุ ID ที่สะดวก]</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">เบอร์โทรศัพท์อื่น:</td>
+                                <td style="font-size: 13px; color: #5c574f; padding-bottom: 8px;"><span class="highlight">[ระบุเบอร์โทร]</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 13px; color: #1a1814; font-weight: bold;">ช่วงเวลาที่สะดวก:</td>
+                                <td style="font-size: 13px; color: #5c574f;"><span class="highlight">[ระบุเวลา]</span></td>
+                            </tr>
+                        </table>
                     </div>
 
-                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        หากสะดวก สามารถแจ้งช่องทางและรายละเอียดการติดต่อที่ท่านต้องการได้เลยนะคะ ดิฉันยินดีติดต่อกลับและดูแลท่านโดยตรงค่ะ หากท่านสนใจรับข้อมูลเพิ่มเติมเกี่ยวกับบริการ OTC หรือต้องการพูดคุยเกี่ยวกับรูปแบบการทำรายการ สามารถตอบกลับอีเมลฉบับนี้ได้เลยนะคะ 
-                    </p>
-                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        ขอบพระคุณสำหรับเวลาของท่านนะคะ และหวังว่าจะได้มีโอกาสพูดคุยและดูแลท่านในโอกาสต่อไปค่ะ
+                    <p style="margin: 0 0 35px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        ท่านสามารถตอบกลับอีเมลฉบับนี้เพื่อแจ้งช่องทางติดต่อที่ท่านต้องการได้เลยนะคะ ดิฉันยินดีให้ข้อมูลเพิ่มเติมและดูแลประสานงานให้ท่านโดยตรงค่ะ ขอบพระคุณสำหรับเวลาของท่าน และหวังว่าจะได้มีโอกาสพูดคุยและร่วมงานกันในโอกาสต่อไปค่ะ
                     </p>
                 </td>
             </tr>
             <tr>
-                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                <td align="left" style="padding: 0 45px 45px 45px;" class="mobile-padding">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         ขอแสดงความนับถือ,<br><br>
                         <strong style="color: #1a1814; font-size: 16px;">Piyathida (Lisa)</strong><br>
@@ -202,8 +271,8 @@
         <!-- RUSSIAN (RU) -->
         <tbody id="content-ru" class="email-lang" style="display: none;">
             <tr>
-                <td align="left" style="padding: 0 40px 20px 40px;" class="mobile-padding">
-                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814;">
+                <td align="left" style="padding: 0 45px 15px 45px;" class="mobile-padding">
+                    <p style="margin: 0 0 24px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
                         Уважаемый(ая) <span class="highlight">[Имя клиента]</span>,
                     </p>
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
@@ -213,12 +282,32 @@
                         Разработанный специально для институциональных инвесторов и крупных трейдеров, сервис Bitazza OTC предлагает:
                     </p>
                     
-                    <ul style="margin: 0 0 25px 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Институциональное исполнение:</strong> Доступ к пулам глубокой ликвидности для крупных сделок с минимальным влиянием на рынок.</li>
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Конкурентное ценообразование:</strong> Оптимизированные структуры цен, адаптированные к вашим объемам торгов.</li>
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Ускоренные операции:</strong> Приоритетное обслуживание обеспечивает быстрые и безопасные расчеты.</li>
-                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Первоклассный консалтинг:</strong> Прямой и конфиденциальный доступ к команде экспертов, закрепленной за вашим счетом.</li>
-                    </ul>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">Институциональное исполнение:</strong> Доступ к пулам глубокой ликвидности для крупных сделок с минимальным влиянием на рынок.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">Конкурентное ценообразование:</strong> Оптимизированные структуры цен, адаптированные к вашим объемам торгов.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">Ускоренные операции:</strong> Приоритетное обслуживание обеспечивает быстрые и безопасные расчеты.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
+                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                <strong style="color:#1a1814;">Первоклассный консалтинг:</strong> Прямой и конфиденциальный доступ к команде экспертов, закрепленной за вашим счетом.
+                            </td>
+                        </tr>
+                    </table>
 
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Ранее я пыталась связаться с вами по номеру <span class="highlight">[Номер клиента]</span>, чтобы поприветствовать вас лично, но не смогла дозвониться.
@@ -227,19 +316,30 @@
                         Чтобы наше общение было максимально удобным, пожалуйста, сообщите предпочитаемый канал связи:
                     </p>
                     
-                    <div style="background-color: #fdfcf9; border-left: 3px solid #b8923c; padding: 15px 20px; margin-bottom: 25px;">
-                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>WhatsApp / Telegram / LINE:</strong> <span class="highlight">[Укажите ID или номер]</span></p>
-                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>Дополнительный телефон:</strong> <span class="highlight">[Укажите номер]</span></p>
-                        <p style="margin: 0; font-size: 14px; color: #5c574f;"><strong>Удобное время для звонка:</strong> <span class="highlight">[Укажите время]</span></p>
+                    <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="180" style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">WhatsApp / LINE:</td>
+                                <td style="font-size: 13px; color: #5c574f; padding-bottom: 8px;"><span class="highlight">[Укажите ID или номер]</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">Дополнительный телефон:</td>
+                                <td style="font-size: 13px; color: #5c574f; padding-bottom: 8px;"><span class="highlight">[Укажите номер]</span></td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 13px; color: #1a1814; font-weight: bold;">Удобное время:</td>
+                                <td style="font-size: 13px; color: #5c574f;"><span class="highlight">[Укажите время]</span></td>
+                            </tr>
+                        </table>
                     </div>
 
-                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 35px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Просто ответьте на это письмо, указав предпочтительный способ связи, и я оперативно свяжусь с вами. С нетерпением ждем возможности поддержать ваши торговые потребности.
                     </p>
                 </td>
             </tr>
             <tr>
-                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                <td align="left" style="padding: 0 45px 45px 45px;" class="mobile-padding">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         С уважением,<br><br>
                         <strong style="color: #1a1814; font-size: 16px;">Пиятида (Лиза)</strong><br>
@@ -254,8 +354,8 @@
 
         <!-- FOOTER -->
         <tr>
-            <td align="center" style="padding: 30px 20px;">
-                <p style="margin: 0 0 10px 0; font-size: 11px; line-height: 1.6; color: #8a8377; text-align: justify;">
+            <td align="center" style="padding: 30px 20px; border-top: 1px solid #e1ddce;">
+                <p style="margin: 0 0 10px 0; font-size: 11px; line-height: 1.6; color: #8a8377; text-align: justify; max-width: 500px;">
                     <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law.
                 </p>
                 <p style="margin: 0; font-size: 10px; line-height: 1.8; color: #8a8377; text-transform: uppercase; letter-spacing: 1px;">
