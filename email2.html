@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitazza Elite - Intro Email Tool</title>
+<style>
+    body { background-color: #e9e7e0; font-family: sans-serif; margin: 0; padding: 0; }
+    .control-panel {
+        background: #1a1814; color: white; padding: 20px; text-align: center;
+        position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .control-panel h2 { margin: 0 0 15px 0; font-size: 18px; color: #b8923c; letter-spacing: 1px; }
+    .lang-btn {
+        background: transparent; border: 1px solid #b8923c; color: #b8923c;
+        padding: 8px 20px; margin: 0 5px; cursor: pointer; border-radius: 4px;
+        font-size: 14px; transition: all 0.2s;
+    }
+    .lang-btn.active { background: #b8923c; color: #1a1814; font-weight: bold; }
+    .copy-btn {
+        background: #ffffff; color: #1a1814; border: none; font-weight: bold;
+        padding: 10px 25px; margin-left: 20px; cursor: pointer; border-radius: 4px;
+        font-size: 14px; box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    .copy-btn:hover { background: #d1c8b4; }
+    .copy-msg { display: none; color: #4CAF50; font-weight: bold; margin-left: 15px; font-size: 14px; }
+    
+    .subject-box {
+        margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.05);
+        border-radius: 4px; display: inline-block; font-size: 13px; color: #d1c8b4;
+    }
+    .subject-box strong { color: #ffffff; }
+    .copy-sub-btn {
+        background: transparent; border: 1px solid #b8923c; color: #b8923c;
+        padding: 4px 10px; margin-left: 10px; cursor: pointer; border-radius: 4px; font-size: 12px;
+    }
+    .copy-sub-btn:hover { background: #b8923c; color: #1a1814; }
+
+    .email-wrapper { padding: 40px 20px; display: flex; justify-content: center; }
+
+    table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
+    table { border-collapse: collapse !important; }
+    
+    .highlight { color: #b8923c; font-weight: bold; }
+
+    @media only screen and (max-width: 600px) {
+        .mobile-padding { padding: 30px 20px !important; }
+    }
+</style>
+</head>
+<body>
+
+<div class="control-panel" id="no-copy-zone">
+  <h2>🤝 Bitazza OTC - RM Intro Email Tool</h2>
+  <div>
+      <button class="lang-btn active" onclick="switchLang('en')">English</button>
+      <button class="lang-btn" onclick="switchLang('th')">ภาษาไทย</button>
+      <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
+      <button class="copy-btn" onclick="copyEmailContent()">📋 Copy Email Body</button>
+      <span class="copy-msg" id="copy-success">✅ Copied!</span>
+  </div>
+  
+  <div class="subject-box">
+      <strong>Subject:</strong> <span id="email-subject">Personal Introduction: Your Bitazza OTC Relationship Manager</span>
+      <button class="copy-sub-btn" onclick="copySubject()">📋 Copy Subject</button>
+      <span id="copy-sub-msg" style="display:none; color:#4CAF50; margin-left:5px;">✅</span>
+  </div>
+  <p style="font-size: 12px; color: #8a8377; margin-top: 10px;">⚠️ Don't forget to replace the <span style="color:#b8923c;">[Gold Bracket text]</span> before sending!</p>
+</div>
+
+<div class="email-wrapper">
+    <table id="email-content" width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e1ddce; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+        
+        <!-- HIDDEN PREHEADER TEXT -->
+        <tr>
+            <td style="display: none !important; visibility: hidden; mso-hide: all; font-size: 1px; color: #ffffff; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+                I am pleased to introduce myself as your Dedicated Relationship Manager...
+            </td>
+        </tr>
+
+        <!-- HEADER -->
+        <tr>
+            <td align="center" style="padding: 40px 40px 30px 40px; background-color: #ffffff;">
+                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" width="100" style="display: block; border: 0;">
+                <p style="margin: 20px 0 0 0; font-size: 10px; letter-spacing: 3px; color: #b8923c; text-transform: uppercase; font-weight: bold;">
+                    OTC Desk &middot; Private Client
+                </p>
+            </td>
+        </tr>
+
+        <!-- HERO IMAGE -->
+        <tr>
+            <td align="center" style="padding: 0 0 30px 0;">
+                <!-- สามารถใช้รูป chess.jpg (หมากรุก) หรือ el.jpg ได้ตามความเหมาะสม -->
+                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/el.jpg" alt="Bitazza OTC" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
+            </td>
+        </tr>
+
+        <!-- ENGLISH (EN) -->
+        <tbody id="content-en" class="email-lang">
+            <tr>
+                <td align="left" style="padding: 0 40px 20px 40px;" class="mobile-padding">
+                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814;">
+                        Dear <span class="highlight">[Customer's Name]</span>,
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Thank you for your interest in Bitazza OTC. My name is Piyathida (Lisa), and I am pleased to introduce myself as your Dedicated Relationship Manager. My role is to ensure you receive tailored support, seamless trade execution, and priority access to our Over-the-Counter (OTC) Desk.
+                    </p>
+                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Designed specifically for institutional investors and high-volume traders, Bitazza OTC delivers:
+                    </p>
+                    
+                    <ul style="margin: 0 0 25px 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Institutional-Grade Execution:</strong> Access deep liquidity pools for large-block transactions with minimal market impact.</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Competitive Pricing:</strong> Enjoy optimized pricing structures tailored to your trading volume.</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Fast-Tracked Operations:</strong> Priority handling ensures rapid, secure, and seamless order settlements.</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">High-Touch Advisory:</strong> Direct, confidential access to a specialized team dedicated to your account.</li>
+                    </ul>
+
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        I attempted to reach you earlier today via phone at <span class="highlight">[Customer’s Registered Number]</span> to welcome you personally, but was unable to connect.
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        To ensure we communicate through the most convenient channel for you, could you please let me know your preferred platform?
+                    </p>
+                    
+                    <div style="background-color: #fdfcf9; border-left: 3px solid #b8923c; padding: 15px 20px; margin-bottom: 25px;">
+                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>WhatsApp / Telegram / LINE:</strong> <span class="highlight">[Insert Preferred ID or Number]</span></p>
+                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>Alternative Phone:</strong> <span class="highlight">[Insert Number]</span></p>
+                        <p style="margin: 0; font-size: 14px; color: #5c574f;"><strong>Preferred Time for a Call:</strong> <span class="highlight">[Insert Time Slot]</span></p>
+                    </div>
+
+                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Simply reply to this email with your preferred contact method, and I will connect with you promptly. We look forward to partnering with you and supporting your institutional trading requirements.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                    <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
+                        Best regards,<br><br>
+                        <strong style="color: #1a1814; font-size: 16px;">Piyathida (Lisa)</strong><br>
+                        Dedicated Relationship Manager | Bitazza OTC Desk<br>
+                        Direct: <a href="tel:[RM's Number]" style="color: #b8923c; text-decoration: none;"><span class="highlight">[RM’s Number]</span></a><br>
+                        Email: <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a><br>
+                        Website: <a href="https://bitazza.co.th/otc" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th/otc</a>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+
+        <!-- THAI (TH) -->
+        <tbody id="content-th" class="email-lang" style="display: none;">
+            <tr>
+                <td align="left" style="padding: 0 40px 20px 40px;" class="mobile-padding">
+                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814;">
+                        เรียน <span class="highlight">[ชื่อลูกค้า]</span>,
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        ดิฉัน Piyathida (Lisa), Relationship Manager จาก Bitazza ค่ะ ขออนุญาตติดต่อท่านเพื่อแนะนำตัวและพูดคุยเกี่ยวกับบริการ Bitazza OTC (Over-the-Counter) ค่ะ
+                    </p>
+                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        บริการ OTC ของเราออกแบบมาเพื่อดูแลลูกค้าและนักลงทุนสถาบันที่ต้องการซื้อขายสินทรัพย์ดิจิทัลในปริมาณสูง โดยท่านจะได้รับบริการดังนี้:
+                    </p>
+                    
+                    <ul style="margin: 0 0 25px 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">การซื้อขายระดับสถาบัน:</strong> เข้าถึงสภาพคล่องเชิงลึก รองรับการทำธุรกรรมขนาดใหญ่โดยกระทบต่อราคาตลาดน้อยที่สุด</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">ราคาที่ดีที่สุด:</strong> โครงสร้างราคาแบบพิเศษที่ปรับให้เหมาะสมกับปริมาณการซื้อขายของท่าน</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">การดำเนินการที่รวดเร็ว:</strong> บริการ Fast-track ประสานงานและชำระราคา (Settlement) อย่างรวดเร็วและปลอดภัย</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">ทีมที่ปรึกษาส่วนบุคคล:</strong> ทีมงานผู้เชี่ยวชาญคอยดูแลและประสานงานรายการของท่านเป็นรายบุคคล พร้อมรักษาความลับขั้นสูงสุด</li>
+                    </ul>
+
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        ก่อนหน้านี้ ดิฉันได้พยายามติดต่อท่านผ่านหมายเลขโทรศัพท์ที่ลงทะเบียนไว้ <span class="highlight">[เบอร์โทรลูกค้า]</span> โดยใช้เบอร์ติดต่อตรงของดิฉันเพื่อแนะนำตัว แต่ยังไม่สามารถติดต่อได้ค่ะ
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        เพื่อความสะดวกในการติดต่อ ไม่ทราบว่าท่านสะดวกให้ดิฉันติดต่อผ่านช่องทางใดเป็นพิเศษคะ?
+                    </p>
+                    
+                    <div style="background-color: #fdfcf9; border-left: 3px solid #b8923c; padding: 15px 20px; margin-bottom: 25px;">
+                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>WhatsApp / Telegram / LINE:</strong> <span class="highlight">[ระบุ ID ที่สะดวก]</span></p>
+                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>เบอร์โทรศัพท์อื่น:</strong> <span class="highlight">[ระบุเบอร์โทร]</span></p>
+                        <p style="margin: 0; font-size: 14px; color: #5c574f;"><strong>ช่วงเวลาที่สะดวกให้ติดต่อ:</strong> <span class="highlight">[ระบุเวลา]</span></p>
+                    </div>
+
+                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        หากสะดวก ท่านสามารถตอบกลับอีเมลฉบับนี้เพื่อแจ้งช่องทางติดต่อที่ท่านต้องการได้เลยนะคะ ดิฉันยินดีให้ข้อมูลเพิ่มเติมและดูแลท่านโดยตรงค่ะ ขอบพระคุณสำหรับเวลาของท่าน และหวังว่าจะได้มีโอกาสดูแลท่านในเร็วๆ นี้นะคะ
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                    <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
+                        ขอแสดงความนับถือ,<br><br>
+                        <strong style="color: #1a1814; font-size: 16px;">Piyathida (Lisa)</strong><br>
+                        Dedicated Relationship Manager | Bitazza OTC Desk<br>
+                        Direct: <a href="tel:[RM's Number]" style="color: #b8923c; text-decoration: none;"><span class="highlight">[เบอร์โทร RM]</span></a><br>
+                        Email: <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a><br>
+                        Website: <a href="https://bitazza.co.th/otc" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th/otc</a>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+
+        <!-- RUSSIAN (RU) -->
+        <tbody id="content-ru" class="email-lang" style="display: none;">
+            <tr>
+                <td align="left" style="padding: 0 40px 20px 40px;" class="mobile-padding">
+                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814;">
+                        Уважаемый(ая) <span class="highlight">[Имя клиента]</span>,
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Благодарим за ваш интерес к Bitazza OTC. Меня зовут Пиятида (Лиза), и я рада представиться в качестве вашего персонального менеджера. Моя цель — обеспечить вам индивидуальную поддержку, безупречное исполнение сделок и приоритетный доступ к нашей внебиржевой платформе (OTC).
+                    </p>
+                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Разработанный специально для институциональных инвесторов и крупных трейдеров, сервис Bitazza OTC предлагает:
+                    </p>
+                    
+                    <ul style="margin: 0 0 25px 0; padding-left: 20px; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Институциональное исполнение:</strong> Доступ к пулам глубокой ликвидности для крупных сделок с минимальным влиянием на рынок.</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Конкурентное ценообразование:</strong> Оптимизированные структуры цен, адаптированные к вашим объемам торгов.</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Ускоренные операции:</strong> Приоритетное обслуживание обеспечивает быстрые и безопасные расчеты.</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:#1a1814;">Первоклассный консалтинг:</strong> Прямой и конфиденциальный доступ к команде экспертов, закрепленной за вашим счетом.</li>
+                    </ul>
+
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Ранее я пыталась связаться с вами по номеру <span class="highlight">[Номер клиента]</span>, чтобы поприветствовать вас лично, но не смогла дозвониться.
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Чтобы наше общение было максимально удобным, пожалуйста, сообщите предпочитаемый канал связи:
+                    </p>
+                    
+                    <div style="background-color: #fdfcf9; border-left: 3px solid #b8923c; padding: 15px 20px; margin-bottom: 25px;">
+                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>WhatsApp / Telegram / LINE:</strong> <span class="highlight">[Укажите ID или номер]</span></p>
+                        <p style="margin: 0 0 8px 0; font-size: 14px; color: #5c574f;"><strong>Дополнительный телефон:</strong> <span class="highlight">[Укажите номер]</span></p>
+                        <p style="margin: 0; font-size: 14px; color: #5c574f;"><strong>Удобное время для звонка:</strong> <span class="highlight">[Укажите время]</span></p>
+                    </div>
+
+                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                        Просто ответьте на это письмо, указав предпочтительный способ связи, и я оперативно свяжусь с вами. С нетерпением ждем возможности поддержать ваши торговые потребности.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                    <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
+                        С уважением,<br><br>
+                        <strong style="color: #1a1814; font-size: 16px;">Пиятида (Лиза)</strong><br>
+                        Dedicated Relationship Manager | Bitazza OTC Desk<br>
+                        Direct: <a href="tel:[RM's Number]" style="color: #b8923c; text-decoration: none;"><span class="highlight">[Номер RM]</span></a><br>
+                        Email: <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a><br>
+                        Website: <a href="https://bitazza.co.th/otc" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th/otc</a>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+
+        <!-- FOOTER -->
+        <tr>
+            <td align="center" style="padding: 30px 20px;">
+                <p style="margin: 0 0 10px 0; font-size: 11px; line-height: 1.6; color: #8a8377; text-align: justify;">
+                    <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law.
+                </p>
+                <p style="margin: 0; font-size: 10px; line-height: 1.8; color: #8a8377; text-transform: uppercase; letter-spacing: 1px;">
+                    152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110
+                </p>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script>
+  // Script สำหรับเปลี่ยนภาษาและ Copy
+  function switchLang(lang) {
+    document.querySelectorAll('.email-lang').forEach(el => {
+      el.style.display = 'none';
+    });
+    document.getElementById('content-' + lang).style.display = 'table-row-group';
+
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // เปลี่ยน Subject ตามภาษา
+    const subjectEl = document.getElementById('email-subject');
+    if (lang === 'en') {
+        subjectEl.innerText = "Personal Introduction: Your Bitazza OTC Relationship Manager";
+    } else if (lang === 'th') {
+        subjectEl.innerText = "ขอแนะนำตัว: ผู้จัดการบัญชีส่วนบุคคล Bitazza OTC ของท่าน";
+    } else if (lang === 'ru') {
+        subjectEl.innerText = "Личное знакомство: Ваш персональный менеджер Bitazza OTC";
+    }
+  }
+
+  function copyEmailContent() {
+    const emailTable = document.getElementById('email-content');
+    const range = document.createRange();
+    range.selectNode(emailTable);
+    
+    const windowSelection = window.getSelection();
+    windowSelection.removeAllRanges();
+    windowSelection.addRange(range);
+    
+    document.execCommand('copy');
+    windowSelection.removeAllRanges();
+    
+    const msg = document.getElementById('copy-success');
+    msg.style.display = 'inline-block';
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+  }
+
+  function copySubject() {
+    const subjectText = document.getElementById('email-subject').innerText;
+    
+    const tempInput = document.createElement("input");
+    tempInput.value = subjectText;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    
+    const msg = document.getElementById('copy-sub-msg');
+    msg.style.display = 'inline-block';
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+  }
+</script>
+
+</body>
+</html>
