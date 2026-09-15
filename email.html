@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitazza Elite - Invitation Email (V1 Full)</title>
+<title>Bitazza Elite - Email Generator Tool</title>
 <style>
-    body { background-color: #e9e7e0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+    body { background-color: #e9e7e0; font-family: sans-serif; margin: 0; padding: 0; }
     .control-panel {
         background: #1a1814; color: white; padding: 20px; text-align: center;
         position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -40,13 +40,14 @@
 
     table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
     table { border-collapse: collapse !important; }
     
-    .highlight { color: #b8923c; font-weight: bold; }
-    .cta-button { display: inline-block; background-color: #b8923c; color: #ffffff !important; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; padding: 16px 36px; border-radius: 2px; text-decoration: none; }
-
     @media only screen and (max-width: 600px) {
+        .stack-column { display: block !important; width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; margin-bottom: 20px !important; text-align: center !important; }
+        .stack-column h3 { text-align: center !important; }
+        .stack-column p { text-align: center !important; margin: 0 auto !important; }
+        .hide-mobile { display: none !important; }
         .mobile-padding { padding: 30px 20px !important; }
     }
 </style>
@@ -54,7 +55,7 @@
 <body>
 
 <div class="control-panel" id="no-copy-zone">
-  <h2>✉️ Bitazza Elite - Invitation Email Tool (V1 Full)</h2>
+  <h2>👑 Bitazza Elite - Email Tool</h2>
   <div>
       <button class="lang-btn active" onclick="switchLang('en')">English</button>
       <button class="lang-btn" onclick="switchLang('th')">ภาษาไทย</button>
@@ -64,149 +65,166 @@
   </div>
   
   <div class="subject-box">
-      <strong>Subject:</strong> <span id="email-subject">Exclusive Invitation: Bitazza OTC Private Client Channel</span>
+      <strong>Subject:</strong> <span id="email-subject">A Private Invitation from Bitazza, Reserved for You</span>
       <button class="copy-sub-btn" onclick="copySubject()">📋 Copy Subject</button>
       <span id="copy-sub-msg" style="display:none; color:#4CAF50; margin-left:5px;">✅</span>
   </div>
-  <p style="font-size: 12px; color: #8a8377; margin-top: 10px;">⚠️ Please replace the <span style="color:#b8923c; font-weight:bold;">[Gold Bracket Text]</span> with the client's information before sending.</p>
 </div>
 
 <div class="email-wrapper">
-    <table id="email-content" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="width: 600px; max-width: 600px; background-color: #ffffff; border: 1px solid #e1ddce; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+    <table id="email-content" width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e1ddce; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
         
         <!-- HIDDEN PREHEADER TEXT -->
         <tr>
             <td style="display: none !important; visibility: hidden; mso-hide: all; font-size: 1px; color: #ffffff; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-                You are cordially invited to experience the Private Client Channel...
+                You’ve been selected for a more personal level of Private Client support.
             </td>
         </tr>
 
         <!-- HEADER -->
         <tr>
-            <td align="center" bgcolor="#ffffff" style="padding: 45px 40px 30px 40px; background-color: #ffffff;">
-                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" width="110" style="display: block; border: 0;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/logo.jpg';">
+            <td align="center" style="padding: 40px 40px 30px 40px; background-color: #ffffff;">
+                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza Elite" width="100" style="display: block; border: 0;">
                 <p style="margin: 20px 0 0 0; font-size: 10px; letter-spacing: 3px; color: #b8923c; text-transform: uppercase; font-weight: bold;">
-                    Private Client Channel
+                    By Invitation Only
                 </p>
             </td>
         </tr>
 
         <!-- HERO IMAGE -->
         <tr>
-            <td align="center" bgcolor="#ffffff" style="padding: 0 0 35px 0; background-color: #ffffff;">
-                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg" alt="Bitazza Elite Invitation" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
+            <td align="center" style="padding: 0 0 30px 0;">
+                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/el.jpg" alt="Private Client Channel" width="600" style="width: 100%; max-width: 600px; display: block; border: 0;">
             </td>
         </tr>
 
         <!-- ENGLISH (EN) -->
         <tbody id="content-en" class="email-lang">
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 25px 45px; background-color: #ffffff;" class="mobile-padding">
-                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
-                        Dear <span class="highlight">[Customer's Name]</span>,
+                <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
+                    <h1 style="margin: 0 0 15px 0; font-size: 32px; font-weight: normal; color: #1a1814; font-family: Georgia, serif; line-height: 1.2;">
+                        Your Bitazza Experience,<br>
+                        <span style="font-style: italic; color: #b8923c;">Now More Personal</span>
+                    </h1>
+                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #6a645b; max-width: 480px;">
+                        An invitation to an exclusive client circle—designed to empower your investments with clear communication, direct expert access, and a decisive edge in digital assets.
                     </p>
-                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        You are cordially invited to access the <strong>Bitazza Elite Private Client Channel</strong> — a dedicated institutional service engineered for sophisticated investors and high-volume traders.
-                    </p>
-                    <p style="margin: 0 0 30px 0; font-size: 15px; line-height: 1.8; color: #b8923c; font-style: italic; font-weight: bold; font-family: Georgia, serif; text-align: center;">
-                        "Priority. Precision. Privilege."
-                    </p>
-
-                    <!-- STATS BAR -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px; background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 4px; padding: 15px 10px;">
+                    
+                    <!-- TOP CTA BUTTON -->
+                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=en" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #b8923c; color: #b8923c; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; padding: 12px 28px; border-radius: 2px;">
+                        Accept Invitation
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 30px 40px 30px 40px;" class="mobile-padding">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td align="center" width="33%" style="font-size: 12px; color: #1a1814; font-weight: bold; border-right: 1px solid #e1ddce;">
-                                SEC-Licensed<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">Broker in Thailand</span>
-                            </td>
-                            <td align="center" width="33%" style="font-size: 12px; color: #1a1814; font-weight: bold; border-right: 1px solid #e1ddce;">
-                                7+ Years<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">Market Experience</span>
-                            </td>
-                            <td align="center" width="34%" style="font-size: 12px; color: #1a1814; font-weight: bold;">
-                                Private Channels<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">LINE &middot; WhatsApp &middot; Telegram</span>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 1 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        High-Touch Advisory & Dedicated Team
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Dedicated Advisory Team:</strong> Direct access to a specialized desk of experts who know your portfolio, trading history, and execution preferences.
+                            <td align="center" style="padding-bottom: 20px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">Priority</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">A direct line to your dedicated Relationship Manager with fast-tracked operational support.</span>
                             </td>
                         </tr>
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Direct, Private Channels:</strong> Immediate access via direct line, WhatsApp, LINE, or Telegram with full confidentiality.
+                            <td align="center" style="padding-bottom: 20px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">Precision</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">Clear, transparent communication paired with bespoke execution strategies and deep liquidity.</span>
                             </td>
                         </tr>
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Proactive & Priority Service:</strong> Faster request handling, internal team coordination, and proactive follow-ups.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Tailored Trading Strategies:</strong> Customized execution structures, bespoke risk parameters, and flexible liquidity solutions.
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 2 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        Execution & Advantage
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Institutional Execution:</strong> Competitive pricing, deep liquidity access, and specialized OTC support for large-order trades.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Priority Operations:</strong> Fast-tracked settlement coordination and whitelist assistance built for sophisticated investors.
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 3 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        Exclusive Access & Perks
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Bespoke Engagement:</strong> Named invitations to exclusive Private Client events and personalized market updates.
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- CTA BUTTON -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
-                        <tr>
-                            <td align="center">
-                                <a href="https://bitazza-private.github.io/vip-chanel/" class="cta-button" target="_blank">Accept Invitation</a>
+                            <td align="center" style="padding-bottom: 10px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">Privilege</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">Exclusive access to private client events, tailored perks, and noise-free updates.</span>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;">
+                <td align="center" style="padding: 0 40px;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr><td style="border-top: 1px solid #e1ddce; height: 1px; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 40px 40px 10px 40px;" class="mobile-padding">
+                    <p style="margin: 0 0 35px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase; text-align: center; font-weight: bold;">
+                        What You Will Receive
+                    </p>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg" alt="Dedicated Support" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">High-Touch Advisory</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Direct access to a specialized desk of experts who know your portfolio and execution preferences. Enjoy proactive service, custom trading strategies, and discreet communication via your preferred private channels.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Execution" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Execution Advantage</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Institutional-grade execution engineered for high-volume traders. Access competitive OTC pricing, deep liquidity pools, and fast-tracked priority operations for seamless, large-order settlements.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg" alt="Exclusive Access" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Exclusive Access</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Bespoke engagement beyond trading. Receive named invitations to private client events and thoughtful, personalized updates tailored to your goals—completely free from automated noise.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                    <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; padding: 35px 25px;">
+                        <h2 style="margin: 0 0 15px 0; font-size: 22px; font-weight: normal; color: #1a1814; font-family: Georgia, serif;">
+                            Experience Service<br><span style="color: #b8923c; font-style: italic;">Designed Around You</span>
+                        </h2>
+                        <p style="margin: 0 0 25px 0; font-size: 13px; line-height: 1.8; color: #6a645b;">
+                            Share your preferences below. Our specialists will reach out privately to deliver dedicated, end-to-end guidance that extends far beyond standard support.
+                        </p>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td align="center">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=en" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
+                                        Discover Full Privileges
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding-top: 15px;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/index.html?lang=en" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
+                                        Accept Invitation
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
-                        Yours sincerely,<br><br>
-                        <strong style="color: #1a1814; font-size: 16px;">Bitazza Elite Thailand</strong><br>
-                        Email: <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a><br>
-                        Website: <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
+                        Yours sincerely,<br>
+                        <strong style="color: #1a1814;">Bitazza Elite Thailand</strong><br>
+                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; 
+                        <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
                     </p>
                 </td>
             </tr>
@@ -215,112 +233,130 @@
         <!-- THAI (TH) -->
         <tbody id="content-th" class="email-lang" style="display: none;">
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 25px 45px; background-color: #ffffff;" class="mobile-padding">
-                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
-                        เรียน <span class="highlight">[ชื่อลูกค้า]</span>,
+                <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
+                    <h1 style="margin: 0 0 15px 0; font-size: 32px; font-weight: normal; color: #1a1814; font-family: Georgia, serif; line-height: 1.2;">
+                        สิทธิพิเศษเหนือระดับสำหรับ<br>
+                        <span style="font-style: italic; color: #b8923c;">ลูกค้าคนสำคัญ</span>
+                    </h1>
+                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #6a645b; max-width: 480px;">
+                        ขอเรียนเชิญท่านสัมผัสมาตรฐานใหม่ของการซื้อขายระดับสถาบัน ผ่านบริการ Bitazza OTC Private Client Channel ที่ออกแบบมาเพื่อรองรับธุรกรรมขนาดใหญ่ของท่านโดยเฉพาะ
                     </p>
-                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        ขอเรียนเชิญท่านสัมผัสสิทธิพิเศษเหนือระดับผ่านบริการ <strong>Bitazza Elite Private Client Channel</strong> ช่องทางบริการระดับสถาบันที่ออกแบบมาเพื่อรองรับธุรกรรมขนาดใหญ่ของท่านโดยเฉพาะ
-                    </p>
-                    <p style="margin: 0 0 30px 0; font-size: 15px; line-height: 1.8; color: #b8923c; font-weight: bold; text-align: center;">
-                        "เอกสิทธิ์แห่งการดูแล ความแม่นยำ และความเป็นส่วนตัว"
-                    </p>
-
-                    <!-- STATS BAR -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px; background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 4px; padding: 15px 10px;">
+                    
+                    <!-- TOP CTA BUTTON -->
+                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=th" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #b8923c; color: #b8923c; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; padding: 12px 28px; border-radius: 2px;">
+                        ตอบรับคำเชิญ
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 30px 40px 30px 40px;" class="mobile-padding">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td align="center" width="33%" style="font-size: 12px; color: #1a1814; font-weight: bold; border-right: 1px solid #e1ddce;">
-                                ใบอนุญาต ก.ล.ต.<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">นายหน้าสินทรัพย์ดิจิทัล</span>
-                            </td>
-                            <td align="center" width="33%" style="font-size: 12px; color: #1a1814; font-weight: bold; border-right: 1px solid #e1ddce;">
-                                ประสบการณ์ 7+ ปี<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">ในตลาดสินทรัพย์ดิจิทัล</span>
-                            </td>
-                            <td align="center" width="34%" style="font-size: 12px; color: #1a1814; font-weight: bold;">
-                                ช่องทางส่วนตัว<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">LINE &middot; WhatsApp &middot; Telegram</span>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 1 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        การดูแลเฉพาะบุคคลโดยทีมผู้เชี่ยวชาญ
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">ทีมที่ปรึกษาเฉพาะทาง (Dedicated Specialists):</strong> เข้าถึงทีมงานผู้เชี่ยวชาญได้โดยตรง ซึ่งมีความเข้าใจในพอร์ตการลงทุน ประวัติการทำธุรกรรม และสไตล์การซื้อขายของท่านอย่างแท้จริง
+                            <td align="center" style="padding-bottom: 20px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">เอกสิทธิ์แห่งการดูแล</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">ติดต่อผู้ดูแลความสัมพันธ์ส่วนตัว (Relationship Manager) ของท่านได้โดยตรง พร้อมการประสานงานและดูแลด้านการดำเนินงานอย่างรวดเร็วเป็นพิเศษ</span>
                             </td>
                         </tr>
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">ช่องทางติดต่อส่วนตัวระดับ VIP:</strong> สื่อสารตรงผ่าน WhatsApp, LINE หรือ Telegram พร้อมระบบรักษาความปลอดภัย ความเป็นส่วนตัวสูงสุด และการให้คำปรึกษาอย่างรอบคอบ
+                            <td align="center" style="padding-bottom: 20px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">ความแม่นยำและโปร่งใส</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">ยกระดับการสื่อสารที่ชัดเจน โปร่งใส ด้วยกลยุทธ์การส่งสั่งซื้อขายที่ออกแบบเฉพาะบุคคล พร้อมการเข้าถึงสภาพคล่องเชิงลึก (Deep Liquidity)</span>
                             </td>
                         </tr>
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">การดูแลเชิงรุกและการตอบสนองลำดับแรก:</strong> ประสานงานภายในอย่างรวดเร็วเป็นพิเศษ พร้อมการติดตามและดูแลเชิงรุกในทุกธุรกรรมโดยไม่ต้องรอให้ท่านร้องขอ
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">กลยุทธ์การซื้อขายที่รังสรรค์เฉพาะบุคคล:</strong> วางโครงสร้างการส่งคำสั่งซื้อขาย บริหารความเสี่ยง และจัดสรรสภาพคล่องอย่างยืดหยุ่น ออกแบบมาเพื่อรองรับการทำธุรกรรมปริมาณสูง (High-Volume) ของท่านโดยเฉพาะ
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 2 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        เอกสิทธิ์แห่งการดำเนินการ และข้อได้เปรียบระดับสถาบัน
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">การส่งคำสั่งซื้อขายระดับสถาบัน:</strong> ยกระดับประสิทธิภาพการซื้อขายด้วยข้อเสนอราคาอันเหนือชั้น การเข้าถึงสภาพคล่องเชิงลึกอย่างไร้ขีดจำกัด (Deep Liquidity) และบริการ OTC เฉพาะทาง
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">ระบบชำระราคาและการอนุมัติบัญชีด่วนพิเศษ:</strong> สัมผัสประสบการณ์การชำระราคา (Settlement) ที่รวดเร็วและแม่นยำสูงสุด พร้อมเอกสิทธิ์ในการอนุมัติที่อยู่กระเป๋า (Whitelist Address) แบบเร่งด่วน
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 3 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        เอกสิทธิ์และสิทธิประโยชน์เฉพาะบุคคล
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">การบริการและดูแลเฉพาะบุคคล:</strong> สิทธิ์รับเชิญเข้าร่วมงานเอกสิทธิ์สำหรับลูกค้าระดับ Private Client พร้อมรับบริการที่คัดสรรเพื่อท่านโดยเฉพาะ โดยเน้นการสื่อสารโดยตรงจากทีมงานผู้เชี่ยวชาญ
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- CTA BUTTON -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
-                        <tr>
-                            <td align="center">
-                                <a href="https://bitazza-private.github.io/vip-chanel/" class="cta-button" target="_blank">ตอบรับคำเชิญ</a>
+                            <td align="center" style="padding-bottom: 10px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">ความเป็นส่วนตัวขั้นสูงสุด</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">สิทธิ์เข้าร่วมงานเอกสิทธิ์เฉพาะลูกค้า VIP สิทธิประโยชน์ที่คัดสรรเป็นพิเศษ และข้อมูลข่าวสารเชิงลึกที่ส่งตรงถึงท่านโดยเฉพาะ</span>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;">
+                <td align="center" style="padding: 0 40px;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr><td style="border-top: 1px solid #e1ddce; height: 1px; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 40px 40px 10px 40px;" class="mobile-padding">
+                    <p style="margin: 0 0 35px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase; text-align: center; font-weight: bold;">
+                        สิ่งที่คุณจะได้รับ
+                    </p>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg" alt="Dedicated Support" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">การดูแลเฉพาะบุคคลโดยทีมผู้เชี่ยวชาญ</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">เข้าถึงทีมงานผู้เชี่ยวชาญเฉพาะทางที่เข้าใจพอร์ตการลงทุนและสไตล์การซื้อขายของท่านโดยตรง สัมผัสบริการเชิงรุก กลยุทธ์การเทรดที่รังสรรค์เฉพาะบุคคล และการสื่อสารผ่านช่องทางส่วนตัวระดับ VIP อย่างปลอดภัยและไร้รอยต่อ</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Execution" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">เอกสิทธิ์แห่งการดำเนินการ และข้อได้เปรียบระดับสถาบัน</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">ยกระดับประสิทธิภาพการซื้อขายระดับสถาบันด้วยข้อเสนอราคาอันเหนือชั้น เข้าถึงสภาพคล่องเชิงลึก (Deep Liquidity) และสัมผัสประสบการณ์การชำระราคาที่รวดเร็ว พร้อมเอกสิทธิ์อนุมัติบัญชีด่วนพิเศษเป็นลำดับแรก</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg" alt="Exclusive Access" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">เอกสิทธิ์และสิทธิประโยชน์เฉพาะบุคคล</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">สิทธิ์รับเชิญเข้าร่วมงานเอกสิทธิ์สำหรับลูกค้าระดับ Private Client พร้อมรับข้อมูลข่าวสารเชิงลึกที่คัดสรรมาอย่างพิถีพิถันตรงตามเป้าหมายของท่าน โดยปราศจากข้อความอัตโนมัติทั่วไป</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                    <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; padding: 35px 25px;">
+                        <h2 style="margin: 0 0 15px 0; font-size: 22px; font-weight: normal; color: #1a1814; font-family: Georgia, serif;">
+                            บริการที่ออกแบบ<br><span style="color: #b8923c; font-style: italic;">โดยคำนึงถึงท่านเป็นสำคัญ</span>
+                        </h2>
+                        <p style="margin: 0 0 25px 0; font-size: 13px; line-height: 1.8; color: #6a645b;">
+                            กรุณาแจ้งความต้องการของท่านด้านล่าง ผู้เชี่ยวชาญของเราจะติดต่อกลับเป็นการส่วนตัว เพื่อให้คำแนะนำแบบครบวงจรที่เหนือกว่าการบริการมาตรฐานทั่วไป
+                        </p>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td align="center">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=th" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
+                                        ค้นพบสิทธิพิเศษทั้งหมด
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding-top: 15px;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/index.html?lang=th" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
+                                        ตอบรับคำเชิญ
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
-                        ขอแสดงความนับถือ,<br><br>
-                        <strong style="color: #1a1814; font-size: 16px;">ทีมงาน Bitazza Elite ประเทศไทย</strong><br>
-                        Email: <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a><br>
-                        Website: <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
+                        ขอแสดงความนับถือ,<br>
+                        <strong style="color: #1a1814;">ทีมงาน Bitazza Elite ประเทศไทย</strong><br>
+                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; 
+                        <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
                     </p>
                 </td>
             </tr>
@@ -329,112 +365,130 @@
         <!-- RUSSIAN (RU) -->
         <tbody id="content-ru" class="email-lang" style="display: none;">
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 25px 45px; background-color: #ffffff;" class="mobile-padding">
-                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
-                        Уважаемый(ая) <span class="highlight">[Имя клиента]</span>,
+                <td align="center" style="padding: 0 40px 20px 40px;" class="mobile-padding">
+                    <h1 style="margin: 0 0 15px 0; font-size: 32px; font-weight: normal; color: #1a1814; font-family: Georgia, serif; line-height: 1.2;">
+                        Добро пожаловать в<br>
+                        <span style="font-style: italic; color: #b8923c;">Private Client Channel</span>
+                    </h1>
+                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #6a645b; max-width: 480px;">
+                        Приглашаем вас открыть для себя новый стандарт институционального трейдинга, созданный для расширения возможностей ваших инвестиций благодаря прямому доступу к экспертам и решающему преимуществу.
                     </p>
-                    <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
-                        Приглашаем вас открыть для себя новый стандарт институционального трейдинга с <strong>Bitazza Elite Private Client Channel</strong>.
-                    </p>
-                    <p style="margin: 0 0 30px 0; font-size: 15px; line-height: 1.8; color: #b8923c; font-style: italic; font-weight: bold; font-family: Georgia, serif; text-align: center;">
-                        «Приоритет. Точность. Привилегия.»
-                    </p>
-
-                    <!-- STATS BAR -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px; background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 4px; padding: 15px 10px;">
+                    
+                    <!-- TOP CTA BUTTON -->
+                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=ru" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #b8923c; color: #b8923c; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; padding: 12px 28px; border-radius: 2px;">
+                        Принять приглашение
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 30px 40px 30px 40px;" class="mobile-padding">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td align="center" width="33%" style="font-size: 12px; color: #1a1814; font-weight: bold; border-right: 1px solid #e1ddce;">
-                                Лицензия SEC Таиланда<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">Брокер цифровых активов</span>
-                            </td>
-                            <td align="center" width="33%" style="font-size: 12px; color: #1a1814; font-weight: bold; border-right: 1px solid #e1ddce;">
-                                Более 7 лет<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">опыта на рынке</span>
-                            </td>
-                            <td align="center" width="34%" style="font-size: 12px; color: #1a1814; font-weight: bold;">
-                                Приватные каналы<br><span style="font-size: 10px; color: #8a8377; font-weight: normal;">LINE &middot; WhatsApp &middot; Telegram</span>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 1 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        Персональное консультирование и выделенная команда
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Персональная команда консультантов:</strong> Прямой доступ к специализированному деску экспертов, которые знают структуру вашего портфеля и предпочтения в исполнении операций.
+                            <td align="center" style="padding-bottom: 20px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">ПРИОРИТЕТ</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">Прямая связь с вашим персональным менеджером и приоритетная операционная поддержка.</span>
                             </td>
                         </tr>
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Прямые приватные каналы связи:</strong> Прямой доступ по телефону, WhatsApp, LINE или Telegram с полной конфиденциальностью.
+                            <td align="center" style="padding-bottom: 20px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">ТОЧНОСТЬ</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">Чёткая и прозрачная коммуникация в сочетании с индивидуальными стратегиями исполнения сделок и доступом к глубокой ликвидности.</span>
                             </td>
                         </tr>
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Проактивный сервис:</strong> Более быстрая обработка запросов, слаженная работа внутренней команды и проактивное сопровождение на каждом этапе.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Индивидуальные торговые стратегии:</strong> Персонализированные структуры исполнения, персонализированные подходы к управлению рисками и гибкие решения по ликвидности.
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 2 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        Исполнение и преимущества
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Исполнение институционального уровня:</strong> Конкурентное ценообразование, доступ к глубокой ликвидности и специализированная OTC-поддержка.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Приоритетное операционное сопровождение:</strong> Ускоренное согласование расчётов и содействие при добавлении адресов в whitelist.
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- SECTION 3 -->
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #1a1814; font-family: Georgia, serif; border-bottom: 1px solid #ebe6da; padding-bottom: 8px;">
-                        Эксклюзивный доступ и привилегии
-                    </h3>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 35px;">
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 5px;"><div style="width: 5px; height: 5px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Индивидуальный подход:</strong> Именные приглашения на закрытые мероприятия для частных клиентов и продуманные, персонализированные рыночные обзоры.
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- CTA BUTTON -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
-                        <tr>
-                            <td align="center">
-                                <a href="https://bitazza-private.github.io/vip-chanel/" class="cta-button" target="_blank">Принять приглашение</a>
+                            <td align="center" style="padding-bottom: 10px;">
+                                <strong style="font-size: 12px; color: #1a1814; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px;">ПРИВИЛЕГИЯ</strong>
+                                <span style="font-size: 13px; color: #6a645b; line-height: 1.6; max-width: 400px; display: inline-block;">Эксклюзивный доступ к закрытым мероприятиям для частных клиентов, персональные привилегии и тщательно отобранные рыночные обновления без лишних сообщений.</span>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;">
+                <td align="center" style="padding: 0 40px;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr><td style="border-top: 1px solid #e1ddce; height: 1px; font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 40px 40px 10px 40px;" class="mobile-padding">
+                    <p style="margin: 0 0 35px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase; text-align: center; font-weight: bold;">
+                        Что вы получите
+                    </p>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/ele.jpg" alt="Dedicated Support" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Персональное консультирование и выделенная команда</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Прямой доступ к специализированной команде экспертов, которые знают ваш портфель. Наслаждайтесь проактивным сервисом, индивидуальными торговыми стратегиями и безопасным общением через приватные каналы связи.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/chess.jpg" alt="Strategic Execution" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Исполнение и преимущества</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Институциональный уровень исполнения для крупных сделок. Доступ к конкурентным ценам OTC, пулам глубокой ликвидности и приоритетному операционному сопровождению для ускоренного согласования расчётов.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 40px;">
+                        <tr>
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/btz.jpg" alt="Exclusive Access" width="100%" style="border-radius: 6px; display: block; border: 0;">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px; color: #1a1814; font-family: Georgia, serif; font-weight: normal;">Эксклюзивный доступ и привилегии</h3>
+                                <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #6a645b;">Получайте именные приглашения на закрытые мероприятия для частных клиентов и тщательно отобранные персонализированные рыночные обзоры без лишних автоматических рассылок.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding: 0 40px 40px 40px;" class="mobile-padding">
+                    <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-radius: 8px; padding: 35px 25px;">
+                        <h2 style="margin: 0 0 15px 0; font-size: 22px; font-weight: normal; color: #1a1814; font-family: Georgia, serif;">
+                            Сервис, созданный<br><span style="color: #b8923c; font-style: italic;">специально для вас</span>
+                        </h2>
+                        <p style="margin: 0 0 25px 0; font-size: 13px; line-height: 1.8; color: #6a645b;">
+                            Поделитесь своими пожеланиями ниже — и наши специалисты свяжутся с вами лично, чтобы предложить индивидуальное сопровождение, выходящее далеко за рамки стандартного обслуживания.
+                        </p>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td align="center">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/invite.html?lang=ru" target="_blank" style="display: inline-block; background-color: #b8923c; color: #ffffff; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 2px; width: 220px; text-align: center;">
+                                        Узнать о привилегиях
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding-top: 15px;">
+                                    <a href="https://bitazza-private.github.io/vip-chanel/index.html?lang=ru" target="_blank" style="display: inline-block; background-color: transparent; border: 1px solid #d1c8b4; color: #1a1814; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 15px 35px; border-radius: 2px; width: 220px; text-align: center;">
+                                        Принять приглашение
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding: 0 40px 40px 40px;" class="mobile-padding">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
-                        С уважением,<br><br>
-                        <strong style="color: #1a1814; font-size: 16px;">Команда Bitazza Elite</strong><br>
-                        Email: <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a><br>
-                        Website: <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
+                        С уважением,<br>
+                        <strong style="color: #1a1814;">Команда Bitazza Elite</strong><br>
+                        <a href="mailto:elitethailand@bitazza.com" style="color: #b8923c; text-decoration: none;">elitethailand@bitazza.com</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; 
+                        <a href="https://bitazza.co.th" target="_blank" style="color: #b8923c; text-decoration: none;">bitazza.co.th</a>
                     </p>
                 </td>
             </tr>
@@ -442,12 +496,20 @@
 
         <!-- FOOTER -->
         <tr>
-            <td align="center" bgcolor="#ffffff" style="padding: 30px 20px; background-color: #ffffff; border-top: 1px solid #e1ddce;">
-                <p style="margin: 0 0 10px 0; font-size: 11px; line-height: 1.6; color: #8a8377; text-align: justify; max-width: 500px;">
+            <td align="center" style="padding: 30px 20px;">
+                <p style="margin: 0 0 20px 0; font-size: 11px; letter-spacing: 2px; color: #8a8377; text-transform: uppercase;">
+                    <a href="https://www.facebook.com/bitazza" style="color: #6a645b; text-decoration: none; font-weight: bold;">FB</a> &nbsp;&middot;&nbsp; 
+                    <a href="https://www.linkedin.com/company/bitazza" style="color: #6a645b; text-decoration: none; font-weight: bold;">IN</a> &nbsp;&middot;&nbsp; 
+                    <a href="https://line.me/ti/g2/XNIJmH98kyHBdlN0GZVMBA" style="color: #6a645b; text-decoration: none; font-weight: bold;">LINE</a> &nbsp;&middot;&nbsp; 
+                    <a href="https://x.com/bitazzaofficial" style="color: #6a645b; text-decoration: none; font-weight: bold;">X</a> &nbsp;&middot;&nbsp; 
+                    <a href="https://coinmarketcap.com/exchanges/bitazza/" style="color: #6a645b; text-decoration: none; font-weight: bold;">CMC</a> &nbsp;&middot;&nbsp; 
+                    <a href="https://www.coingecko.com/en/exchanges/bitazza" style="color: #6a645b; text-decoration: none; font-weight: bold;">CG</a>
+                </p>
+                <p style="margin: 0 0 10px 0; font-size: 11px; line-height: 1.6; color: #8a8377; text-align: justify;">
                     <strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law.
                 </p>
                 <p style="margin: 0; font-size: 10px; line-height: 1.8; color: #8a8377; text-transform: uppercase; letter-spacing: 1px;">
-                    THIS INVITATION WAS EXTENDED PERSONALLY AND IS NOT TRANSFERABLE.<br>
+                    This invitation was extended personally and is not transferable.<br>
                     152 Soi Meesuwan 3, Phra Khanong Nua, Vadhana, Bangkok 10110
                 </p>
             </td>
@@ -464,15 +526,6 @@
 
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
-    
-    const subjectEl = document.getElementById('email-subject');
-    if (lang === 'en') {
-        subjectEl.innerText = "Exclusive Invitation: Bitazza OTC Private Client Channel";
-    } else if (lang === 'th') {
-        subjectEl.innerText = "คำเชิญสุดเอ็กซ์คลูซีฟ: สิทธิพิเศษสำหรับลูกค้า Bitazza OTC Private Client";
-    } else if (lang === 'ru') {
-        subjectEl.innerText = "Эксклюзивное приглашение: Bitazza OTC Private Client Channel";
-    }
   }
 
   function copyEmailContent() {
