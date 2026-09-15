@@ -40,16 +40,10 @@
 
     table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
     table { border-collapse: collapse !important; }
     
     .highlight { color: #b8923c; font-weight: bold; }
-
-    @media only screen and (max-width: 600px) {
-        .mobile-padding { padding: 30px 24px !important; }
-        .stack-column { display: block !important; width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; margin-bottom: 20px !important; text-align: left !important; }
-        .hide-mobile { display: none !important; }
-    }
 </style>
 </head>
 <body>
@@ -73,7 +67,8 @@
 </div>
 
 <div class="email-wrapper">
-    <table id="email-content" width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e1ddce; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+    <!-- บังคับโครงสร้างหลักล็อคกว้าง 600px เป๊ะๆ -->
+    <table id="email-content" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="width: 600px; max-width: 600px; background-color: #ffffff; border: 1px solid #e1ddce; border-radius: 4px; margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
         
         <!-- HIDDEN PREHEADER TEXT -->
         <tr>
@@ -82,7 +77,7 @@
             </td>
         </tr>
 
-        <!-- HEADER (ลบรูปคู่ตรงนี้ออกไปแล้ว เหลือแต่ Logo) -->
+        <!-- HEADER -->
         <tr>
             <td align="center" bgcolor="#ffffff" style="padding: 45px 40px 30px 40px; background-color: #ffffff;">
                 <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza OTC" width="110" style="display: block; border: 0;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/logo.jpg';">
@@ -95,25 +90,25 @@
         <!-- ENGLISH (EN) -->
         <tbody id="content-en" class="email-lang">
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 15px 45px; background-color: #ffffff;" class="mobile-padding">
+                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 15px 45px; background-color: #ffffff;">
                     <p style="margin: 0 0 24px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
                         Dear <span class="highlight">[Customer's Name]</span>,
                     </p>
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Thank you for your interest in Bitazza OTC. My name is Piyathida (Lisa), and I am pleased to introduce myself as your Dedicated Relationship Manager. My role is to ensure you receive tailored support, seamless trade execution, and priority access to our Over-the-Counter (OTC) Desk.
                     </p>
-                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Designed specifically for institutional investors and high-volume traders, Bitazza OTC delivers:
                     </p>
                     
-                    <!-- BLOCK 1: รูปซ้าย ข้อความขวา -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
+                    <!-- BLOCK 1: รูปซ้าย (220px) | ช่องว่าง (20px) | ข้อความขวา (270px) -->
+                    <table width="510" border="0" cellspacing="0" cellpadding="0" style="width: 510px; margin-bottom: 30px;">
                         <tr>
-                            <td class="stack-column" width="45%" valign="middle">
-                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image01.jpg" alt="Institutional Execution" width="100%" style="display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image01.jpg';">
+                            <td width="220" valign="middle" align="left">
+                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image01.jpg" alt="Institutional Execution" width="220" style="width: 220px; max-width: 220px; display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image01.jpg';">
                             </td>
-                            <td class="hide-mobile" width="5%"></td>
-                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                            <td width="20" style="width: 20px;">&nbsp;</td>
+                            <td width="270" valign="middle" align="left">
                                 <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">Institutional-Grade Execution:</strong><br>Access deep liquidity pools for large-block transactions with minimal market impact.
                                 </p>
@@ -124,20 +119,20 @@
                         </tr>
                     </table>
 
-                    <!-- BLOCK 2: รูปขวา ข้อความซ้าย -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 25px;">
+                    <!-- BLOCK 2: ข้อความซ้าย (270px) | ช่องว่าง (20px) | รูปขวา (220px) -->
+                    <table width="510" border="0" cellspacing="0" cellpadding="0" style="width: 510px; margin-bottom: 35px;">
                         <tr>
-                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
-                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image02.jpg" alt="Dedicated Support" width="100%" style="display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image02.jpg';">
-                            </td>
-                            <td class="hide-mobile" width="5%" dir="ltr"></td>
-                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                            <td width="270" valign="middle" align="left">
                                 <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">Fast-Tracked Operations:</strong><br>Priority handling ensures rapid, secure, and seamless order settlements.
                                 </p>
                                 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">High-Touch Advisory:</strong><br>Direct, confidential access to a specialized team dedicated to your account.
                                 </p>
+                            </td>
+                            <td width="20" style="width: 20px;">&nbsp;</td>
+                            <td width="220" valign="middle" align="right">
+                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image02.jpg" alt="Dedicated Support" width="220" style="width: 220px; max-width: 220px; display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image02.jpg';">
                             </td>
                         </tr>
                     </table>
@@ -149,7 +144,7 @@
                         To ensure we communicate through the most convenient channel for you, could you please let me know your preferred platform?
                     </p>
                     
-                    <div style="background-color: #ffffff; border: 1px solid #e1ddce; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
+                    <div style="background-color: #ffffff; border: 1px solid #e1ddce; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px;">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td width="160" style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">WhatsApp/LINE:</td>
@@ -172,7 +167,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;" class="mobile-padding">
+                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         Best regards,<br><br>
                         <strong style="color: #1a1814; font-size: 16px;">Piyathida (Lisa)</strong><br>
@@ -188,25 +183,25 @@
         <!-- THAI (TH) -->
         <tbody id="content-th" class="email-lang" style="display: none;">
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 15px 45px; background-color: #ffffff;" class="mobile-padding">
+                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 15px 45px; background-color: #ffffff;">
                     <p style="margin: 0 0 24px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
                         เรียน <span class="highlight">[ชื่อลูกค้า]</span>,
                     </p>
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         ดิฉัน Piyathida (Lisa), Relationship Manager จาก Bitazza ค่ะ ขออนุญาตติดต่อท่านเพื่อแนะนำตัวและพูดคุยเกี่ยวกับบริการ Bitazza OTC (Over-the-Counter) ค่ะ
                     </p>
-                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         บริการ OTC ของเราดูแลลูกค้าและนักลงทุนสถาบันที่ต้องการซื้อขายสินทรัพย์ดิจิทัลในปริมาณสูง โดยมีทีมงานคอยดูแลและประสานงานรายการของท่านเป็นรายบุคคล เพื่อให้การทำรายการราบรื่นและเหมาะสมกับความต้องการของท่าน ดังนี้:
                     </p>
                     
-                    <!-- BLOCK 1: รูปซ้าย ข้อความขวา -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
+                    <!-- BLOCK 1: รูปซ้าย (220px) | ช่องว่าง (20px) | ข้อความขวา (270px) -->
+                    <table width="510" border="0" cellspacing="0" cellpadding="0" style="width: 510px; margin-bottom: 30px;">
                         <tr>
-                            <td class="stack-column" width="45%" valign="middle">
-                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image01.jpg" alt="Institutional Execution" width="100%" style="display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image01.jpg';">
+                            <td width="220" valign="middle" align="left">
+                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image01.jpg" alt="Institutional Execution" width="220" style="width: 220px; max-width: 220px; display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image01.jpg';">
                             </td>
-                            <td class="hide-mobile" width="5%"></td>
-                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                            <td width="20" style="width: 20px;">&nbsp;</td>
+                            <td width="270" valign="middle" align="left">
                                 <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">การซื้อขายระดับสถาบัน:</strong><br>เข้าถึงสภาพคล่องเชิงลึก รองรับการทำธุรกรรมขนาดใหญ่โดยกระทบต่อราคาตลาดน้อยที่สุด
                                 </p>
@@ -217,20 +212,20 @@
                         </tr>
                     </table>
 
-                    <!-- BLOCK 2: รูปขวา ข้อความซ้าย -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 25px;">
+                    <!-- BLOCK 2: ข้อความซ้าย (270px) | ช่องว่าง (20px) | รูปขวา (220px) -->
+                    <table width="510" border="0" cellspacing="0" cellpadding="0" style="width: 510px; margin-bottom: 35px;">
                         <tr>
-                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
-                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image02.jpg" alt="Dedicated Support" width="100%" style="display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image02.jpg';">
-                            </td>
-                            <td class="hide-mobile" width="5%" dir="ltr"></td>
-                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                            <td width="270" valign="middle" align="left">
                                 <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">การดำเนินการที่รวดเร็ว:</strong><br>บริการ Fast-track ประสานงานและชำระราคา (Settlement) อย่างรวดเร็วและปลอดภัย
                                 </p>
                                 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">ทีมที่ปรึกษาส่วนบุคคล:</strong><br>ทีมงานผู้เชี่ยวชาญคอยดูแลและให้คำแนะนำโดยตรง พร้อมรักษาความลับขั้นสูงสุด
                                 </p>
+                            </td>
+                            <td width="20" style="width: 20px;">&nbsp;</td>
+                            <td width="220" valign="middle" align="right">
+                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image02.jpg" alt="Dedicated Support" width="220" style="width: 220px; max-width: 220px; display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image02.jpg';">
                             </td>
                         </tr>
                     </table>
@@ -242,7 +237,7 @@
                         เพื่อความสะดวกในการติดต่อ ไม่ทราบว่าท่านสะดวกให้ดิฉันติดต่อผ่านช่องทางใดเป็นพิเศษคะ?
                     </p>
                     
-                    <div style="background-color: #ffffff; border: 1px solid #e1ddce; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
+                    <div style="background-color: #ffffff; border: 1px solid #e1ddce; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px;">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td width="150" style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">WhatsApp / LINE:</td>
@@ -265,7 +260,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;" class="mobile-padding">
+                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         ขอแสดงความนับถือ,<br><br>
                         <strong style="color: #1a1814; font-size: 16px;">Piyathida (Lisa)</strong><br>
@@ -281,25 +276,25 @@
         <!-- RUSSIAN (RU) -->
         <tbody id="content-ru" class="email-lang" style="display: none;">
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 15px 45px; background-color: #ffffff;" class="mobile-padding">
+                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 15px 45px; background-color: #ffffff;">
                     <p style="margin: 0 0 24px 0; font-size: 15px; color: #1a1814; font-family: Georgia, serif;">
                         Уважаемый(ая) <span class="highlight">[Имя клиента]</span>,
                     </p>
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Благодарим за ваш интерес к Bitazza OTC. Меня зовут Пиятида (Лиза), и я рада представиться в качестве вашего персонального менеджера. Моя цель — обеспечить вам индивидуальную поддержку, безупречное исполнение сделок и приоритетный доступ к нашей внебиржевой платформе (OTC).
                     </p>
-                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 30px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Разработанный специально для институциональных инвесторов и крупных трейдеров, сервис Bitazza OTC предлагает:
                     </p>
                     
-                    <!-- BLOCK 1: รูปซ้าย ข้อความขวา -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
+                    <!-- BLOCK 1: รูปซ้าย (220px) | ช่องว่าง (20px) | ข้อความขวา (270px) -->
+                    <table width="510" border="0" cellspacing="0" cellpadding="0" style="width: 510px; margin-bottom: 30px;">
                         <tr>
-                            <td class="stack-column" width="45%" valign="middle">
-                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image01.jpg" alt="Institutional Execution" width="100%" style="display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image01.jpg';">
+                            <td width="220" valign="middle" align="left">
+                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image01.jpg" alt="Institutional Execution" width="220" style="width: 220px; max-width: 220px; display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image01.jpg';">
                             </td>
-                            <td class="hide-mobile" width="5%"></td>
-                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                            <td width="20" style="width: 20px;">&nbsp;</td>
+                            <td width="270" valign="middle" align="left">
                                 <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">Институциональное исполнение:</strong><br>Доступ к пулам глубокой ликвидности для крупных сделок с минимальным влиянием на рынок.
                                 </p>
@@ -310,20 +305,20 @@
                         </tr>
                     </table>
 
-                    <!-- BLOCK 2: รูปขวา ข้อความซ้าย -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 25px;">
+                    <!-- BLOCK 2: ข้อความซ้าย (270px) | ช่องว่าง (20px) | รูปขวา (220px) -->
+                    <table width="510" border="0" cellspacing="0" cellpadding="0" style="width: 510px; margin-bottom: 35px;">
                         <tr>
-                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
-                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image02.jpg" alt="Dedicated Support" width="100%" style="display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image02.jpg';">
-                            </td>
-                            <td class="hide-mobile" width="5%" dir="ltr"></td>
-                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                            <td width="270" valign="middle" align="left">
                                 <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">Ускоренные операции:</strong><br>Приоритетное обслуживание обеспечивает быстрые и безопасные расчеты.
                                 </p>
                                 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
                                     <strong style="color:#1a1814;">Первоклассный консалтинг:</strong><br>Прямой и конфиденциальный доступ к команде экспертов, закрепленной за вашим счетом.
                                 </p>
+                            </td>
+                            <td width="20" style="width: 20px;">&nbsp;</td>
+                            <td width="220" valign="middle" align="right">
+                                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image02.jpg" alt="Dedicated Support" width="220" style="width: 220px; max-width: 220px; display: block; border-radius: 4px;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image02.jpg';">
                             </td>
                         </tr>
                     </table>
@@ -335,7 +330,7 @@
                         Чтобы наше общение было максимально удобным, пожалуйста, сообщите предпочитаемый канал связи:
                     </p>
                     
-                    <div style="background-color: #ffffff; border: 1px solid #e1ddce; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
+                    <div style="background-color: #ffffff; border: 1px solid #e1ddce; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px;">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td width="180" style="font-size: 13px; color: #1a1814; font-weight: bold; padding-bottom: 8px;">WhatsApp / LINE:</td>
@@ -358,7 +353,7 @@
                 </td>
             </tr>
             <tr>
-                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;" class="mobile-padding">
+                <td align="left" bgcolor="#ffffff" style="padding: 0 45px 45px 45px; background-color: #ffffff;">
                     <p style="margin: 0; font-size: 14px; line-height: 1.8; color: #6a645b;">
                         С уважением,<br><br>
                         <strong style="color: #1a1814; font-size: 16px;">Пиятида (Лиза)</strong><br>
