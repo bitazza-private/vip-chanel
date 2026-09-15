@@ -45,8 +45,11 @@
     
     .highlight { color: #b8923c; font-weight: bold; }
 
+    /* CSS สำหรับมือถือ */
     @media only screen and (max-width: 600px) {
-        .mobile-padding { padding: 30px 24px !important; }
+        .mobile-padding { padding: 30px 20px !important; }
+        .stack-column { display: block !important; width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; margin-bottom: 20px !important; text-align: left !important; }
+        .hide-mobile { display: none !important; }
     }
 </style>
 </head>
@@ -83,27 +86,10 @@
         <!-- HEADER -->
         <tr>
             <td align="center" style="padding: 45px 40px 30px 40px; background-color: #ffffff;">
-                <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/logo.jpg" alt="Bitazza OTC" width="110" style="display: block; border: 0;" onerror="this.src='https://bitazza-private.github.io/vip-chanel/logo.jpg';">
+                <img src="https://bitazza-private.github.io/vip-chanel/logo.jpg" alt="Bitazza OTC" width="110" style="display: block; border: 0;" onerror="this.src='https://raw.githubusercontent.com/chiraphats-stack/vip-form/main/logo.jpg';">
                 <p style="margin: 20px 0 0 0; font-size: 10px; letter-spacing: 3px; color: #b8923c; text-transform: uppercase; font-weight: bold;">
                     Bitazza OTC Desk &middot; Institutional Trading
                 </p>
-            </td>
-        </tr>
-
-        <!-- HERO IMAGES (จัดแบบ 2 คอลัมน์ คู่กันซ้าย-ขวา) -->
-        <tr>
-            <td align="center" style="padding: 0 40px 35px 40px;">
-                <table width="100%" max-width="500" border="0" cellspacing="0" cellpadding="0" style="max-width: 500px;">
-                    <tr>
-                        <td align="center" width="48%" valign="top">
-                            <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image01.jpg" alt="Bitazza OTC Services" width="100%" style="display: block; border: 0; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image01.jpg';">
-                        </td>
-                        <td width="4%" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
-                        <td align="center" width="48%" valign="top">
-                            <img src="https://raw.githubusercontent.com/bitazza-private/vip-chanel/main/card-image02.jpg" alt="Bitazza OTC Advantages" width="100%" style="display: block; border: 0; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);" onerror="this.src='https://bitazza-private.github.io/vip-chanel/card-image02.jpg';">
-                        </td>
-                    </tr>
-                </table>
             </td>
         </tr>
 
@@ -117,34 +103,42 @@
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Thank you for your interest in Bitazza OTC. My name is Piyathida (Lisa), and I am pleased to introduce myself as your Dedicated Relationship Manager. My role is to ensure you receive tailored support, seamless trade execution, and priority access to our Over-the-Counter (OTC) Desk.
                     </p>
-                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Designed specifically for institutional investors and high-volume traders, Bitazza OTC delivers:
                     </p>
                     
-                    <!-- BULLET POINTS -->
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
+                    <!-- BLOCK 1: รูปซ้าย ข้อความขวา -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Institutional-Grade Execution:</strong> Access deep liquidity pools for large-block transactions with minimal market impact.
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://bitazza-private.github.io/vip-chanel/card-image01.jpg" alt="Institutional Execution" width="100%" style="display: block; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">Institutional-Grade Execution:</strong><br>Access deep liquidity pools for large-block transactions with minimal market impact.
+                                </p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">Competitive Pricing:</strong><br>Enjoy optimized pricing structures tailored to your trading volume.
+                                </p>
                             </td>
                         </tr>
+                    </table>
+
+                    <!-- BLOCK 2: รูปขวา ข้อความซ้าย -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 25px;">
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Competitive Pricing:</strong> Enjoy optimized pricing structures tailored to your trading volume.
+                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
+                                <img src="https://bitazza-private.github.io/vip-chanel/card-image02.jpg" alt="Dedicated Support" width="100%" style="display: block; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                             </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Fast-Tracked Operations:</strong> Priority handling ensures rapid, secure, and seamless order settlements.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">High-Touch Advisory:</strong> Direct, confidential access to a specialized team dedicated to your account.
+                            <td class="hide-mobile" width="5%" dir="ltr"></td>
+                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                                <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">Fast-Tracked Operations:</strong><br>Priority handling ensures rapid, secure, and seamless order settlements.
+                                </p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">High-Touch Advisory:</strong><br>Direct, confidential access to a specialized team dedicated to your account.
+                                </p>
                             </td>
                         </tr>
                     </table>
@@ -203,33 +197,42 @@
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         ดิฉัน Piyathida (Lisa), Relationship Manager จาก Bitazza ค่ะ ขออนุญาตติดต่อท่านเพื่อแนะนำตัวและพูดคุยเกี่ยวกับบริการ Bitazza OTC (Over-the-Counter) ค่ะ
                     </p>
-                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         บริการ OTC ของเราดูแลลูกค้าและนักลงทุนสถาบันที่ต้องการซื้อขายสินทรัพย์ดิจิทัลในปริมาณสูง โดยมีทีมงานคอยดูแลและประสานงานรายการของท่านเป็นรายบุคคล เพื่อให้การทำรายการราบรื่นและเหมาะสมกับความต้องการของท่าน ดังนี้:
                     </p>
                     
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
+                    <!-- BLOCK 1: รูปซ้าย ข้อความขวา -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">การซื้อขายระดับสถาบัน:</strong> เข้าถึงสภาพคล่องเชิงลึก รองรับการทำธุรกรรมขนาดใหญ่โดยกระทบต่อราคาตลาดน้อยที่สุด
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://bitazza-private.github.io/vip-chanel/card-image01.jpg" alt="Institutional Execution" width="100%" style="display: block; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">การซื้อขายระดับสถาบัน:</strong><br>เข้าถึงสภาพคล่องเชิงลึก รองรับการทำธุรกรรมขนาดใหญ่โดยกระทบต่อราคาตลาดน้อยที่สุด
+                                </p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">ราคาที่ดีที่สุด:</strong><br>โครงสร้างราคาแบบพิเศษที่ปรับให้เหมาะสมกับปริมาณการซื้อขายของท่าน
+                                </p>
                             </td>
                         </tr>
+                    </table>
+
+                    <!-- BLOCK 2: รูปขวา ข้อความซ้าย -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 25px;">
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">ราคาที่ดีที่สุด:</strong> โครงสร้างราคาแบบพิเศษที่ปรับให้เหมาะสมกับปริมาณการซื้อขายของท่าน
+                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
+                                <img src="https://bitazza-private.github.io/vip-chanel/card-image02.jpg" alt="Dedicated Support" width="100%" style="display: block; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                             </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">การดำเนินการที่รวดเร็ว:</strong> บริการ Fast-track ประสานงานและชำระราคา (Settlement) อย่างรวดเร็วและปลอดภัย
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">ทีมที่ปรึกษาส่วนบุคคล:</strong> ทีมงานผู้เชี่ยวชาญคอยดูแลและให้คำแนะนำโดยตรง พร้อมรักษาความลับขั้นสูงสุด
+                            <td class="hide-mobile" width="5%" dir="ltr"></td>
+                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                                <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">การดำเนินการที่รวดเร็ว:</strong><br>บริการ Fast-track ประสานงานและชำระราคา (Settlement) อย่างรวดเร็วและปลอดภัย
+                                </p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">ทีมที่ปรึกษาส่วนบุคคล:</strong><br>ทีมงานผู้เชี่ยวชาญคอยดูแลและให้คำแนะนำโดยตรง พร้อมรักษาความลับขั้นสูงสุด
+                                </p>
                             </td>
                         </tr>
                     </table>
@@ -241,6 +244,7 @@
                         เพื่อความสะดวกในการติดต่อ ไม่ทราบว่าท่านสะดวกให้ดิฉันติดต่อผ่านช่องทางใดเป็นพิเศษคะ?
                     </p>
                     
+                    <!-- CONTACT PREFERENCE BOX -->
                     <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
@@ -287,33 +291,42 @@
                     <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Благодарим за ваш интерес к Bitazza OTC. Меня зовут Пиятида (Лиза), и я рада представиться в качестве вашего персонального менеджера. Моя цель — обеспечить вам индивидуальную поддержку, безупречное исполнение сделок и приоритетный доступ к нашей внебиржевой платформе (OTC).
                     </p>
-                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
+                    <p style="margin: 0 0 25px 0; font-size: 14px; line-height: 1.8; color: #5c574f;">
                         Разработанный специально для институциональных инвесторов и крупных трейдеров, сервис Bitazza OTC предлагает:
                     </p>
                     
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 25px;">
+                    <!-- BLOCK 1: รูปซ้าย ข้อความขวา -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px;">
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Институциональное исполнение:</strong> Доступ к пулам глубокой ликвидности для крупных сделок с минимальным влиянием на рынок.
+                            <td class="stack-column" width="45%" valign="middle">
+                                <img src="https://bitazza-private.github.io/vip-chanel/card-image01.jpg" alt="Institutional Execution" width="100%" style="display: block; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                            </td>
+                            <td class="hide-mobile" width="5%"></td>
+                            <td class="stack-column" width="50%" valign="middle" style="text-align: left;">
+                                <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">Институциональное исполнение:</strong><br>Доступ к пулам глубокой ликвидности для крупных сделок с минимальным влиянием на рынок.
+                                </p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">Конкурентное ценообразование:</strong><br>Оптимизированные структуры цен, адаптированные к вашим объемам торгов.
+                                </p>
                             </td>
                         </tr>
+                    </table>
+
+                    <!-- BLOCK 2: รูปขวา ข้อความซ้าย -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl" style="margin-bottom: 25px;">
                         <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Конкурентное ценообразование:</strong> Оптимизированные структуры цен, адаптированные к вашим объемам торгов.
+                            <td class="stack-column" width="45%" valign="middle" dir="ltr">
+                                <img src="https://bitazza-private.github.io/vip-chanel/card-image02.jpg" alt="Dedicated Support" width="100%" style="display: block; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                             </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="padding-bottom: 12px; font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Ускоренные операции:</strong> Приоритетное обслуживание обеспечивает быстрые и безопасные расчеты.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="20" valign="top" style="padding-top: 6px;"><div style="width: 6px; height: 6px; background-color: #b8923c; border-radius: 50%;"></div></td>
-                            <td style="font-size: 14px; line-height: 1.6; color: #5c574f;">
-                                <strong style="color:#1a1814;">Первоклассный консалтинг:</strong> Прямой и конфиденциальный доступ к команде экспертов, закрепленной за вашим счетом.
+                            <td class="hide-mobile" width="5%" dir="ltr"></td>
+                            <td class="stack-column" width="50%" valign="middle" dir="ltr" style="text-align: left;">
+                                <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">Ускоренные операции:</strong><br>Приоритетное обслуживание обеспечивает быстрые и безопасные расчеты.
+                                </p>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c574f;">
+                                    <strong style="color:#1a1814;">Первоклассный консалтинг:</strong><br>Прямой и конфиденциальный доступ к команде экспертов, закрепленной за вашим счетом.
+                                </p>
                             </td>
                         </tr>
                     </table>
@@ -325,6 +338,7 @@
                         Чтобы наше общение было максимально удобным, пожалуйста, сообщите предпочитаемый канал связи:
                     </p>
                     
+                    <!-- CONTACT PREFERENCE BOX -->
                     <div style="background-color: #fdfcf9; border: 1px solid #ebe6da; border-left: 3px solid #b8923c; padding: 20px; margin-bottom: 25px; border-radius: 0 4px 4px 0;">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
