@@ -5,13 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitazza Elite — Private Client Channel</title>
 <style>
-  /* อัปเดตเพิ่มฟอนต์ Prompt สำหรับภาษาไทย */
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap');
 
   * { box-sizing: border-box; }
   body, html { margin: 0; padding: 0; background-color: #f4f3ed; scroll-behavior: smooth; }
   
-  /* ใส่ Prompt ไว้ต่อท้าย Jost */
   body { font-family: 'Jost', 'Prompt', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #5c574f; }
   .serif { font-family: 'Cormorant Garamond', 'Prompt', Georgia, serif; }
   
@@ -40,7 +38,6 @@
   .btn-outline { display: inline-block; border: 1px solid #d1c8b4; color: #1a1814 !important; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 12px 24px; border-radius: 2px; transition: border-color 0.3s ease; }
   .btn-outline:hover { border-color: #b8923c; }
 
-  /* เมนูเลือกภาษา */
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; }
   .nav-left { display: flex; align-items: center; }
   .logo-img { height: 60px; object-fit: contain; mix-blend-mode: multiply; }
@@ -227,7 +224,6 @@
     
     <a href="https://bitazza-private.github.io/vip-chanel/" class="btn" style="margin-top: 10px;" data-key="btn_accept_2">Accept Invitation</a>
     
-    <!-- อัปเดตผูกระบบแปลภาษาและเปลี่ยนลิงก์เป็น bitazza.co.th -->
     <p class="sign-off" data-key="sign_off">
       Yours sincerely,<br>
       <strong>Bitazza Elite Thailand</strong><br>
@@ -272,7 +268,6 @@
 </div>
 
 <script>
-  // ข้อมูลแปลภาษา (EN, TH, RU) - อัปเดตคำศัพท์ระดับ VVIP และคำลงท้าย
   const translations = {
     en: {
       nav_invite: "INVITATION ONLY",
@@ -320,110 +315,109 @@
       
       sign_off: "Yours sincerely,<br><strong>Bitazza Elite Thailand</strong><br><a href=\"mailto:elitethailand@bitazza.com\">elitethailand@bitazza.com</a> &nbsp;&middot;&nbsp; <a href=\"https://bitazza.co.th\" target=\"_blank\">bitazza.co.th</a>",
       
-      footer_confidential: "<strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law.",
+      footer_confidential: "<strong>CONFIDENTIAL NOTE:</strong> The information contained in this email is intended only for the use of the individual or entity named above and may contain information that is privileged, confidential and exempt from disclosure under applicable law. If the reader of this message is not the intended recipient, you are hereby notified that any dissemination, distribution or copying of this communication is strictly prohibited. If you have received this message in error, please immediately notify the sender and delete the mail.",
       footer_address: "THIS INVITATION WAS EXTENDED PERSONALLY AND IS NOT TRANSFERABLE.<br>152 SOI MEESUWAN 3, PHRA KHANONG NUA, VADHANA, BANGKOK 10110"
     },
     th: {
       nav_invite: "สำหรับผู้ที่ได้รับเชิญเท่านั้น",
       hero_title: "สิทธิพิเศษเหนือระดับสำหรับ<br><span class=\"gold\" style=\"font-style:italic;\">ลูกค้าคนสำคัญ</span>",
-      hero_quote: "\"รวดเร็ว แม่นยำ และเหนือระดับ\"",
-      grid_title_1: "เอกสิทธิ์แห่งความรวดเร็ว (PRIORITY)",
-      grid_desc_1: "ช่องทางติดต่อสายตรงถึงผู้ดูแลบัญชีส่วนตัวของคุณ พร้อมบริการประสานงานแบบ Fast-track",
-      grid_title_2: "ความแม่นยำ (PRECISION)",
-      grid_desc_2: "การสื่อสารที่โปร่งใส พร้อมกลยุทธ์การซื้อขายที่ออกแบบเฉพาะคุณและสภาพคล่องระดับสูง",
-      grid_title_3: "สิทธิประโยชน์เหนือระดับ (PRIVILEGE)",
-      grid_desc_3: "สิทธิ์เข้าร่วมงาน Private Event เอกสิทธิ์พิเศษ และอัปเดตข้อมูลสำคัญโดยปราศจากข้อมูลรบกวน",
+      hero_quote: "\"สำคัญที่สุด แม่นยำ พิเศษเฉพาะคุณ\"",
+      grid_title_1: "ลำดับความสำคัญ",
+      grid_desc_1: "ติดต่อตรงกับผู้ดูแลความสัมพันธ์ส่วนตัวของท่าน พร้อมการสนับสนุนด้านปฏิบัติการที่รวดเร็วทันใจ",
+      grid_title_2: "ความแม่นยำ",
+      grid_desc_2: "การสื่อสารที่ชัดเจนโปร่งใส ผสานกลยุทธ์การดำเนินการที่ออกแบบเฉพาะบุคคล และสภาพคล่องระดับลึก",
+      grid_title_3: "สิทธิพิเศษ",
+      grid_desc_3: "สิทธิ์เข้าร่วมงานอีเวนต์เฉพาะลูกค้าคนพิเศษ สิทธิประโยชน์ที่ออกแบบเฉพาะตัว และข่าวสารที่คัดสรรมาเพื่อท่านโดยเฉพาะ",
       btn_accept: "ตอบรับคำเชิญ",
       btn_accept_2: "ตอบรับคำเชิญ",
       stat_sec: "ได้รับใบอนุญาตจาก ก.ล.ต.",
-      stat_sec_desc: "นายหน้าสินทรัพย์ดิจิทัลในประเทศไทย",
+      stat_sec_desc: "ผู้ให้บริการนายหน้าสินทรัพย์ดิจิทัลในประเทศไทย",
       stat_exp: "ประสบการณ์กว่า 7 ปี",
       stat_exp_desc: "ในตลาดสินทรัพย์ดิจิทัล",
-      stat_chan: "ช่องทางติดต่อส่วนตัว",
+      stat_chan: "ช่องทางส่วนตัว",
       stat_chan_desc: "LINE · WhatsApp · Telegram",
       
-      feat1_title: "บริการที่ปรึกษาส่วนบุคคล <br><span class=\"gold serif\" style=\"font-style:italic;\">ระดับพรีเมียม</span>",
-      feat1_li1_h4: "ทีมที่ปรึกษาเฉพาะบุคคล",
-      feat1_li1_p: "เข้าถึงทีมผู้เชี่ยวชาญเฉพาะด้านที่เข้าใจพอร์ตโฟลิโอ ประวัติการลงทุน และสไตล์การซื้อขายของคุณอย่างลึกซึ้ง",
-      feat1_li2_h4: "ช่องทางติดต่อสายตรงแบบส่วนตัว",
-      feat1_li2_p: "ติดต่อได้ทันทีผ่านสายตรง, WhatsApp, LINE, หรือ Telegram พร้อมการเก็บรักษาความลับขั้นสูงสุด",
-      feat1_li3_h4: "บริการเชิงรุกผ่านช่องทางพิเศษ",
-      feat1_li3_p: "จัดการคำขออย่างรวดเร็ว ประสานงานภายในอย่างราบรื่น และติดตามผลล่วงหน้าโดยที่คุณไม่ต้องร้องขอ",
-      feat1_li4_h4: "กลยุทธ์การซื้อขายเฉพาะบุคคล",
-      feat1_li4_p: "โครงสร้างการซื้อขายที่ปรับแต่งได้ การบริหารความเสี่ยงเฉพาะตัว และสภาพคล่องที่ยืดหยุ่นสำหรับธุรกรรมขนาดใหญ่",
+      feat1_title: "การให้คำปรึกษาระดับพรีเมียม <br><span class=\"gold serif\" style=\"font-style:italic;\">และทีมงานดูแลเฉพาะท่าน</span>",
+      feat1_li1_h4: "ทีมที่ปรึกษาเฉพาะทาง",
+      feat1_li1_p: "เข้าถึงทีมผู้เชี่ยวชาญเฉพาะกลุ่มที่เข้าใจพอร์ตการลงทุน ประวัติการเทรด และรูปแบบการดำเนินการที่ท่านต้องการโดยตรง",
+      feat1_li2_h4: "ช่องทางติดต่อส่วนตัวโดยตรง",
+      feat1_li2_p: "เข้าถึงได้ทันทีผ่านสายตรง WhatsApp LINE หรือ Telegram พร้อมความเป็นส่วนตัวและการให้คำปรึกษาอย่างรอบคอบ",
+      feat1_li3_h4: "บริการเชิงรุกและได้รับความสำคัญเป็นลำดับแรก",
+      feat1_li3_p: "ดำเนินการตามคำขอได้รวดเร็วขึ้น ประสานงานภายในทีมอย่างมีประสิทธิภาพ พร้อมติดตามผลล่วงหน้าก่อนที่ท่านจะต้องร้องขอ",
+      feat1_li4_h4: "กลยุทธ์การเทรดที่ออกแบบเฉพาะบุคคล",
+      feat1_li4_p: "โครงสร้างการดำเนินการที่ปรับแต่งได้ พารามิเตอร์ความเสี่ยงเฉพาะราย และโซลูชันด้านสภาพคล่องที่ยืดหยุ่น ออกแบบมาเพื่อการเทรดปริมาณสูงโดยเฉพาะ",
       
-      feat2_title: "ศักยภาพการซื้อขาย <br><span class=\"gold serif\" style=\"font-style:italic;\">ระดับสถาบัน</span>",
-      feat2_li1_h4: "เครือข่ายการซื้อขายระดับสถาบัน",
-      feat2_li1_p: "มอบข้อเสนอราคาแบบ OTC ที่ดีที่สุด พร้อมเข้าถึงแหล่งสภาพคล่องเชิงลึก ออกแบบมาเพื่อรองรับการทำธุรกรรมขนาดใหญ่โดยเฉพาะ",
-      feat2_li2_h4: "เอกสิทธิ์ด้านการทำธุรกรรม",
-      feat2_li2_p: "บริการช่องทางพิเศษ (Fast-track) ในการอนุมัติธุรกรรมและการเพิ่ม Whitelist เพื่อตอบสนองความต้องการของนักลงทุนระดับ UHNW",
-      feat2_tag: "กลยุทธ์ระดับสถาบัน",
-      feat2_sub: "การซื้อขายแบบเฉพาะเจาะจง",
+      feat2_title: "การดำเนินการ <span class=\"gold serif\" style=\"font-style:italic;\">และ</span><br><span class=\"gold serif\" style=\"font-style:italic;\">ความได้เปรียบ</span>",
+      feat2_li1_h4: "การดำเนินการซื้อขายเทียบเท่าสถาบันการเงินชั้นนำ",
+      feat2_li1_p: "ราคาที่แข่งขันได้ การเข้าถึงสภาพคล่องระดับลึก และการสนับสนุนด้าน OTC เฉพาะทางสำหรับคำสั่งซื้อขายขนาดใหญ่",
+      feat2_li2_h4: "การดำเนินงานที่ได้รับความสำคัญเป็นลำดับแรก",
+      feat2_li2_p: "การประสานงานด้านการชำระราคาที่รวดเร็ว และความช่วยเหลือด้านการขึ้นบัญชี Whitelist ที่ออกแบบมาเพื่อนักลงทุนผู้มีความเชี่ยวชาญ",
+      feat2_tag: "การวางแผนเชิงกลยุทธ์",
+      feat2_sub: "การดำเนินการเฉพาะบุคคล",
       
-      feat3_title: "เอกสิทธิ์การเข้าถึง <br><span class=\"gold serif\" style=\"font-style:italic;\">และสิทธิประโยชน์</span>",
-      feat3_li1_h4: "การดูแลแบบเอ็กซ์คลูซีฟ",
-      feat3_li1_p: "รับบัตรเชิญแบบระบุชื่อสำหรับงาน Private Event และรับเฉพาะข้อมูลอัปเดตตลาดที่สำคัญ คัดกรองมาเพื่อคุณโดยเฉพาะ",
+      feat3_title: "สิทธิ์การเข้าถึง <br><span class=\"gold serif\" style=\"font-style:italic;\">และสิทธิประโยชน์เฉพาะ</span>",
+      feat3_li1_h4: "การดูแลเฉพาะบุคคล",
+      feat3_li1_p: "คำเชิญเข้าร่วมงาน Private Client โดยเฉพาะในนามของท่าน พร้อมข้อมูลตลาดที่คัดสรรมาอย่างพิถีพิถัน ปราศจากข้อความอัตโนมัติที่ไม่จำเป็น",
       
-      cta_title: "สัมผัสประสบการณ์ที่ออกแบบมาเพื่อคุณ",
-      cta_desc: "โปรดแจ้งความประสงค์ของคุณด้านล่าง ทีมผู้เชี่ยวชาญของเราจะติดต่อกลับเป็นการส่วนตัว เพื่อมอบบริการและคำแนะนำแบบครบวงจร",
+      cta_title: "ประสบการณ์บริการที่ออกแบบมาเพื่อท่านโดยเฉพาะ",
+      cta_desc: "กรุณาแจ้งความต้องการของท่านด้านล่าง ผู้เชี่ยวชาญของเราจะติดต่อกลับเป็นการส่วนตัว เพื่อให้คำแนะนำแบบครบวงจรที่เหนือกว่าการบริการมาตรฐานทั่วไป",
       
       sign_off: "ขอแสดงความนับถือ,<br><strong>ทีมงาน Bitazza Elite ประเทศไทย</strong><br><a href=\"mailto:elitethailand@bitazza.com\">elitethailand@bitazza.com</a> &nbsp;&middot;&nbsp; <a href=\"https://bitazza.co.th\" target=\"_blank\">bitazza.co.th</a>",
       
-      footer_confidential: "<strong>ข้อสงวนสิทธิ์ด้านความลับ:</strong> ข้อมูลที่มีอยู่ในเว็บไซต์นี้มีไว้สำหรับการใช้งานของบุคคลหรือนิติบุคคลที่ได้รับเชิญเท่านั้น และถือเป็นข้อมูลลับเฉพาะ",
-      footer_address: "คำเชิญนี้เป็นสิทธิ์เฉพาะบุคคลและไม่สามารถโอนสิทธิ์ให้ผู้อื่นได้<br>152 ซอยมีสุวรรณ 3 แขวงพระโขนงเหนือ เขตวัฒนา กรุงเทพฯ 10110"
+      footer_confidential: "<strong>หมายเหตุการรักษาความลับ:</strong> ข้อมูลในอีเมลฉบับนี้มีไว้สำหรับบุคคลหรือหน่วยงานที่ระบุชื่อไว้ข้างต้นเท่านั้น และอาจมีข้อมูลอันเป็นสิทธิพิเศษ เป็นความลับ และได้รับการยกเว้นจากการเปิดเผยตามกฎหมายที่เกี่ยวข้อง หากท่านไม่ใช่ผู้รับที่ระบุไว้ การเผยแพร่ แจกจ่าย หรือคัดลอกข้อความนี้ถือเป็นสิ่งต้องห้ามโดยเด็ดขาด หากท่านได้รับอีเมลฉบับนี้โดยผิดพลาด กรุณาแจ้งผู้ส่งทันทีและลบอีเมลฉบับนี้ออก",
+      footer_address: "คำเชิญฉบับนี้จัดส่งถึงท่านเป็นการส่วนตัว และไม่สามารถโอนสิทธิ์ให้แก่ผู้อื่นได้<br>152 ซอยมีสุวรรณ 3 พระโขนงเหนือ วัฒนา กรุงเทพฯ 10110"
     },
     ru: {
       nav_invite: "ТОЛЬКО ПО ПРИГЛАШЕНИЮ",
       hero_title: "Добро пожаловать в<br><span class=\"gold\" style=\"font-style:italic;\">Private Client Channel</span>",
-      hero_quote: "\"Приоритет. Точность. Привилегия.\"",
+      hero_quote: "«Приоритет. Точность. Привилегия.»",
       grid_title_1: "ПРИОРИТЕТ",
-      grid_desc_1: "Прямая связь с вашим персональным менеджером и ускоренная операционная поддержка.",
+      grid_desc_1: "Прямая связь с вашим персональным менеджером и оперативная поддержка по всем вопросам.",
       grid_title_2: "ТОЧНОСТЬ",
-      grid_desc_2: "Прозрачная коммуникация в сочетании с индивидуальными стратегиями исполнения и глубокой ликвидностью.",
+      grid_desc_2: "Прозрачная коммуникация в сочетании с индивидуальными стратегиями исполнения сделок и глубокой ликвидностью.",
       grid_title_3: "ПРИВИЛЕГИЯ",
-      grid_desc_3: "Эксклюзивный доступ к закрытым мероприятиям, индивидуальным привилегиям и важным обновлениям.",
+      grid_desc_3: "Эксклюзивный доступ к закрытым мероприятиям для частных клиентов, персональные привилегии и информация без лишнего шума.",
       btn_accept: "Принять приглашение",
       btn_accept_2: "Принять приглашение",
       stat_sec: "Лицензия SEC",
-      stat_sec_desc: "Брокер в Таиланде",
-      stat_exp: "7+ лет опыта",
-      stat_exp_desc: "На рынке цифровых активов",
-      stat_chan: "Частные каналы",
+      stat_sec_desc: "Брокер цифровых активов в Таиланде",
+      stat_exp: "Более 7 лет",
+      stat_exp_desc: "Опыта работы на рынке цифровых активов",
+      stat_chan: "Приватные каналы связи",
       stat_chan_desc: "LINE · WhatsApp · Telegram",
       
-      feat1_title: "Премиальный консалтинг <br><span class=\"gold serif\" style=\"font-style:italic;\">и Экспертиза</span>",
-      feat1_li1_h4: "Персональная команда",
-      feat1_li1_p: "Прямой доступ к профильным экспертам, которые знают ваш портфель, историю торгов и инвестиционный стиль.",
-      feat1_li2_h4: "Прямые частные каналы",
-      feat1_li2_p: "Мгновенный доступ по прямой линии, WhatsApp, LINE или Telegram с соблюдением строжайшей конфиденциальности.",
-      feat1_li3_h4: "Проактивный сервис (Fast-track)",
-      feat1_li3_p: "Ускоренная обработка запросов, бесперебойная внутренняя координация и проактивные действия со стороны команды.",
-      feat1_li4_h4: "Индивидуальные стратегии",
-      feat1_li4_p: "Персонализированные структуры исполнения, управление рисками и глубокая ликвидность для крупных сделок.",
+      feat1_title: "Персональное консультирование <br><span class=\"gold serif\" style=\"font-style:italic;\">и выделенная команда</span>",
+      feat1_li1_h4: "Персональная команда консультантов",
+      feat1_li1_p: "Прямой доступ к специализированному деску экспертов, которые знают структуру вашего портфеля, историю сделок и предпочтения в исполнении операций.",
+      feat1_li2_h4: "Прямые приватные каналы связи",
+      feat1_li2_p: "Мгновенный доступ по прямой линии, WhatsApp, LINE или Telegram — с полной конфиденциальностью и деликатным подходом к консультациям.",
+      feat1_li3_h4: "Проактивный сервис с приоритетным обслуживанием",
+      feat1_li3_p: "Более быстрая обработка запросов, слаженная работа внутренней команды и проактивное сопровождение — ещё до того, как у вас возникнет вопрос.",
+      feat1_li4_h4: "Индивидуальные торговые стратегии",
+      feat1_li4_p: "Персонализированные структуры исполнения, индивидуальные параметры риска и гибкие решения по ликвидности, разработанные специально для клиентов с высоким объёмом торгов.",
       
-      feat2_title: "Преимущество <br><span class=\"gold serif\" style=\"font-style:italic;\">Институционального уровня</span>",
-      feat2_li1_h4: "Институциональное исполнение",
-      feat2_li1_p: "Лучшие внебиржевые (OTC) цены и доступ к пулам глубокой ликвидности, специально для работы с крупными объемами.",
+      feat2_title: "Исполнение <span class=\"gold serif\" style=\"font-style:italic;\">и</span><br><span class=\"gold serif\" style=\"font-style:italic;\">преимущества</span>",
+      feat2_li1_h4: "Исполнение институционального уровня",
+      feat2_li1_p: "Конкурентное ценообразование, доступ к глубокой ликвидности и специализированная OTC-поддержка для крупных сделок.",
       feat2_li2_h4: "Приоритетные операции",
-      feat2_li2_p: "Ускоренное (Fast-track) проведение расчетов и добавление в Whitelist, разработанное для инвесторов уровня UHNW.",
-      feat2_tag: "Стратегическое управление",
+      feat2_li2_p: "Ускоренное согласование расчётов и содействие во внесении в whitelist — специально для опытных инвесторов.",
+      feat2_tag: "Стратегическое планирование",
       feat2_sub: "Индивидуальное исполнение",
       
-      feat3_title: "Эксклюзивный доступ <br><span class=\"gold serif\" style=\"font-style:italic;\">и Привилегии</span>",
+      feat3_title: "Эксклюзивный доступ <br><span class=\"gold serif\" style=\"font-style:italic;\">и привилегии</span>",
       feat3_li1_h4: "Индивидуальный подход",
-      feat3_li1_p: "Именные приглашения на закрытые мероприятия (Private Events) и персонализированные обзоры рынка без лишнего шума.",
+      feat3_li1_p: "Именные приглашения на закрытые мероприятия для частных клиентов и продуманные, персонализированные рыночные обзоры — без автоматических рассылок.",
       
       cta_title: "Сервис, созданный специально для вас",
-      cta_desc: "Поделитесь своими предпочтениями ниже. Наши специалисты свяжутся с вами лично, чтобы предоставить первоклассное обслуживание.",
+      cta_desc: "Поделитесь своими пожеланиями ниже — и наши специалисты свяжутся с вами лично, чтобы предложить индивидуальное сопровождение, выходящее далеко за рамки стандартного обслуживания.",
       
       sign_off: "С уважением,<br><strong>Команда Bitazza Elite</strong><br><a href=\"mailto:elitethailand@bitazza.com\">elitethailand@bitazza.com</a> &nbsp;&middot;&nbsp; <a href=\"https://bitazza.co.th\" target=\"_blank\">bitazza.co.th</a>",
       
-      footer_confidential: "<strong>КОНФИДЕНЦИАЛЬНО:</strong> Информация, содержащаяся на данном ресурсе, предназначена исключительно для приглашенных лиц и является строго конфиденциальной.",
-      footer_address: "ЭТО ПРИГЛАШЕНИЕ ЯВЛЯЕТСЯ ЛИЧНЫМ И НЕ ПОДЛЕЖИТ ПЕРЕДАЧЕ.<br>152 SOI MEESUWAN 3, PHRA KHANONG NUA, VADHANA, BANGKOK 10110"
+      footer_confidential: "<strong>Конфиденциально:</strong> информация, содержащаяся в этом письме, предназначена исключительно для лица или организации, указанных выше, и может содержать сведения, являющиеся привилегированными, конфиденциальными и не подлежащими разглашению в соответствии с действующим законодательством. Если вы не являетесь адресатом данного сообщения, любое распространение, копирование или передача этой информации строго запрещены. Если вы получили это письмо по ошибке, пожалуйста, немедленно уведомите отправителя и удалите его.",
+      footer_address: "Данное приглашение является персональным и не подлежит передаче третьим лицам.<br>152 Сой Мисуван 3, Пхра Кханонг Нуа, Ваттхана, Бангкок 10110"
     }
   };
 
-  // ฟังก์ชันเปลี่ยนภาษา
   function changeLang(lang) {
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
@@ -436,7 +430,6 @@
     });
   }
 
-  // Animation Script
   document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); obs.unobserve(entry.target); } });
